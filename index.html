@@ -21,9 +21,10 @@
     <a class="logo" href="#topo">BRITTO<span class="ast">*</span><small>GROUP</small></a>
     <div class="navscroll">
       <nav class="menu" aria-label="Seções">
+        <button type="button" data-scroll="palestrantes">Palestrantes</button>
         <button type="button" data-scroll="metodo">Método</button>
         <button type="button" data-scroll="mentorias">Mentorias</button>
-        <button type="button" data-scroll="palestrantes">Palestrantes</button>
+        <button type="button" data-scroll="apresentacoes">Slides</button>
         <button type="button" data-scroll="cases">Cases</button>
         <button type="button" data-scroll="matriz">Matriz</button>
         <a class="cta magnet" data-wa="Olá! Vim pelo site da BRITTO* GROUP e quero solicitar minha palestra." href="#">Solicitar palestra</a>
@@ -74,6 +75,25 @@
 
     <div class="scroll-hint" aria-hidden="true"><span>Role para entrar em cena</span><i></i></div>
     <div class="stage-hud" aria-hidden="true"><span id="hud-ato">Ato I · Impacto</span><span id="hud-pct">00%</span></div>
+  </div>
+</section>
+
+<!-- PALESTRANTES — trilho horizontal que anda com o scroll -->
+<section class="cast" id="palestrantes" aria-label="Palestrantes BRITTO*">
+  <div class="cast-pin">
+    <div class="wrap cast-head">
+      <div class="stack">
+        <p class="eyebrow" data-reveal>Palestrantes BRITTO*</p>
+        <h2 data-reveal data-split>Quem já subiu ao palco com a gente.</h2>
+      </div>
+      <div class="cast-meta" data-reveal>
+        <span class="cast-count"><b id="cast-idx">01</b> / <span id="cast-total">13</span></span>
+        <span class="cast-bar"><i id="cast-bar"></i></span>
+      </div>
+    </div>
+    <div class="cast-viewport">
+      <div class="cast-track" id="speakers"></div>
+    </div>
   </div>
 </section>
 
@@ -168,6 +188,44 @@
   </div>
 </section>
 
+<!-- APRESENTAÇÕES — MacBook 3D que abre girando e passa os slides -->
+<section class="showcase" id="apresentacoes" aria-label="Apresentações BRITTO*">
+  <div class="show-pin">
+    <div class="show-glow" aria-hidden="true"></div>
+    <div class="wrap show-copy">
+      <p class="eyebrow">Apresentações BRITTO*</p>
+      <h2>Slides que trabalham a favor da fala.</h2>
+      <div class="show-caption" aria-live="polite">
+        <span class="show-client" id="show-client">BRITTO*</span>
+        <b class="show-title" id="show-title">Direção de arte para palestras</b>
+      </div>
+      <div class="show-dots" id="show-dots" role="tablist" aria-label="Apresentações"></div>
+    </div>
+    <div class="mac-stage" aria-hidden="true">
+      <div class="mac" id="mac">
+        <div class="mac-base">
+          <div class="mac-deck"><i class="mac-keys"></i><i class="mac-pad"></i></div>
+          <div class="mac-under"></div>
+          <div class="mac-front"></div>
+        </div>
+        <div class="mac-lid" id="mac-lid">
+          <div class="mac-screen-face">
+            <div class="mac-bezel">
+              <i class="mac-notch"></i>
+              <div class="mac-screen" id="mac-screen">
+                <div class="mac-boot"><span>BRITTO<em>*</em></span><small>GROUP</small></div>
+                <div class="mac-slides" id="mac-slides"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mac-back-face"><span>*</span></div>
+        </div>
+      </div>
+      <div class="mac-shadow"></div>
+    </div>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap">
     <div class="head">
@@ -196,16 +254,6 @@
       <div class="fmt" data-reveal><h3>Aberturas e convenções</h3><p>Entradas com vídeo, trilha e efeito ao vivo para convenções e eventos de empresa.</p></div>
       <div class="fmt" data-reveal><h3>Espetáculo para eventos</h3><p>A linguagem de shows e musicais aplicada a imersões e eventos empresariais.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="band" id="palestrantes">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow" data-reveal>Palestrantes BRITTO*</p>
-      <h2 data-reveal data-split>Quem já subiu ao palco com a gente.</h2>
-    </div>
-    <div class="speakers" id="speakers"></div>
   </div>
 </section>
 
@@ -324,6 +372,8 @@
 </a>
 
 <script src="js/stage.js"></script>
+<script src="js/data.js"></script>
 <script src="js/main.js"></script>
+<script src="js/showcase.js"></script>
 </body>
 </html>

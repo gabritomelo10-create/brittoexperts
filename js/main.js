@@ -18,32 +18,66 @@
   var cid = ["Manaus", "São Paulo", "Salvador", "Japão", "China"], ct = document.getElementById("cidades");
   for (var r = 0; r < 4; r++) cid.forEach(function (c) { var s = document.createElement("span"); s.textContent = c; ct.appendChild(s); });
 
-  /* ---------- palestrantes ---------- */
-  var spk = [
-    ["Ícaro Gaspar", "CEO All In Consultoria · Mentor All In Club"],
-    ["Djalma Neto", "Founder Sushi Ponta Negra, Joya Sushi e Mori Izakaya"],
-    ["Luiz Eduardo Leal", "Co-founder RUMO MKT"],
-    ["Jacqueline Guedes", "Founder ENPOWER Palestras de Sucesso e Clube das CEOs"],
-    ["Rafael Amorim", "CSO Pará Cabos · Host Wow Cast"],
-    ["Ricardo Feitoza", "Founder Mr. Feitoza Barbearia · Mentor GDV"],
-    ["Marcus Evangelista", "CEO Exithus Consultoria"],
-    ["Luis Cunha", "CSO All In Consultoria · Mentor All In Club"],
-    ["Roberta Gaspar", "Mentora All In Club"],
-    ["Marcelo Marcene", "Multiempresário · Kopenhagen, Hinode, MaisÓtica"],
-    ["Rodrigo Omena", "Advogado · Redes sociais e tráfego para advogados"],
-    ["Angel", "Barbeiro · Método PDV, Performance de Verdade"],
-    ["Juan Campos", "Franqueado Medprev Manaus"]
-  ];
+  /* ---------- palestrantes: trilho horizontal ---------- */
+  var spk = (window.BRITTO && window.BRITTO.palestrantes) || [];
   var sp = document.getElementById("speakers");
   spk.forEach(function (p, i) {
-    var ini = p[0].split(" ").slice(0, 2).map(function (w) { return w[0]; }).join("");
-    var d = document.createElement("div");
-    d.className = "spk glow";
-    d.setAttribute("data-reveal", "");
-    d.style.setProperty("--d", (i % 4) * 0.06 + "s");
-    d.innerHTML = '<span class="ini" aria-hidden="true"><span>' + esc(ini) + '</span></span><b>' + esc(p[0]) + '</b><span>' + esc(p[1]) + '</span>';
+    var ini = p.nome.split(" ").slice(0, 2).map(function (w) { return w[0]; }).join("");
+    var d = document.createElement("article");
+    d.className = "spk no-photo";
+    d.innerHTML =
+      '<div class="spk-photo"><span class="spk-ini" aria-hidden="true">' + esc(ini) + '</span>' +
+      '<img alt="' + esc(p.nome) + '" loading="lazy" decoding="async"></div>' +
+      '<div class="spk-info"><span class="spk-n">' + String(i + 1).padStart(2, "0") + '</span>' +
+      '<b>' + esc(p.nome) + '</b><span class="spk-role">' + esc(p.papel) + '</span>' +
+      (p.palestra ? '<span class="spk-talk">' + esc(p.palestra) + '</span>' : '') + '</div>';
+    var img = d.querySelector("img");
+    img.addEventListener("load", function () { d.classList.remove("no-photo"); });
+    img.src = "img/palestrantes/" + p.foto + ".jpg";
     sp.appendChild(d);
   });
+  document.getElementById("cast-total").textContent = String(spk.length).padStart(2, "0");
+
+  var cast = document.getElementById("palestrantes");
+  var castCards = Array.prototype.slice.call(sp.children);
+  var castIdx = document.getElementById("cast-idx"), castBar = document.getElementById("cast-bar");
+  var castPinned = false, castMax = 0;
+  function castLayout() {
+    castPinned = !reduce && innerWidth >= 900;
+    cast.classList.toggle("pinned", castPinned);
+    sp.style.transform = "";
+    if (castPinned) {
+      castMax = Math.max(0, sp.scrollWidth - innerWidth + 32);
+      cast.style.height = (innerHeight + castMax) + "px";
+    } else {
+      cast.style.height = "";
+    }
+  }
+  function castScroll() {
+    var p;
+    if (castPinned) {
+      var r = cast.getBoundingClientRect();
+      p = clamp(-r.top / Math.max(1, r.height - innerHeight), 0, 1);
+      sp.style.transform = "translate3d(" + (-p * castMax).toFixed(1) + "px,0,0)";
+    } else {
+      p = sp.scrollLeft / Math.max(1, sp.scrollWidth - sp.clientWidth);
+    }
+    castBar.style.transform = "scaleX(" + Math.max(0.04, p).toFixed(3) + ")";
+    // cada card gira levemente conforme a posição na tela e endireita no centro
+    var best = 0, bestD = 1e9, mid = innerWidth / 2;
+    castCards.forEach(function (c, i) {
+      var b = c.getBoundingClientRect();
+      var off = (b.left + b.width / 2 - mid) / innerWidth;
+      if (Math.abs(off) < bestD) { bestD = Math.abs(off); best = i; }
+      if (!reduce) c.style.setProperty("--off", clamp(off, -1, 1).toFixed(3));
+    });
+    castIdx.textContent = String(best + 1).padStart(2, "0");
+  }
+  sp.addEventListener("scroll", castScroll, { passive: true });
+  window.addEventListener("resize", function () { castLayout(); castScroll(); });
+  castLayout();
+  window.addEventListener("load", function () { castLayout(); castScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { castLayout(); castScroll(); });
 
   /* ---------- títulos divididos em palavras ---------- */
   document.querySelectorAll("[data-split]").forEach(function (el) {
@@ -163,6 +197,7 @@
 
   function onScroll() {
     ticking = false;
+    castScroll();
     var y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
     bar.style.transform = "scaleX(" + (max > 0 ? y / max : 0).toFixed(4) + ")";
     var pastStage = y > stage.offsetHeight - innerHeight;
