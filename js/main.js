@@ -90,7 +90,7 @@
 
   /* ---------- revelação no scroll ---------- */
   // atraso escalonado para irmãos revelados juntos
-  document.querySelectorAll(".dor,.ida,.cnv,.steps,.formatos,.talks,.cases,.nums").forEach(function (g) {
+  document.querySelectorAll(".dor,.palco-list,.cases,.nums").forEach(function (g) {
     Array.prototype.forEach.call(g.querySelectorAll("[data-reveal]"), function (el, i) { el.style.setProperty("--d", i * 0.09 + "s"); });
   });
   var io = new IntersectionObserver(function (entries) {
@@ -164,8 +164,7 @@
     return { el: el, a: +el.getAttribute("data-in"), b: +el.getAttribute("data-out") };
   });
   var hint = document.querySelector(".scroll-hint"), hud = document.querySelector(".stage-hud");
-  var hudAto = document.getElementById("hud-ato"), hudPct = document.getElementById("hud-pct");
-  var atoAtual = "";
+  var hudPct = document.getElementById("hud-pct");
   if (window.BrittoStage) {
     window.BrittoStage.onProgress = function (p) {
       beats.forEach(function (bt) {
@@ -178,8 +177,6 @@
       });
       hint.style.opacity = p < 0.04 ? 1 : 0;
       hud.style.opacity = p > 0.7 ? 0 : 1;
-      var ato = p < 0.45 ? "Ato I · Impacto" : p < 0.72 ? "Ato II · Direção" : "Ato III · Apoteose";
-      if (ato !== atoAtual) { hudAto.textContent = ato; atoAtual = ato; }
       hudPct.textContent = String(Math.round(p * 100)).padStart(2, "0") + "%";
     };
   }
@@ -222,6 +219,15 @@
   }
   window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
+
+  /* ---------- para cada tipo de palco: o painel em foco se abre ---------- */
+  var palcos = Array.prototype.slice.call(document.querySelectorAll(".palco"));
+  function abrirPalco(el) { palcos.forEach(function (p) { p.classList.toggle("is-open", p === el); }); }
+  palcos.forEach(function (p) {
+    p.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") abrirPalco(p); });
+    p.addEventListener("focus", function () { abrirPalco(p); });
+    p.addEventListener("click", function () { abrirPalco(p); });
+  });
 
   /* ---------- Matriz de Genialidade (demonstração) ---------- */
   var zonas = {
