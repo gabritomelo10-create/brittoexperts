@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BRITTO* GROUP · Palestras de alto nível</title>
+<meta name="description" content="BRITTO* GROUP: extraímos o melhor do seu conhecimento, da sua ideia e da sua história e transformamos em uma apresentação cinematográfica. Método I.D.A. e Mentorias C.N.V.">
+<meta name="theme-color" content="#070d0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#topo">BRITTO<span class="ast">*</span><small>GROUP</small></a>
+    <div class="navscroll">
+      <nav class="menu" aria-label="Seções">
+        <button type="button" data-scroll="metodo">Método</button>
+        <button type="button" data-scroll="mentorias">Mentorias</button>
+        <button type="button" data-scroll="palestrantes">Palestrantes</button>
+        <button type="button" data-scroll="cases">Cases</button>
+        <button type="button" data-scroll="matriz">Matriz</button>
+        <a class="cta magnet" data-wa="Olá! Vim pelo site da BRITTO* GROUP e quero solicitar minha palestra." href="#">Solicitar palestra</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- ATO I · IMPACTO — cena 3D: plateia cheia, a câmera recua e revela VOCÊ -->
+<section class="stage" id="stage" aria-label="Abertura">
+  <div class="stage-pin">
+    <canvas id="stage-canvas" aria-hidden="true"></canvas>
+    <div class="stage-vignette" aria-hidden="true"></div>
+
+    <div class="beat beat-1" data-in="0" data-out="0.13">
+      <div class="wrap">
+        <p class="eyebrow">BRITTO* GROUP · Palestras de alto nível</p>
+        <h1>Sua grande ideia precisa ser <em>bem apresentada.</em></h1>
+        <p class="lede">Extraímos o melhor do seu conhecimento, da sua ideia e da sua história e transformamos em uma experiência cinematográfica que impacta, conecta, converte e não sai da mente do público.</p>
+      </div>
+    </div>
+
+    <div class="beat beat-2" data-in="0.15" data-out="0.31">
+      <div class="wrap">
+        <p class="kicker">Uma plateia cheia.</p>
+        <p class="kicker dim">Centenas de olhares esperando a primeira palavra.</p>
+      </div>
+    </div>
+
+    <div class="beat beat-3" data-in="0.42" data-out="0.6">
+      <div class="wrap">
+        <p class="kicker small">E no centro do palco, quem decide se eles vão lembrar é…</p>
+      </div>
+    </div>
+
+    <h2 class="sr-only">Você. Não desperdice o potencial da sua próxima apresentação.</h2>
+
+    <div class="beat beat-final" data-in="0.86" data-out="2">
+      <div class="wrap">
+        <div class="btns">
+          <a class="btn magnet" data-wa="Olá! Vim pelo site da BRITTO* GROUP e quero solicitar minha palestra." href="#">Solicitar minha palestra <span class="arr">→</span></a>
+          <button class="btn ghost magnet" type="button" data-scroll="metodo">Conhecer o método</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true"><span>Role para entrar em cena</span><i></i></div>
+    <div class="stage-hud" aria-hidden="true"><span id="hud-ato">Ato I · Impacto</span><span id="hud-pct">00%</span></div>
+  </div>
+</section>
+
+<div class="cidades" aria-label="Cidades com palestrantes BRITTO*">
+  <div class="cidades-track" id="cidades"></div>
+</div>
+
+<section class="band numbers">
+  <div class="wrap nums">
+    <div data-reveal><b data-count="50" data-prefix="+">0</b><span>palestrantes BRITTO*</span></div>
+    <div data-reveal><b data-count="5">0</b><span>cidades com palcos BRITTO*</span></div>
+    <div data-reveal><b data-count="3">0</b><span>mentorias no método C.N.V.</span></div>
+    <div data-reveal><b data-count="3">0</b><span>atos do método I.D.A.</span></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="ato-label" data-reveal>Ato I · Impacto</p>
+    <div class="head">
+      <p class="eyebrow" data-reveal>O problema</p>
+      <h2 data-reveal data-split>Conhecimento de ouro, apresentação de papelão.</h2>
+      <p class="lede" data-reveal>Você tem resultado, história e repertório. Mas no palco, isso nem sempre aparece.</p>
+    </div>
+    <div class="dor">
+      <div class="glow" data-reveal><span class="n">01</span><b>O começo morno</b><p>Os primeiros minutos passam com agradecimentos e currículo. Quando o conteúdo começa, a plateia já está no celular.</p></div>
+      <div class="glow" data-reveal><span class="n">02</span><b>O slide que atrapalha</b><p>Textos longos, imagens genéricas e um visual que não está à altura de quem você é.</p></div>
+      <div class="glow" data-reveal><span class="n">03</span><b>O final esquecível</b><p>A palestra termina sem um momento marcante. O público aplaude, sai e não lembra do que ouviu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow" data-reveal>Para quem é</p>
+      <h2 data-reveal data-split>Quem vive de falar e de vender ideias.</h2>
+    </div>
+    <div class="stack">
+      <p class="lede" data-reveal>Empresário aprende com empresário. Trabalhamos com quem tem resultado de verdade e quer que o palco mostre isso.</p>
+      <div class="chips" data-reveal>
+        <span class="chip">Palestrantes</span><span class="chip">Mentores</span><span class="chip">Empresários</span><span class="chip">Comunicadores</span><span class="chip">Especialistas técnicos</span><span class="chip">Pitch para investidores</span><span class="chip">Apresentações comerciais</span><span class="chip">Imersões e convenções</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATO II · DIREÇÃO -->
+<section class="band" id="metodo">
+  <div class="wrap">
+    <p class="ato-label" data-reveal>Ato II · Direção</p>
+    <div class="head">
+      <p class="eyebrow" data-reveal>Método I.D.A.</p>
+      <h2 data-reveal data-split>Os três atos de uma apresentação.</h2>
+      <p class="lede" data-reveal>Baseado no modelo teatral grego. Funciona para palestra, aula, show, treinamento e musical. Este site, inclusive, foi escrito nele.</p>
+    </div>
+    <div class="ida">
+      <div class="tilt glow" data-reveal><span class="letra" data-parallax="0.04">I</span><span class="ato">1º ato</span><h3>Impacto</h3><p>O começo precisa ser com tudo. Se começar mal, a plateia se perde e não volta.</p></div>
+      <div class="tilt glow" data-reveal><span class="letra" data-parallax="0.07">D</span><span class="ato">2º ato</span><h3>Direção</h3><p>Uma narrativa que conduz a pessoa pela jornada, do problema à virada, sem deixá-la se perder.</p></div>
+      <div class="tilt glow" data-reveal><span class="letra" data-parallax="0.1">A</span><span class="ato">3º ato</span><h3>Apoteose</h3><p>O ápice final que arrepia, emociona e torna o evento inesquecível.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="mentorias">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Mentorias C.N.V.</p>
+      <h2 data-reveal data-split>Conteúdo, Narrativa e Visual.</h2>
+      <p class="lede" data-reveal>Três mentorias separadas. Em cada uma, o expert recebe material didático exclusivo da BRITTO*.</p>
+    </div>
+    <div class="cnv">
+      <article class="mentoria tilt glow" data-reveal>
+        <span class="letra">C</span>
+        <h3>Mentoria de Conteúdo</h3>
+        <p>Organizamos o que você sabe: a grande ideia, os argumentos e as provas que sustentam a sua fala.</p>
+        <ul><li>Grande ideia da palestra</li><li>Seleção de histórias e provas</li><li>Estrutura de tópicos</li></ul>
+      </article>
+      <article class="mentoria tilt glow" data-reveal>
+        <span class="letra">N</span>
+        <h3>Mentoria de Narrativa</h3>
+        <p>Transformamos o conteúdo em história, distribuída nos três atos do método I.D.A.</p>
+        <ul><li>Abertura de impacto</li><li>Jornada e pontos de virada</li><li>Apoteose final</li></ul>
+      </article>
+      <article class="mentoria tilt glow" data-reveal>
+        <span class="letra">V</span>
+        <h3>Mentoria de Visual</h3>
+        <p>Slides, vídeos e telões que trabalham a favor da sua fala, e não contra ela.</p>
+        <ul><li>Direção de arte da palestra</li><li>Slides e vídeos</li><li>Conteúdo para telão de LED</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Como funciona</p>
+      <h2 data-reveal data-split>Do briefing ao palco.</h2>
+    </div>
+    <div class="steps" id="steps">
+      <div class="step" data-reveal><span class="n">ETAPA 1</span><h3>Diagnóstico</h3><p>Conversa para entender o evento, o público e o objetivo da sua fala.</p></div>
+      <div class="step" data-reveal><span class="n">ETAPA 2</span><h3>Mentorias C.N.V.</h3><p>Conteúdo, narrativa e visual construídos com você, uma etapa por vez.</p></div>
+      <div class="step" data-reveal><span class="n">ETAPA 3</span><h3>Produção</h3><p>Slides, vídeos de abertura, trilha e conteúdo para telão.</p></div>
+      <div class="step" data-reveal><span class="n">ETAPA 4</span><h3>Ensaio</h3><p>Passagem completa da apresentação com ajustes de tempo e de fala.</p></div>
+      <div class="step" data-reveal><span class="n">ETAPA 5</span><h3>Palco</h3><p>Você entra para fazer a apresentação mais marcante da sua carreira.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Formatos</p>
+      <h2 data-reveal data-split>Para cada tipo de palco.</h2>
+    </div>
+    <div class="formatos">
+      <div class="fmt" data-reveal><h3>Palestras de alto nível</h3><p>Para palestrantes e mentores que querem uma palestra-assinatura, pronta para eventos e imersões.</p></div>
+      <div class="fmt" data-reveal><h3>Pitch e apresentações comerciais</h3><p>Para empresários que precisam convencer investidores, parceiros ou grandes clientes em poucos minutos.</p></div>
+      <div class="fmt" data-reveal><h3>Aberturas e convenções</h3><p>Entradas com vídeo, trilha e efeito ao vivo para convenções e eventos de empresa.</p></div>
+      <div class="fmt" data-reveal><h3>Espetáculo para eventos</h3><p>A linguagem de shows e musicais aplicada a imersões e eventos empresariais.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="palestrantes">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Palestrantes BRITTO*</p>
+      <h2 data-reveal data-split>Quem já subiu ao palco com a gente.</h2>
+    </div>
+    <div class="speakers" id="speakers"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Palestras</p>
+      <h2 data-reveal data-split>Algumas que já aconteceram.</h2>
+    </div>
+    <div class="talks">
+      <div class="talk" data-reveal><span>Luiz Eduardo Leal</span><b>IA gera vendas e eu posso provar</b><i class="arr" aria-hidden="true">→</i></div>
+      <div class="talk" data-reveal><span>Marcus Evangelista</span><b>Domine as redes sociais e venda mais</b><i class="arr" aria-hidden="true">→</i></div>
+      <div class="talk" data-reveal><span>Djalma Neto</span><b>História e bastidores do Sushi Ponta Negra</b><i class="arr" aria-hidden="true">→</i></div>
+      <div class="talk" data-reveal><span>Ícaro Gaspar</span><b>All In Faixa Preta</b><i class="arr" aria-hidden="true">→</i></div>
+      <div class="talk" data-reveal><span>Rodrigo Omena</span><b>O advogado que não vende está desaparecido</b><i class="arr" aria-hidden="true">→</i></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="cases">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Cases</p>
+      <h2 data-reveal data-split>O método I.D.A. em cena.</h2>
+    </div>
+    <div class="cases">
+      <article class="case tilt glow" data-reveal>
+        <span class="tag">Palestra</span>
+        <h3>O advogado que não vende está desaparecido</h3>
+        <p>Rodrigo Omena falou sobre redes sociais e tráfego para advogados contando a palestra inteira como um caso policial.</p>
+        <div class="ida-mini">
+          <div><b>I</b><span>O "desaparecimento" é anunciado como uma ocorrência.</span></div>
+          <div><b>D</b><span>A plateia investiga as pistas de por que o advogado não vende.</span></div>
+          <div><b>A</b><span>O caso é resolvido com o método de captação.</span></div>
+        </div>
+      </article>
+      <article class="case tilt glow" data-reveal>
+        <span class="tag">Convenção</span>
+        <h3>25 anos do Grupo Gerber</h3>
+        <p>Abertura com o tema De Volta para o Futuro para celebrar a trajetória da empresa.</p>
+        <div class="ida-mini">
+          <div><b>I</b><span>No vídeo, o carro de Rodrigo Vogel vira um DeLorean.</span></div>
+          <div><b>D</b><span>A viagem no tempo conta a história do grupo.</span></div>
+          <div><b>A</b><span>Ele entra ao vivo tocando guitarra com a banda.</span></div>
+        </div>
+      </article>
+      <article class="case tilt glow" data-reveal>
+        <span class="tag">Pitch</span>
+        <h3>Medprev Manaus</h3>
+        <p>Apresentação de pitch para o franqueado Juan Campos, estruturada com as três mentorias do método C.N.V.</p>
+        <div class="ida-mini">
+          <div><b>C</b><span>Os números e argumentos certos para o público.</span></div>
+          <div><b>N</b><span>Uma história com começo, virada e fechamento.</span></div>
+          <div><b>V</b><span>Visual à altura da marca.</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band green" id="matriz">
+  <div class="wrap matriz">
+    <div class="stack">
+      <p class="eyebrow" data-reveal>Matriz de Genialidade</p>
+      <h2 data-reveal data-split>Descubra a sua zona de genialidade.</h2>
+      <p class="lede" data-reveal>Responda a quatro perguntas e veja qual repertório você já tem para criar uma palestra, um curso, uma mentoria ou uma consultoria. Todo negócio tem potencial para ter um braço educacional.</p>
+      <p class="lede note" data-reveal>Esta é uma versão de demonstração. A Matriz completa é aplicada pelo time da BRITTO*.</p>
+    </div>
+    <div class="quiz" id="quiz" aria-live="polite" data-reveal></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow" data-reveal>Perguntas frequentes</p>
+      <h2 data-reveal data-split>Antes de subir ao palco.</h2>
+    </div>
+    <div data-reveal>
+      <details class="faq"><summary>Preciso já ter uma palestra pronta?</summary><p>Não. Muitos experts chegam só com o conhecimento e a história. A Mentoria de Conteúdo organiza tudo do zero.</p></details>
+      <details class="faq"><summary>Posso contratar só uma das mentorias?</summary><p>Sim. As mentorias de Conteúdo, Narrativa e Visual são separadas. Indicamos as três quando a palestra ainda não existe.</p></details>
+      <details class="faq"><summary>Vocês atendem fora de Manaus?</summary><p>Sim. Já temos palestrantes BRITTO* em Manaus, São Paulo, Salvador, Japão e China. As mentorias podem ser online.</p></details>
+      <details class="faq"><summary>Funciona para apresentação comercial?</summary><p>Funciona. O método I.D.A. vale para qualquer apresentação, de um pitch de dez minutos a uma convenção inteira.</p></details>
+      <details class="faq"><summary>Quanto tempo leva?</summary><p>Depende do formato e da data do evento. No diagnóstico, montamos o cronograma junto com você, de trás para frente a partir do dia do palco.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ATO III · APOTEOSE -->
+<section class="band apoteose" id="apoteose">
+  <div class="spot" aria-hidden="true"></div>
+  <div class="apo-ast" id="apo-ast" aria-hidden="true">*</div>
+  <div class="wrap">
+    <p class="ato-label" data-reveal>Ato III · Apoteose</p>
+    <h2 data-reveal data-split>Qual é o seu próximo palco?</h2>
+    <p class="lede" data-reveal>Conte pra gente. A BRITTO* cuida para ele ser inesquecível.</p>
+    <div class="btns" data-reveal>
+      <a class="btn magnet" data-wa="Olá! Vim pelo site da BRITTO* GROUP e quero solicitar minha palestra." href="#">Solicitar minha palestra <span class="arr">→</span></a>
+      <a class="btn ghost magnet" data-wa="Olá! Quero saber mais sobre as Mentorias C.N.V. da BRITTO*." href="#">Saber das mentorias</a>
+    </div>
+    <p class="contato-linha" data-reveal>WhatsApp <b>(92) 99121-8255</b> · Edifício ZEN.WORK, 3º andar · Rua Rio Javari, 361 · Manaus, AM</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>BRITTO* Experts · uma empresa BRITTO* GROUP</span>
+    <span>© 2026 BRITTO* GROUP</span>
+  </div>
+</footer>
+
+<a class="wa" data-wa="Olá! Vim pelo site da BRITTO* GROUP." href="#" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.7-.3z"/></svg>
+</a>
+
+<script src="js/stage.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
