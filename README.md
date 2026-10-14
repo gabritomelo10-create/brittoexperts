@@ -12,6 +12,16 @@ Site estático (HTML + CSS + JS puro, sem build e sem dependências), baseado no
 
 O mouse move levemente a câmera (parallax). Respeita `prefers-reduced-motion`.
 
+## Palestrantes (logo após a abertura)
+
+Trilho horizontal que anda com o scroll no desktop (no celular, deslize para o lado). Os cards giram de leve e endireitam no centro; no hover a foto ganha cor.
+
+**Fotos:** salve cada foto em `img/palestrantes/<nome>.jpg` (retrato, ~800×1000). Os nomes dos arquivos estão em `js/data.js` (ex.: `icaro-gaspar.jpg`). Enquanto a foto não existir, o card mostra as iniciais.
+
+## Apresentações (MacBook 3D)
+
+Ao rolar, um MacBook entra girando e abre a tampa com um brilho verde atrás, liga com a logo BRITTO* e passa as apresentações. Os slides atuais são maquetes em HTML dos projetos reais. Para usar os slides de verdade, exporte cada um como imagem 16:9 em `img/slides/` e preencha o campo `img` em `js/data.js`.
+
 ## Animações no resto da página
 
 - Revelação no scroll (títulos palavra por palavra, cards em cascata, contadores).
