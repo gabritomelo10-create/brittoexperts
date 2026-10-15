@@ -24,7 +24,7 @@ Ao rolar, um MacBook entra girando e abre a tampa com um brilho verde atrás, li
 
 ## Quem é Gabriel Brito
 
-Retrato que acende com um foco de luz conforme a seção entra na tela, com o nome correndo em letras gigantes ao fundo. **Foto:** salve em `img/gabriel-brito.jpg` (retrato, ~800×1000). O texto fica em `index.html`, na seção `id="gabriel"`.
+Retrato que acende com um foco de luz conforme a seção entra na tela, com o nome correndo em letras gigantes ao fundo. Retrato em `img/gabriel-brito.jpg` (800×1000) e faixa de fotos "Em cena" em `img/gabriel/`, que desliza com o scroll. O texto fica em `index.html`, na seção `id="gabriel"`.
 
 ## Método C.N.V. (scroll)
 
