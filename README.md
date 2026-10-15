@@ -22,6 +22,10 @@ Trilho horizontal que anda com o scroll no desktop (no celular, deslize para o l
 
 Ao rolar, um MacBook entra girando e abre a tampa com um brilho verde atrás, liga com a logo BRITTO* e passa as apresentações. Os slides atuais são maquetes em HTML dos projetos reais. Para usar os slides de verdade, exporte cada um como imagem 16:9 em `img/slides/` e preencha o campo `img` em `js/data.js`.
 
+## Quem é Gabriel Brito
+
+Retrato que acende com um foco de luz conforme a seção entra na tela, com o nome correndo em letras gigantes ao fundo. Retrato em `img/gabriel-brito.jpg` (800×1000) e faixa de fotos "Em cena" em `img/gabriel/`, que desliza com o scroll. O texto fica em `index.html`, na seção `id="gabriel"`.
+
 ## Método C.N.V. (scroll)
 
 `js/flow.js`: uma ideia feita de partículas viaja pela tela, absorve palavras do repertório (Conteúdo), vira um roteiro (Narrativa), depois um slide (Visual) e por fim a silhueta de quem apresenta, brilhando. O texto ao lado acompanha a mentoria ativa.

@@ -90,15 +90,14 @@
 
   /* ---------- revelação no scroll ---------- */
   // atraso escalonado para irmãos revelados juntos
-  document.querySelectorAll(".dor,.palco-list,.cases,.nums").forEach(function (g) {
+  document.querySelectorAll(".dor,.palco-list,.cases,.nums,.founder-copy").forEach(function (g) {
     Array.prototype.forEach.call(g.querySelectorAll("[data-reveal]"), function (el, i) { el.style.setProperty("--d", i * 0.09 + "s"); });
   });
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.add("in");
-      var c = e.target.querySelector("[data-count]");
-      if (c) countUp(c);
+      e.target.querySelectorAll("[data-count]").forEach(countUp);
       io.unobserve(e.target);
     });
   }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
@@ -219,6 +218,25 @@
   }
   window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
+
+  /* ---------- quem é Gabriel Brito: o retrato acende e o nome corre atrás ---------- */
+  var founder = document.getElementById("gabriel");
+  var fPhoto = document.getElementById("founder-photo"), fName = document.getElementById("founder-name");
+  var fImg = fPhoto.querySelector("img"), reel = document.getElementById("reel-track");
+  fImg.addEventListener("load", function () { fPhoto.classList.remove("no-photo"); });
+  fImg.src = fImg.getAttribute("data-src");
+  function founderScroll() {
+    var r = founder.getBoundingClientRect();
+    var p = clamp((innerHeight - r.top) / (innerHeight + r.height), 0, 1);
+    founder.style.setProperty("--lit", reduce ? 1 : clamp((p - 0.12) / 0.3, 0, 1).toFixed(3));
+    if (!reduce) fName.style.setProperty("--nx", (-p * innerWidth * 0.8).toFixed(1) + "px");
+    if (!reduce && innerWidth >= 900) {
+      var max = Math.max(0, reel.scrollWidth - innerWidth);
+      reel.style.setProperty("--rx", (-clamp((p - 0.3) / 0.6, 0, 1) * max).toFixed(1) + "px");
+    }
+  }
+  window.addEventListener("scroll", founderScroll, { passive: true });
+  founderScroll();
 
   /* ---------- para cada tipo de palco: o painel em foco se abre ---------- */
   var palcos = Array.prototype.slice.call(document.querySelectorAll(".palco"));
