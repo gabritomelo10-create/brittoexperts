@@ -145,7 +145,7 @@
       var s = cam.f / dz;
       var depth = map(dz, 2, 46);
       ctx.fillStyle = mix(C_NEAR, C_FAR, Math.pow(depth, 0.7));
-      var rimA = (1 - depth) * 0.55 + 0.12;
+      var rimA = ((1 - depth) * 0.5 + 0.1) * lerp(0.18, 1, map(p, 0.12, 0.5));
       var body = new Path2D();
       var rim = new Path2D();
       for (var i = 0; i < row.people.length; i++) {
@@ -173,7 +173,7 @@
         rim.ellipse(sx, hy, hr, hr * 1.18, 0, Math.PI * 1.1, Math.PI * 1.9);
 
         // braços levantados com celular aceso
-        var lit = pp.phone < lerp(0.05, 0.32, cheer);
+        var lit = pp.phone < lerp(lerp(0.006, 0.05, map(p, 0.1, 0.45)), 0.32, cheer);
         if (lit) {
           var arm = (0.42 + pp.hand * 0.2) * s;
           var ax = sx + (pp.hand > 0.5 ? 1 : -1) * sw * 0.8;
@@ -442,7 +442,6 @@
     stageFloor(p);
     speaker(p);
     blackout();
-    grain();
   }
 
   function resize() {

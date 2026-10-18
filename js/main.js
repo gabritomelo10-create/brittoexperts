@@ -162,8 +162,7 @@
   var beats = Array.prototype.map.call(document.querySelectorAll(".beat"), function (el) {
     return { el: el, a: +el.getAttribute("data-in"), b: +el.getAttribute("data-out") };
   });
-  var hint = document.querySelector(".scroll-hint"), hud = document.querySelector(".stage-hud");
-  var hudPct = document.getElementById("hud-pct");
+  var hint = document.querySelector(".scroll-hint");
   if (window.BrittoStage) {
     window.BrittoStage.onProgress = function (p) {
       beats.forEach(function (bt) {
@@ -175,8 +174,6 @@
         bt.el.firstElementChild.style.transform = "translateY(" + y.toFixed(1) + "px)";
       });
       hint.style.opacity = p < 0.04 ? 1 : 0;
-      hud.style.opacity = p > 0.7 ? 0 : 1;
-      hudPct.textContent = String(Math.round(p * 100)).padStart(2, "0") + "%";
     };
   }
 

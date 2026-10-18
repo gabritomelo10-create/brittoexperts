@@ -95,7 +95,7 @@ nav.menu a.cta:hover{background:var(--verde-claro)}
 .beat .wrap{width:100%}
 .beat.on{visibility:visible}
 .beat.on .btns,.beat.on a,.beat.on button{pointer-events:auto}
-.beat-1{align-items:flex-end;padding-bottom:clamp(64px,12vh,140px);background:linear-gradient(0deg,rgba(3,6,4,.85),rgba(3,6,4,.35) 55%,transparent)}
+.beat-1{align-items:flex-end;padding-bottom:clamp(64px,12vh,140px);background:linear-gradient(90deg,rgba(3,6,4,.94) 0%,rgba(3,6,4,.8) 38%,rgba(3,6,4,.25) 70%,transparent),linear-gradient(0deg,rgba(3,6,4,.9),transparent 60%)}
 .beat-1 .wrap{display:grid;gap:24px}
 .beat-1 h1 em{font-style:normal;color:var(--verde)}
 .beat-1 h1{max-width:12ch;text-shadow:0 4px 40px rgba(0,0,0,.6)}
