@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ecossistema Otorhinus · Proposta BRITTO*</title>
+<meta name="description" content="Proposta de rebranding de ecossistema: Dr. Jandrio Campos, Dra. Mônica Pinheiro e Otorhinus Manaus. Três marcas, um ecossistema.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f1110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Proposta Ecossistema Otorhinus — mesma linguagem do PDF: palco escuro, faixas claras,
+   verde BRITTO* como luz, e uma cor de assinatura para cada marca. */
+:root{
+  --ink:#0f1110;
+  --ink-2:#1a1d1b;
+  --ink-line:#2a2f2c;
+  --paper:#ffffff;
+  --mist:#edf6f0;
+  --gris:#f3f4f3;
+  --gris-line:#e3e6e4;
+  --text:#121413;
+  --mute:#5d6661;
+  --mute-d:#a9b3ad;
+  --verde:#1ba85a;
+  --verde-escuro:#0f6b3a;
+  --verde-claro:#6fdc9c;
+  --jandrio:#8b939b;
+  --monica:#b8995a;
+  --otorhinus:#8c2a3a;
+  --f-sans:"Inter Tight","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-sans);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--verde-claro);outline-offset:3px;border-radius:6px}
+::selection{background:var(--verde);color:#fff}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+section{position:relative;padding-block:clamp(72px,11vw,128px)}
+.dark{background:var(--ink);color:var(--paper)}
+.light{background:var(--paper);color:var(--text)}
+.light + .light{border-top:1px solid var(--gris-line)}
+.eyebrow{font-family:var(--f-sans);font-size:.8125rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--verde)}
+.dark .eyebrow{color:var(--verde-claro)}
+.title{font-size:clamp(2rem,4.6vw,3.25rem);margin-top:14px;max-width:22ch}
+.head{margin-bottom:clamp(36px,5vw,56px)}
+.lede{margin-top:18px;font-size:1.125rem;color:var(--mute);max-width:62ch}
+.dark .lede{color:var(--mute-d)}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400}
+.note{margin-top:22px;font-size:.9375rem;color:var(--mute);font-style:italic}
+.glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 55% at 50% 45%,rgba(27,168,90,.28),transparent 70%)}
+
+/* revelação */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ---------- topo ---------- */
+.top{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s,transform .4s var(--ease);border-bottom:1px solid transparent}
+.top.solid{background:rgba(15,17,16,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--ink-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font-weight:800;letter-spacing:.32em;font-size:1rem;text-decoration:none}
+.logo b{color:var(--verde-claro)}
+.top-mid{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute-d);display:none}
+@media (min-width:760px){.top-mid{display:block}}
+.btn{display:inline-flex;align-items:center;gap:.6em;border:1px solid var(--verde);background:var(--verde);color:#fff;text-decoration:none;font-weight:600;font-size:.9375rem;padding:12px 20px;border-radius:999px;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(27,168,90,.7)}
+.btn.sm{padding:9px 16px;font-size:.875rem}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);box-shadow:none}
+.btn.white{background:#fff;color:var(--verde-escuro);border-color:#fff}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ---------- trilho inferior (como no PDF) ---------- */
+.track{position:fixed;left:0;right:0;bottom:0;z-index:40;pointer-events:none;padding:0 max(16px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px));transition:color .4s}
+.track-in{max-width:1200px;margin:auto;position:relative;height:46px;pointer-events:auto;cursor:pointer}
+.track-line{position:absolute;left:18px;right:18px;top:18px;height:0;border-top:2px dashed currentColor;opacity:.35}
+.track-fill{position:absolute;left:18px;top:17px;height:4px;width:calc((100% - 36px) * var(--p,0));background:var(--verde);border-radius:2px;opacity:.9}
+.track-dot{position:absolute;top:0;left:calc(18px + (100% - 36px) * var(--p,0));width:38px;height:38px;margin-left:-19px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;border:2px solid rgba(255,255,255,.85);box-shadow:0 0 0 6px rgba(27,168,90,.18)}
+.track-dot svg{width:18px;height:18px}
+.track-l,.track-r{position:absolute;bottom:-4px;font-size:.625rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
+.track-l{left:0}.track-r{right:0}
+.track{padding-top:18px}
+.track.on-light{color:var(--text);background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.96) 45%)}
+.track.on-dark{color:#fff;background:linear-gradient(rgba(15,17,16,0),rgba(15,17,16,.94) 45%)}
+.track.on-final{color:#fff;background:linear-gradient(rgba(13,95,52,0),rgba(13,95,52,.9) 45%)}
+@media (max-width:640px){.track-l,.track-r{display:none}.track-in{height:40px}}
+
+/* ---------- Venn ---------- */
+.venn{position:relative;aspect-ratio:1/0.96;width:100%;max-width:540px;margin-inline:auto;--k:1}
+.vc{position:absolute;width:56%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:clamp(1.05rem,2.4vw,1.75rem);transition:transform 1.2s var(--ease),background .4s,box-shadow .4s,opacity .4s;will-change:transform}
+.vc span{transform:translate(var(--tx,0),var(--ty,0))}
+.vc.a{left:0;top:0;--tx:-8%;--ty:-4%;transform:translate(calc((1 - var(--k)) * -38%),calc((1 - var(--k)) * -20%))}
+.vc.b{right:0;top:0;--tx:8%;--ty:-4%;transform:translate(calc((1 - var(--k)) * 38%),calc((1 - var(--k)) * -20%))}
+.vc.c{left:22%;bottom:0;--ty:8%;transform:translate(0,calc((1 - var(--k)) * 30%))}
+.venn.outline .vc{border:2.5px solid var(--verde-claro);background:rgba(27,168,90,.08);color:#fff}
+.venn.outline .vc.c{background:rgba(27,168,90,.14)}
+.venn.solid .vc{border:2px solid #7fe3a8;background:radial-gradient(circle at 35% 30%,rgba(165,230,195,.9),rgba(59,180,112,.7));color:var(--verde-escuro);box-shadow:0 20px 60px -20px rgba(27,168,90,.6)}
+.venn.solid .vc.c{background:radial-gradient(circle at 40% 30%,#2fbf70,#16a052);color:#fff;z-index:1}
+.venn.solid .vc{mix-blend-mode:multiply}
+.venn.solid .vc.c{mix-blend-mode:normal;opacity:.96}
+.venn.white .vc{border:2.5px solid #fff;background:rgba(255,255,255,.14);color:#fff}
+.venn.white .vc.c{background:rgba(255,255,255,.26)}
+.venn .vc.hl{box-shadow:0 0 0 6px rgba(111,220,156,.35),0 24px 70px -18px rgba(27,168,90,.9)}
+.venn .vc.dim{opacity:.45}
+.spark{position:absolute;color:#fff;animation:tw 3.2s ease-in-out infinite}
+.spark svg{display:block;width:100%;height:100%}
+@keyframes tw{0%,100%{opacity:1;transform:scale(1) rotate(0)}50%{opacity:.5;transform:scale(.78) rotate(12deg)}}
+
+/* ---------- 1. abertura ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding-block:96px 110px;overflow:hidden;background:radial-gradient(70% 70% at 78% 45%,rgba(27,168,90,.42),transparent 62%),var(--ink)}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.pill{display:inline-block;background:var(--verde);border:1px solid #57d18d;border-radius:999px;padding:9px 18px;font-size:.75rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;box-shadow:0 0 30px rgba(27,168,90,.55)}
+.hero h1{font-size:clamp(2.9rem,6.6vw,5.6rem);margin-top:28px;letter-spacing:-.035em}
+.hero h1 em{display:block;font-style:normal;color:var(--verde-claro);white-space:nowrap}
+@media (max-width:640px){.pill{letter-spacing:.14em;font-size:.6875rem;padding:8px 14px}}
+.hero .rule{width:120px;height:4px;background:var(--verde);margin:36px 0 22px;border-radius:2px}
+.names{font-weight:600;font-size:clamp(.95rem,1.6vw,1.125rem);display:flex;flex-wrap:wrap;gap:6px 14px}
+.names i{color:var(--verde-claro);font-style:normal}
+.hero .serif{margin-top:14px;font-size:clamp(1.1rem,2vw,1.4rem);color:#d6ddd8}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-venn{position:relative}
+.scroll-cue{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-d);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(var(--verde-claro),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-height:700px){.scroll-cue{display:none}}
+
+/* ---------- 2. ponto de partida ---------- */
+.cards3{display:grid;gap:20px}
+@media (min-width:860px){.cards3{grid-template-columns:repeat(3,1fr)}}
+.bcard{position:relative;border:1.5px solid #9fe2bb;background:var(--mist);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;min-height:400px;transition:transform .5s var(--ease),box-shadow .5s}
+.bcard:hover{transform:translateY(-6px);box-shadow:0 26px 60px -30px rgba(15,107,58,.55)}
+.bcard .tag{width:52px;height:8px;border-radius:2px;background:var(--c)}
+.bcard h3{font-size:1.3rem;margin-top:22px}
+.bcard .ico{margin-top:22px;color:var(--verde);width:44px;height:44px}
+.bcard h4{margin:22px 0 4px;font-size:1.125rem;color:var(--verde-escuro)}
+.bcard p{color:var(--mute);font-size:.98rem}
+.bcard .num{margin-top:auto;padding-top:28px;font-size:2.4rem;font-weight:700;color:var(--verde);letter-spacing:-.02em}
+.bcard .num small{font-size:.95rem;font-weight:500;color:var(--mute);margin-left:6px;letter-spacing:0}
+.bcard.feat{background:var(--verde);border-color:var(--verde);color:#fff;box-shadow:0 20px 50px -20px rgba(27,168,90,.8)}
+.bcard.feat .ico,.bcard.feat h4,.bcard.feat .num,.bcard.feat p,.bcard.feat .num small{color:#fff}
+.total{margin-top:28px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px}
+.total strong{font-size:clamp(2.2rem,5vw,3.2rem);color:var(--verde);letter-spacing:-.03em}
+.total span{color:var(--mute);font-style:italic}
+
+/* ---------- 3. hoje ---------- */
+.solo{display:grid;gap:44px 28px}
+@media (min-width:860px){.solo{grid-template-columns:repeat(3,1fr)}}
+.solo-item{text-align:center}
+.ring{width:min(240px,62vw);aspect-ratio:1;margin:0 auto 26px;border-radius:50%;border:3px solid var(--c);background:radial-gradient(circle,#103a25,#0d1a13);display:grid;place-items:center;font-size:1.6rem;font-weight:700;animation:bob 6s ease-in-out infinite;animation-delay:var(--dl,0s);transition:box-shadow .4s}
+.solo-item:hover .ring{box-shadow:0 0 0 10px color-mix(in srgb,var(--c) 22%,transparent),0 0 60px color-mix(in srgb,var(--c) 40%,transparent)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.solo-item h3{font-size:1.15rem}
+.solo-item p{color:var(--mute-d);margin-top:6px;max-width:30ch;margin-inline:auto}
+.banner{margin-top:52px;border:1.5px solid var(--verde);border-radius:999px;background:var(--ink-2);padding:20px 28px;text-align:center;color:var(--verde-claro);font-weight:600}
+
+/* ---------- 4. arquitetura ---------- */
+.arch{display:grid;gap:44px;align-items:center}
+@media (min-width:900px){.arch{grid-template-columns:.95fr 1.05fr}}
+.roles{display:flex;flex-direction:column;gap:14px}
+.role{all:unset;box-sizing:border-box;cursor:pointer;display:block;position:relative;border:1px solid var(--gris-line);background:var(--gris);border-radius:14px;padding:22px 24px 22px 34px;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .3s}
+.role::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;border-radius:14px 0 0 14px;background:var(--c)}
+.role b{display:block;font-size:1.15rem}
+.role span{color:var(--mute);font-size:.98rem}
+.role:hover,.role.on{transform:translateX(6px);box-shadow:0 14px 40px -24px rgba(0,0,0,.5)}
+.role.on{background:var(--verde);border-color:var(--verde);color:#fff}
+.role.on span{color:#eafff2}
+.sig{border-radius:999px;background:var(--ink);color:#fff;text-align:center;padding:18px 24px;font-weight:600}
+.sig em{color:var(--verde-claro);font-style:normal;margin-right:6px}
+.sig q{font-style:italic}
+
+/* ---------- 5. marcas (abas) ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.tab{cursor:pointer;border:1.5px solid var(--gris-line);background:var(--paper);border-radius:999px;padding:11px 20px 11px 16px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:all .3s var(--ease)}
+.tab i{width:12px;height:12px;border-radius:3px;background:var(--c)}
+.tab small{font-weight:500;color:var(--mute);font-size:.8125rem}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab[aria-selected="true"] small{color:var(--mute-d)}
+.brand-name{display:flex;align-items:center;gap:18px;font-size:clamp(2rem,5vw,3.25rem);margin:8px 0 34px}
+.brand-name::before{content:"";width:12px;align-self:stretch;min-height:48px;border-radius:3px;background:var(--c);transition:background .4s}
+.panel{animation:panelIn .6s var(--ease)}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.duo{display:grid;gap:20px}
+@media (min-width:860px){.duo{grid-template-columns:1fr 1fr}}
+.box{border-radius:var(--r);padding:32px}
+.box.lt{background:var(--mist);border:1.5px solid #9fe2bb}
+.box.dk{background:var(--ink);color:#fff;box-shadow:0 30px 60px -36px rgba(0,0,0,.8)}
+.box .eyebrow{font-size:.75rem;letter-spacing:.28em;color:var(--verde-escuro)}
+.box.dk .eyebrow{color:var(--verde-claro)}
+.checks{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+.checks li{display:flex;gap:14px;align-items:center;font-size:1.03rem;opacity:0;transform:translateX(-10px);animation:liIn .5s var(--ease) forwards;animation-delay:calc(var(--i) * 80ms + 120ms)}
+@keyframes liIn{to{opacity:1;transform:none}}
+.ck{flex:none;width:38px;height:38px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center}
+.ck svg{width:18px;height:18px}
+.posit{margin-top:22px;border-radius:999px;background:var(--verde);color:#fff;padding:24px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 22px;text-align:center;box-shadow:0 18px 50px -18px rgba(27,168,90,.85)}
+.posit small{font-size:.75rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+.posit q{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.15rem,2.2vw,1.5rem)}
+@media (max-width:640px){.posit{border-radius:24px}}
+
+/* ---------- 6. guia ---------- */
+.guide{display:flex;flex-direction:column;gap:14px}
+.need{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr;gap:10px;align-items:center}
+@media (min-width:760px){.need{grid-template-columns:1fr 70px 1fr}}
+.n-in{display:flex;align-items:center;gap:16px;background:var(--gris);border:1px solid var(--gris-line);border-radius:999px;padding:9px 22px 9px 9px;font-weight:600;font-size:1.08rem;transition:background .3s,border-color .3s}
+.n-ico{flex:none;width:52px;height:52px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center}
+.n-ico svg{width:24px;height:24px}
+.n-arrow{position:relative;height:2px;background:var(--gris-line);display:none}
+@media (min-width:760px){.n-arrow{display:block}}
+.n-arrow::before{content:"";position:absolute;inset:0;background:var(--verde);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
+.n-arrow::after{content:"";position:absolute;right:-1px;top:50%;width:10px;height:10px;border-top:2px solid var(--gris-line);border-right:2px solid var(--gris-line);transform:translateY(-50%) rotate(45deg);transition:border-color .3s .3s}
+.n-out{border:1.5px solid #9fe2bb;background:var(--mist);border-radius:999px;padding:20px 28px;min-height:70px;display:flex;flex-direction:column;justify-content:center;transition:all .45s var(--ease)}
+.n-out b{font-weight:500}
+.n-out small{display:block;max-height:0;overflow:hidden;opacity:0;font-size:.8125rem;transition:max-height .45s var(--ease),opacity .35s,margin .3s}
+.need.deep .n-out{background:var(--verde);border-color:var(--verde);color:#fff;box-shadow:0 12px 34px -14px rgba(27,168,90,.8)}
+.need.deep .n-out b{font-weight:600}
+.need.on .n-in{background:#fff;border-color:var(--verde)}
+.need.on .n-arrow::before{transform:scaleX(1)}
+.need.on .n-arrow::after{border-color:var(--verde)}
+.need.on .n-out{transform:translateX(6px);box-shadow:0 18px 44px -18px rgba(15,107,58,.55)}
+.need.on .n-out small{max-height:40px;opacity:.85;margin-top:4px}
+.need:not(.deep).on .n-out{border-color:var(--verde)}
+.legend{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px 24px;font-size:.9375rem;color:var(--mute)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:14px;height:14px;border-radius:50%;border:1.5px solid #9fe2bb;background:var(--mist)}
+.legend i.g{background:var(--verde);border-color:var(--verde)}
+
+/* ---------- 7. imersão ---------- */
+.how{display:grid;gap:20px}
+@media (min-width:860px){.how{grid-template-columns:repeat(3,1fr)}}
+.hcard{position:relative;border:1.5px solid rgba(27,168,90,.75);border-radius:var(--r);background:var(--ink-2);padding:32px;min-height:320px;box-shadow:0 0 34px -10px rgba(27,168,90,.45);transition:transform .5s var(--ease),background .4s}
+.hcard:hover{transform:translateY(-6px)}
+.hcard .hi{width:80px;height:80px;border-radius:50%;background:var(--verde);display:grid;place-items:center;border:1.5px solid #57d18d}
+.hcard .hi svg{width:38px;height:38px}
+.hcard h3{margin-top:34px;font-size:1.65rem}
+.hcard p{margin-top:16px;color:var(--mute-d)}
+.hcard.feat{background:var(--verde);border-color:#57d18d}
+.hcard.feat .hi{background:#fff;color:var(--verde)}
+.hcard.feat p{color:#eafff2}
+
+/* ---------- 8. entregáveis ---------- */
+.for{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:26px}
+.for > span{font-size:.8125rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-right:6px}
+.chip{cursor:pointer;border:1.5px solid var(--gris-line);background:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:.9375rem;display:inline-flex;align-items:center;gap:8px;transition:all .3s}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.chip[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,#fff)}
+.grid8{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.dcard{position:relative;overflow:hidden;background:var(--gris);border:1px solid var(--gris-line);border-radius:16px;padding:24px;min-height:178px;transition:transform .45s var(--ease),box-shadow .45s}
+.dcard:hover{transform:translateY(-5px);box-shadow:0 20px 40px -24px rgba(0,0,0,.4)}
+.dcard svg{width:42px;height:42px;color:var(--verde)}
+.dcard h3{font-size:1.1rem;margin-top:16px;line-height:1.2}
+.dcard p{color:var(--mute);font-size:.9375rem;margin-top:4px}
+.dcard.feat{background:var(--verde);border-color:var(--verde);color:#fff;box-shadow:0 16px 40px -18px rgba(27,168,90,.85)}
+.dcard.feat svg,.dcard.feat p{color:#fff}
+.dcard .stamp{position:absolute;right:14px;top:14px;display:flex;gap:4px}
+.dcard .stamp i{width:9px;height:9px;border-radius:50%;background:var(--c);transform:scale(0);transition:transform .35s var(--ease)}
+.dcard .stamp i.on{transform:scale(1)}
+.dcard.feat .stamp i{box-shadow:0 0 0 1.5px #fff}
+.times{margin-top:22px;border-radius:999px;background:var(--ink);color:#fff;padding:20px 28px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 16px;font-size:1.05rem;text-align:center}
+.times b{color:var(--verde-claro);font-size:1.15rem}
+.times .dot{color:var(--mute-d)}
+@media (max-width:640px){.times{border-radius:22px}}
+
+/* ---------- 9. une ---------- */
+.unite{display:grid;gap:28px;align-items:center}
+@media (min-width:980px){.unite{grid-template-columns:1fr 1.25fr 1fr}}
+.ucol{display:flex;flex-direction:column;gap:18px}
+.upill{border-radius:999px;background:var(--gris);border:1px solid var(--gris-line);padding:22px 24px;text-align:center;font-weight:600;font-size:1.05rem;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .3s;cursor:default}
+.upill:hover{transform:scale(1.04);background:var(--mist);border-color:#9fe2bb}
+.upill.g{background:var(--verde);border-color:var(--verde);color:#fff;box-shadow:0 14px 34px -14px rgba(27,168,90,.85)}
+.unite .venn{max-width:440px}
+.unite .venn.beat .vc{animation:beat .9s var(--ease)}
+@keyframes beat{40%{filter:brightness(1.12)}}
+
+/* ---------- 10. etapas ---------- */
+.steps{position:relative;display:grid;gap:18px}
+@media (min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:22px}}
+.steps-bar{display:none}
+@media (min-width:900px){
+  .steps-bar{display:block;position:absolute;left:0;right:0;top:-26px;height:4px;background:var(--gris-line);border-radius:2px;overflow:hidden}
+  .steps-bar i{display:block;height:100%;width:calc(var(--s,0) * 100%);background:var(--verde);border-radius:2px}
+}
+.step{border-radius:var(--r);padding:30px 28px;min-height:380px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s,opacity .5s}
+.step.s1{background:var(--mist);border:1.5px solid #9fe2bb}
+.step.s2,.step.s3{background:var(--ink);color:#fff}
+.step.s4{background:var(--verde);color:#fff;box-shadow:0 22px 50px -22px rgba(27,168,90,.9)}
+.step .big{font-size:4rem;font-weight:700;line-height:1;color:var(--verde)}
+.step.s4 .big{color:#fff}
+.step .lbl{margin-top:24px;font-size:.75rem;font-weight:700;letter-spacing:.3em;color:var(--verde-escuro)}
+.step.s2 .lbl,.step.s3 .lbl{color:var(--verde-claro)}
+.step.s4 .lbl{color:#eafff2}
+.step h3{font-size:1.55rem;margin-top:8px}
+.step ul{list-style:none;margin:auto 0 0;padding:26px 0 0;display:flex;flex-direction:column;gap:14px}
+.step li{display:flex;gap:10px;font-size:.98rem;line-height:1.35}
+.step li svg{flex:none;width:18px;height:18px;color:var(--verde);margin-top:1px}
+.step.s4 li svg,.step.s2 li svg,.step.s3 li svg{color:#fff}
+.step.s2 li svg,.step.s3 li svg{color:var(--verde-claro)}
+.step.cur{transform:translateY(-8px)}
+.steps-note{margin-top:28px;font-weight:600;color:var(--verde-escuro)}
+
+/* ---------- 11. investimento ---------- */
+.inv{display:grid;gap:24px;align-items:stretch}
+@media (min-width:960px){.inv{grid-template-columns:1.25fr .9fr}}
+.price{position:relative;background:var(--verde);color:#fff;border-radius:22px;padding:clamp(28px,4vw,44px);box-shadow:0 0 0 1.5px #57d18d,0 30px 80px -26px rgba(27,168,90,.9)}
+.price .was{font-size:1.05rem;color:#eafff2}
+.price .was s{text-decoration-thickness:2px}
+.price .now{display:flex;align-items:baseline;gap:12px;margin-top:22px;flex-wrap:wrap}
+.price .now small{font-size:clamp(2rem,4vw,2.8rem);font-weight:700}
+.price .now strong{font-size:clamp(3.6rem,10vw,6.6rem);font-weight:800;letter-spacing:-.045em;line-height:.9}
+.price .tot{margin-top:18px;font-weight:600;font-size:1.1rem}
+.bars{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.bar{position:relative;height:30px;border-radius:8px;background:rgba(255,255,255,.14);overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;display:flex;align-items:center;padding-left:12px;font-style:normal;font-size:.8125rem;font-weight:600;white-space:nowrap;width:0;transition:width 1.4s var(--ease)}
+.bar.std i{background:rgba(255,255,255,.28);text-decoration:line-through}
+.bar.eco{display:flex}
+.bar.eco i{position:relative;background:#fff;color:var(--verde-escuro);border-right:2px solid var(--verde)}
+.bar.eco i:nth-child(2){background:#dcf6e6}
+.bar.eco i:nth-child(3){background:#bdeccf}
+.saving{margin-top:26px;background:#fff;color:var(--text);border-radius:16px;padding:22px 26px;box-shadow:0 0 30px rgba(255,255,255,.35)}
+.saving b{display:block;font-size:1.5rem;color:var(--verde-escuro)}
+.saving > span{color:var(--mute)}
+.comp{background:var(--ink);color:#fff;border-radius:22px;padding:clamp(28px,4vw,40px);display:flex;flex-direction:column}
+.comp .eyebrow{font-size:.75rem}
+.row{display:flex;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid var(--ink-line);font-size:1.05rem}
+.row b{color:var(--verde-claro);font-weight:700}
+.comp p{margin-top:auto;padding-top:22px;color:var(--mute-d);font-size:.95rem}
+.inv-star{position:absolute;top:-16px;right:20px;width:46px;height:46px;color:#5fe0a3}
+
+/* ---------- 12. muda ---------- */
+.switch{display:inline-flex;background:var(--gris);border:1px solid var(--gris-line);border-radius:999px;padding:5px;margin-bottom:28px;position:relative}
+.switch button{all:unset;cursor:pointer;position:relative;z-index:1;padding:10px 26px;font-weight:700;font-size:.8125rem;letter-spacing:.24em;text-transform:uppercase;border-radius:999px;transition:color .3s}
+.switch .knob{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:var(--verde);transition:transform .5s var(--ease)}
+.switch[data-v="depois"] .knob{transform:translateX(100%)}
+.switch[data-v="hoje"] .knob{background:var(--ink)}
+.switch button[aria-pressed="true"]{color:#fff}
+.ba{display:grid;gap:22px}
+@media (min-width:860px){.ba{grid-template-columns:1fr 1fr}}
+.side{border-radius:var(--r);padding:34px;transition:opacity .5s,transform .5s var(--ease),filter .5s}
+.side.h{background:var(--gris);border:1px solid var(--gris-line);color:var(--mute)}
+.side.d{background:var(--verde);color:#fff;box-shadow:0 26px 60px -26px rgba(27,168,90,.95)}
+.side .eyebrow{color:inherit;font-size:.8125rem}
+.side ul{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:18px}
+.side li{display:flex;align-items:center;gap:14px;font-size:1.08rem}
+.side.h li i{flex:none;width:38px;height:38px;border-radius:50%;background:#e2e6e3}
+.side.d li i{flex:none;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--verde);display:grid;place-items:center}
+.side.d li i svg{width:18px;height:18px}
+.ba[data-v="hoje"] .side.d{opacity:.35;filter:saturate(.3);transform:scale(.97)}
+.ba[data-v="depois"] .side.h{opacity:.4;transform:scale(.97)}
+
+/* ---------- 13. começar ---------- */
+.final{overflow:hidden;background:radial-gradient(80% 90% at 30% 40%,#2aa766 0%,#178a4b 45%,#0d5f34 100%);color:#fff;padding-bottom:clamp(110px,13vw,150px)}
+.final-grid{display:grid;gap:48px;align-items:center}
+@media (min-width:900px){.final-grid{grid-template-columns:1.1fr .9fr}}
+.final .eyebrow{color:#a7f0c6}
+.go{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-direction:column;gap:30px}
+.go li{display:flex;align-items:baseline;gap:28px}
+.go .n{font-size:clamp(2.2rem,4vw,3rem);font-weight:700;min-width:2.2ch}
+.go b{font-size:1.35rem}
+.go span{color:#dff7e9;margin-left:8px}
+.final .serif{margin-top:44px;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.3;max-width:24ch}
+.final .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.final .logo{display:inline-block;margin-top:46px;font-size:1.1rem}
+.final .logo b{color:#a7f0c6}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  [data-reveal]{opacity:1;transform:none}
+  .checks li{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0z" fill="currentColor"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.4-3.7 4.2-5.5 7.5-5.5s6.1 1.8 7.5 5.5"/></g></symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio">BRITTO<b>*</b></a>
+    <span class="top-mid">Proposta · Rebranding de ecossistema</span>
+    <a class="btn sm" href="#comecar">Aprovar proposta <span class="arr">→</span></a>
+  </div>
+</header>
+
+<div class="track on-dark" id="track" aria-hidden="true">
+  <div class="track-in" id="trackIn">
+    <div class="track-line"></div>
+    <div class="track-fill"></div>
+    <div class="track-dot"><svg><use href="#i-user"/></svg></div>
+    <span class="track-l">Três marcas</span>
+    <span class="track-r">Um ecossistema</span>
+  </div>
+</div>
+
+<main>
+
+<!-- 1 · ABERTURA -->
+<section class="hero dark" id="inicio" data-theme="dark">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill" data-reveal>Proposta · Rebranding de ecossistema</span>
+      <h1 data-reveal style="--d:1">Três marcas.<em>Um ecossistema.</em></h1>
+      <div class="rule" data-reveal style="--d:2"></div>
+      <p class="names" data-reveal style="--d:3">Dr. Jandrio Campos <i>·</i> Dra. Mônica Pinheiro <i>·</i> Otorhinus Manaus</p>
+      <p class="serif" data-reveal style="--d:4">Marcas que se conversam, se completam e guiam o paciente.</p>
+      <div class="btns" data-reveal style="--d:5">
+        <a class="btn" href="#partida">Ver a proposta <span class="arr">↓</span></a>
+        <a class="btn ghost" href="#investimento">Investimento</a>
+      </div>
+    </div>
+    <div class="hero-venn" id="heroVenn">
+      <div class="venn outline" id="venn1" style="--k:0">
+        <div class="vc a"><span>Jandrio</span></div>
+        <div class="vc b"><span>Mônica</span></div>
+        <div class="vc c"><span>Otorhinus</span></div>
+      </div>
+      <span class="spark" style="right:-2%;top:-4%;width:54px;height:54px"><svg><use href="#i-star4"/></svg></span>
+      <span class="spark" style="right:-5%;top:10%;width:26px;height:26px;animation-delay:.8s"><svg><use href="#i-star4"/></svg></span>
+      <span class="spark" style="left:-4%;bottom:2%;width:34px;height:34px;animation-delay:1.5s"><svg><use href="#i-star4"/></svg></span>
+    </div>
+  </div>
+  <div class="scroll-cue">Role</div>
+</section>
+
+<!-- 2 · PONTO DE PARTIDA -->
+<section class="light" id="partida" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>O ponto de partida</p>
+      <h2 class="title" data-reveal style="--d:1">Três marcas com ativos reais e uma história em comum.</h2>
+    </div>
+    <div class="cards3">
+      <article class="bcard" style="--c:var(--jandrio)" data-reveal>
+        <span class="tag"></span>
+        <h3>Dr. Jandrio Campos</h3>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 6 16 3-8h4"/></svg>
+        <h4>Território claro: dor crônica</h4>
+        <p>Método próprio nomeado e uma frente de formação para fisioterapeutas.</p>
+        <p class="num"><span data-count="8542">0</span><small>seguidores</small></p>
+      </article>
+      <article class="bcard feat" style="--c:var(--monica);--d:1" data-reveal>
+        <span class="tag"></span>
+        <h3>Dra. Mônica Pinheiro</h3>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg>
+        <h4>Rinoplastia com naturalidade</h4>
+        <p>Estética, função nasal e identidade, com base acadêmica (UEA, ABORL).</p>
+        <p class="num"><span data-count="31.7" data-suffix=" mil" data-dec="1">0</span><small>seguidores</small></p>
+      </article>
+      <article class="bcard" style="--c:var(--otorhinus)" data-reveal>
+        <span class="tag"></span>
+        <h3>Otorhinus Manaus</h3>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 10.5L12 3.5l8.5 7V20a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path d="M9.5 21v-6.5h5V21"/></svg>
+        <h4>A estrutura que conecta</h4>
+        <p>Idealizada pela Dra. Mônica e inaugurada em 2018, com atendimento multidisciplinar.</p>
+        <p class="num"><span data-count="16.1" data-suffix=" mil" data-dec="1">0</span><small>seguidores</small></p>
+      </article>
+    </div>
+    <div class="total" data-reveal>
+      <strong>+<span data-count="56" data-suffix=" mil">0</span></strong>
+      <span>seguidores somados nos três perfis (consulta pública em 29/10/2026).</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · O QUE ENCONTRAMOS -->
+<section class="dark" id="hoje" data-theme="dark">
+  <div class="glow"></div>
+  <div class="wrap" style="position:relative">
+    <div class="head">
+      <p class="eyebrow" data-reveal>O que encontramos</p>
+      <h2 class="title" data-reveal style="--d:1">Hoje, cada marca fala sozinha.</h2>
+    </div>
+    <div class="solo">
+      <div class="solo-item" data-reveal style="--c:var(--jandrio)">
+        <div class="ring">Jandrio</div>
+        <h3>Duas audiências no mesmo caminho</h3>
+        <p>Pacientes e fisioterapeutas chegam pela mesma porta.</p>
+      </div>
+      <div class="solo-item" data-reveal style="--d:1;--c:var(--monica);--dl:-2s">
+        <div class="ring" style="--dl:-2s">Mônica</div>
+        <h3>Muitas ofertas, pouca hierarquia</h3>
+        <p>Rinoplastia divide espaço com tudo, sem uma ordem clara.</p>
+      </div>
+      <div class="solo-item" data-reveal style="--d:2;--c:#b4384c">
+        <div class="ring" style="--dl:-4s">Otorhinus</div>
+        <h3>Catálogo, não guia</h3>
+        <p>A clínica lista especialidades; o paciente procura uma solução.</p>
+      </div>
+    </div>
+    <p class="banner" data-reveal>E entre elas: páginas, números e identidades diferentes, sem o endosso da clínica visível.</p>
+  </div>
+</section>
+
+<!-- 4 · ARQUITETURA -->
+<section class="light" id="arquitetura" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>A arquitetura</p>
+      <h2 class="title" data-reveal style="--d:1">Marcas pessoais com o endosso da clínica.</h2>
+      <p class="lede" data-reveal style="--d:2">Toque em cada marca para ver o papel dela no ecossistema.</p>
+    </div>
+    <div class="arch">
+      <div data-reveal>
+        <div class="venn solid" id="venn2">
+          <div class="vc a" data-k="j"><span>Jandrio</span></div>
+          <div class="vc b" data-k="m"><span>Mônica</span></div>
+          <div class="vc c" data-k="o"><span>Otorhinus</span></div>
+        </div>
+      </div>
+      <div class="roles" data-reveal style="--d:1">
+        <button class="role" type="button" data-k="m" style="--c:var(--monica)"><b>Dra. Mônica Pinheiro</b><span>Confiança e decisão em cirurgia facial.</span></button>
+        <button class="role" type="button" data-k="j" style="--c:var(--jandrio)"><b>Dr. Jandrio Campos</b><span>Procura por cuidado fisioterapêutico da dor, com a formação em entrada própria.</span></button>
+        <button class="role on" type="button" data-k="o" style="--c:var(--otorhinus)"><b>Otorhinus Manaus</b><span>Orienta o acesso a profissionais, especialidades, exames e atendimento.</span></button>
+        <p class="sig"><em>Assinatura comum:</em> <q>Atendimento em Manaus, na Otorhinus</q></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · AS MARCAS -->
+<section class="light" id="marcas" data-theme="light" style="background:#fafbfa">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:28px">
+      <p class="eyebrow" data-reveal>Marca por marca</p>
+      <h2 class="title" data-reveal style="--d:1">Onde está a força, e o que o rebranding resolve.</h2>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Marcas" data-reveal>
+      <button class="tab" role="tab" type="button" data-b="0" aria-selected="true" style="--c:var(--jandrio)"><i></i>Dr. Jandrio Campos <small>Fisioterapia e dor</small></button>
+      <button class="tab" role="tab" type="button" data-b="1" aria-selected="false" style="--c:var(--monica)"><i></i>Dra. Mônica Pinheiro <small>Cirurgia facial</small></button>
+      <button class="tab" role="tab" type="button" data-b="2" aria-selected="false" style="--c:var(--otorhinus)"><i></i>Otorhinus Manaus <small>A clínica</small></button>
+    </div>
+    <div id="brandPanel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 6 · OTORHINUS COMO GUIA -->
+<section class="light" id="guia" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Otorhinus como guia</p>
+      <h2 class="title" data-reveal style="--d:1">O paciente entra pela necessidade, não pela especialidade.</h2>
+      <p class="lede" data-reveal style="--d:2">Escolha uma necessidade e veja para onde o novo site leva o paciente.</p>
+    </div>
+    <div class="guide" id="guide" data-reveal></div>
+    <div class="legend" data-reveal>
+      <span><i></i>Caminho dentro da clínica</span>
+      <span><i class="g"></i>Leva às marcas pessoais: a clínica endossa, e as marcas aprofundam</span>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · IMERSÃO -->
+<section class="dark" id="imersao" data-theme="dark">
+  <div class="glow" style="background:radial-gradient(50% 40% at 50% 20%,rgba(27,168,90,.25),transparent 70%)"></div>
+  <div class="wrap" style="position:relative">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Ato 2 · Direção — como fazemos</p>
+      <h2 class="title" data-reveal style="--d:1">Tudo começa pela Imersão de Marca.</h2>
+      <p class="lede" data-reveal style="--d:2">Uma imersão única para as três marcas: entender as nuances do ecossistema e traduzir em cada ponto de contato.</p>
+    </div>
+    <div class="how">
+      <article class="hcard" data-reveal>
+        <div class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5h14M12 5v14M9 19h6M5 5v2M19 5v2"/></svg></div>
+        <h3>Textualmente</h3>
+        <p>Posicionamento, promessa, tom de voz e mensagens de cada marca.</p>
+      </article>
+      <article class="hcard feat" data-reveal style="--d:1">
+        <div class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Visualmente</h3>
+        <p>Identidades que mantêm personalidade própria e um sistema de endosso comum.</p>
+      </article>
+      <article class="hcard" data-reveal style="--d:2">
+        <div class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="6" r="2.5"/><circle cx="17" cy="18" r="2.5"/><path d="M7 8.5V20M17 15.5V9a3 3 0 0 0-3-3h-3"/></svg></div>
+        <h3>Processualmente</h3>
+        <p>Caminhos do paciente, páginas, contatos e a navegação entre as três.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · ENTREGÁVEIS -->
+<section class="light" id="entregaveis" data-theme="light">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:28px">
+      <p class="eyebrow" data-reveal>O que cada marca recebe</p>
+      <h2 class="title" data-reveal style="--d:1">Entregáveis completos, para cada uma das três marcas.</h2>
+    </div>
+    <div class="for" data-reveal>
+      <span>Ver para</span>
+      <button class="chip" type="button" data-c="0" aria-pressed="true" style="--c:var(--jandrio)"><i></i>Jandrio</button>
+      <button class="chip" type="button" data-c="1" aria-pressed="true" style="--c:var(--monica)"><i></i>Mônica</button>
+      <button class="chip" type="button" data-c="2" aria-pressed="true" style="--c:var(--otorhinus)"><i></i>Otorhinus</button>
+    </div>
+    <div class="grid8" id="grid8"></div>
+    <p class="times" data-reveal><b id="multi">× 3 marcas</b> <span id="multiNames">Dr. Jandrio Campos <span class="dot">·</span> Dra. Mônica Pinheiro <span class="dot">·</span> Otorhinus Manaus</span></p>
+  </div>
+</section>
+
+<!-- 9 · O QUE UNE -->
+<section class="light" id="une" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>O que une as três</p>
+      <h2 class="title" data-reveal style="--d:1">Identidades diferentes. Uma experiência coerente.</h2>
+    </div>
+    <div class="unite">
+      <div class="ucol">
+        <p class="upill" data-reveal>Assinatura de endosso</p>
+        <p class="upill" data-reveal style="--d:1">Fotos com o mesmo padrão</p>
+        <p class="upill" data-reveal style="--d:2">Informações e contatos coerentes</p>
+      </div>
+      <div data-reveal>
+        <div class="venn solid" id="venn3">
+          <div class="vc a"><span>Jandrio</span></div>
+          <div class="vc b"><span>Mônica</span></div>
+          <div class="vc c"><span>Otorhinus</span></div>
+        </div>
+      </div>
+      <div class="ucol">
+        <p class="upill" data-reveal>Navegação entre as páginas</p>
+        <p class="upill" data-reveal style="--d:1">Conteúdos conjuntos com função</p>
+        <p class="upill g" data-reveal style="--d:2">Jornada de agendamento clara</p>
+      </div>
+    </div>
+    <p class="note serif" style="text-align:center;font-size:1.15rem" data-reveal>A uniformidade das informações vem antes de aproximar as paletas.</p>
+  </div>
+</section>
+
+<!-- 10 · ETAPAS -->
+<section class="light" id="etapas" data-theme="light">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:64px">
+      <p class="eyebrow" data-reveal>As etapas</p>
+      <h2 class="title" data-reveal style="--d:1">Quatro etapas, da imersão à cerimônia de entrega.</h2>
+    </div>
+    <div class="steps" id="steps">
+      <div class="steps-bar"><i></i></div>
+      <article class="step s1" data-reveal>
+        <span class="big">1</span><span class="lbl">ETAPA 1</span><h3>Imersão de Marca</h3>
+        <ul><li><svg><use href="#i-check"/></svg>Imersão com as três marcas</li><li><svg><use href="#i-check"/></svg>Arquitetura do ecossistema</li><li><svg><use href="#i-check"/></svg>Posicionamento e tom de voz</li></ul>
+      </article>
+      <article class="step s2" data-reveal style="--d:1">
+        <span class="big">2</span><span class="lbl">ETAPA 2</span><h3>Moodboard</h3>
+        <ul><li><svg><use href="#i-check"/></svg>Referências de cada marca</li><li><svg><use href="#i-check"/></svg>Direção estética do ecossistema</li><li><svg><use href="#i-check"/></svg>Aprovação da direção visual</li></ul>
+      </article>
+      <article class="step s3" data-reveal style="--d:2">
+        <span class="big">3</span><span class="lbl">ETAPA 3</span><h3>Identidade Visual</h3>
+        <ul><li><svg><use href="#i-check"/></svg>Identidade das três marcas</li><li><svg><use href="#i-check"/></svg>Sistema de endosso</li><li><svg><use href="#i-check"/></svg>Manual, guia, enxoval e materiais</li></ul>
+      </article>
+      <article class="step s4" data-reveal style="--d:3">
+        <span class="big">4</span><span class="lbl">ETAPA 4</span><h3>Cerimônia de Entrega</h3>
+        <ul><li><svg><use href="#i-check"/></svg>Apresentação das três marcas</li><li><svg><use href="#i-check"/></svg>Entrega de todos os arquivos</li><li><svg><use href="#i-check"/></svg>Orientação da equipe</li></ul>
+      </article>
+    </div>
+    <p class="steps-note" data-reveal>Aprovação ao fim de cada etapa. As três marcas avançam juntas, para nascerem como um sistema.</p>
+  </div>
+</section>
+
+<!-- 11 · INVESTIMENTO -->
+<section class="light" id="investimento" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Ato 3 · Apoteose — investimento</p>
+      <h2 class="title" data-reveal style="--d:1">Três rebrandings, com a condição de ecossistema.</h2>
+    </div>
+    <div class="inv" id="inv">
+      <div class="price" data-reveal>
+        <svg class="inv-star"><use href="#i-star4"/></svg>
+        <p class="was">Valor padrão: 3 × R$ 25.000 = <s>R$ 75.000</s></p>
+        <p class="now"><small>10x</small><strong>R$ <span data-count="6500">0</span></strong></p>
+        <p class="tot">Total de R$ 65.000 para as três marcas</p>
+        <div class="bars" aria-hidden="true">
+          <div class="bar std"><i data-w="100">R$ 75.000</i></div>
+          <div class="bar eco"><i data-w="33.33">25 mil</i><i data-w="26.67">20 mil</i><i data-w="26.67">20 mil</i></div>
+        </div>
+        <div class="saving">
+          <b>Economia de R$ <span data-count="10000">0</span></b>
+          <span>Uma Imersão de Marca única para o ecossistema</span>
+        </div>
+      </div>
+      <aside class="comp" data-reveal style="--d:1">
+        <p class="eyebrow">Composição</p>
+        <div class="row"><span>Marca principal</span><b>R$ 25.000</b></div>
+        <div class="row"><span>2ª marca (−20%)</span><b>R$ 20.000</b></div>
+        <div class="row"><span>3ª marca (−20%)</span><b>R$ 20.000</b></div>
+        <p>Imersão, moodboard, identidade, manual, guia de social media, enxoval para redes e materiais gráficos para cada marca.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · O QUE MUDA -->
+<section class="light" id="muda" data-theme="light">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:28px">
+      <p class="eyebrow" data-reveal>O que muda</p>
+      <h2 class="title" data-reveal style="--d:1">De três marcas soltas a um ecossistema que guia.</h2>
+    </div>
+    <div class="switch" id="switch" data-v="depois" data-reveal>
+      <span class="knob"></span>
+      <button type="button" data-v="hoje" aria-pressed="false">Hoje</button>
+      <button type="button" data-v="depois" aria-pressed="true">Depois</button>
+    </div>
+    <div class="ba" id="ba" data-v="depois">
+      <div class="side h" data-reveal>
+        <p class="eyebrow">Hoje</p>
+        <ul><li><i></i>Cada marca fala sozinha</li><li><i></i>Duas audiências no mesmo caminho</li><li><i></i>Ofertas sem hierarquia</li><li><i></i>Clínica como catálogo</li><li><i></i>Contatos e páginas diferentes</li></ul>
+      </div>
+      <div class="side d" data-reveal style="--d:1">
+        <p class="eyebrow">Depois</p>
+        <ul><li><i><svg><use href="#i-check"/></svg></i>Marcas pessoais endossadas pela clínica</li><li><i><svg><use href="#i-check"/></svg></i>Uma entrada para cada audiência</li><li><i><svg><use href="#i-check"/></svg></i>Uma oferta principal em cada marca</li><li><i><svg><use href="#i-check"/></svg></i>Clínica como guia por necessidade</li><li><i><svg><use href="#i-check"/></svg></i>Informações e jornada coerentes</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · PARA COMEÇAR -->
+<section class="final" id="comecar" data-theme="final">
+  <div class="wrap final-grid">
+    <div>
+      <p class="eyebrow" data-reveal>Para começar</p>
+      <ol class="go">
+        <li data-reveal><span class="n">01</span><p><b>Aprovação</b><span>da proposta</span></p></li>
+        <li data-reveal style="--d:1"><span class="n">02</span><p><b>Assinatura</b><span>e primeira parcela</span></p></li>
+        <li data-reveal style="--d:2"><span class="n">03</span><p><b>Imersão de Marca</b><span>com as três marcas juntas</span></p></li>
+      </ol>
+      <p class="serif" data-reveal>Três marcas que se conversam, se completam e levam o paciente ao lugar certo.</p>
+      <div class="btns" data-reveal>
+        <a class="btn white" id="approve" href="#" target="_blank" rel="noopener">Aprovar pelo WhatsApp <span class="arr">→</span></a>
+        <a class="btn ghost" href="proposta-ecossistema-otorhinus.pdf" download>Baixar PDF</a>
+      </div>
+      <a class="logo" href="../../">BRITTO<b>*</b></a>
+    </div>
+    <div class="hero-venn" data-reveal style="--d:1">
+      <div class="venn white" id="venn4">
+        <div class="vc a"><span>Jandrio</span></div>
+        <div class="vc b"><span>Mônica</span></div>
+        <div class="vc c"><span>Otorhinus</span></div>
+      </div>
+      <span class="spark" style="right:0;top:-6%;width:48px;height:48px"><svg><use href="#i-star4"/></svg></span>
+      <span class="spark" style="left:-6%;bottom:4%;width:30px;height:30px;animation-delay:1.2s"><svg><use href="#i-star4"/></svg></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var WA = "5592991218255";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var CHECK = '<svg><use href="#i-check"/></svg>';
+
+  $("#approve").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(
+    "Olá, Gabriel! Vimos a proposta de rebranding do ecossistema Otorhinus (Dr. Jandrio, Dra. Mônica e Otorhinus Manaus) e queremos seguir com a aprovação.");
+
+  /* ---------- contadores ---------- */
+  function fmt(v, el) {
+    var dec = +(el.dataset.dec || 0);
+    var s = dec ? v.toFixed(dec).replace(".", ",") : Math.round(v).toLocaleString("pt-BR");
+    return s + (el.dataset.suffix || "");
+  }
+  function count(el) {
+    var to = parseFloat(el.dataset.count), t0 = null, dur = 1400;
+    if (reduce) { el.textContent = fmt(to, el); return; }
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(to * e, el);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- revelação ---------- */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      el.classList.add("in");
+      $$("[data-count]", el).forEach(count);
+      if (el.matches && el.matches(".price")) $$(".bar i", el).forEach(function (b, i) {
+        setTimeout(function () { b.style.width = b.dataset.w + "%"; }, 300 + i * 220);
+      });
+      io.unobserve(el);
+    });
+  }, { threshold: 0.18, rootMargin: "0px 0px -6% 0px" });
+  $$("[data-reveal]").forEach(function (el) { io.observe(el); });
+
+  /* ---------- Venns que se encontram ---------- */
+  function meet(id, delay) {
+    var v = $(id);
+    if (!v) return;
+    if (reduce) { v.style.setProperty("--k", 1); return; }
+    v.style.setProperty("--k", 0);
+    var o = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { setTimeout(function () { v.style.setProperty("--k", 1); }, delay || 150); o.disconnect(); }
+    }, { threshold: 0.35 });
+    o.observe(v);
+  }
+  meet("#venn1", 450); meet("#venn2"); meet("#venn3"); meet("#venn4", 250);
+
+  // parallax leve no Venn da abertura
+  var hv = $("#heroVenn");
+  if (!reduce && window.matchMedia("(pointer:fine)").matches) {
+    window.addEventListener("mousemove", function (e) {
+      var x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      hv.style.transform = "translate(" + (x * -18) + "px," + (y * -14) + "px)";
+    });
+  }
+
+  /* ---------- arquitetura: marca ↔ papel ---------- */
+  var v2 = $("#venn2");
+  function pick(k) {
+    $$(".role").forEach(function (r) { r.classList.toggle("on", r.dataset.k === k); });
+    $$(".vc", v2).forEach(function (c) { c.classList.toggle("hl", c.dataset.k === k); c.classList.toggle("dim", c.dataset.k !== k); });
+  }
+  $$(".role").forEach(function (r) {
+    r.addEventListener("click", function () { pick(r.dataset.k); });
+    r.addEventListener("mouseenter", function () { pick(r.dataset.k); });
+  });
+  $$(".vc", v2).forEach(function (c) { c.style.cursor = "pointer"; c.addEventListener("click", function () { pick(c.dataset.k); }); });
+  pick("o");
+
+  /* ---------- marcas em abas ---------- */
+  var BRANDS = [
+    { name: "Dr. Jandrio Campos", eyebrow: "Marca 1 · Fisioterapia e dor", c: "var(--jandrio)",
+      forca: ["Foco em dor: fácil de reconhecer e de indicar", "Método nomeado: memorável e ensinável", "Presença pessoal: ele é o rosto da marca", "Frente educacional para fisioterapeutas"],
+      resolve: ["Duas entradas: “quero atendimento” e “sou fisioterapeuta”", "O método explicado pelo processo e pelos limites", "Primeira consulta, sobre, como chegar e dúvidas", "Endosso visível da Otorhinus no atendimento"],
+      pos: "Fisioterapia para quem quer recuperar movimento e autonomia diante da dor." },
+    { name: "Dra. Mônica Pinheiro", eyebrow: "Marca 2 · Cirurgia facial", c: "var(--monica)",
+      forca: ["Rinoplastia associada à naturalidade", "Estética, respiração e identidade juntas", "Formação, ensino e produção acadêmica", "Fundadora da história da Otorhinus"],
+      resolve: ["Hierarquia: rinoplastia como oferta principal", "Autoridade traduzida para a decisão do paciente", "Revisão editorial de todos os textos", "Instagram organizado como porta de entrada"],
+      pos: "Cirurgia facial planejada para valorizar seus traços e cuidar da função." },
+    { name: "Otorhinus Manaus", eyebrow: "Marca 3 · A clínica", c: "var(--otorhinus)",
+      forca: ["História desde 2018, idealizada pela Dra. Mônica", "Atendimento multidisciplinar e exames", "Lema de acolhimento", "Equipe que vai além dos dois profissionais"],
+      resolve: ["De catálogo a guia: o paciente entra pela necessidade", "Landing, equipe, horários e contatos unificados", "Nome sempre como “Otorhinus Manaus”", "História e números atualizados e com contexto"],
+      pos: "Equipe, estrutura e continuidade do cuidado, em um só lugar." }
+  ];
+  var panel = $("#brandPanel");
+  function li(arr) { return arr.map(function (t, i) { return '<li style="--i:' + i + '"><span class="ck">' + CHECK + "</span>" + t + "</li>"; }).join(""); }
+  function showBrand(i) {
+    var b = BRANDS[i];
+    $$(".tab").forEach(function (t) { t.setAttribute("aria-selected", t.dataset.b == i ? "true" : "false"); });
+    panel.innerHTML =
+      '<div class="panel" style="--c:' + b.c + '">' +
+        '<p class="eyebrow">' + b.eyebrow + "</p>" +
+        '<h3 class="brand-name">' + b.name + "</h3>" +
+        '<div class="duo">' +
+          '<div class="box lt"><p class="eyebrow">Onde está a força</p><ul class="checks">' + li(b.forca) + "</ul></div>" +
+          '<div class="box dk"><p class="eyebrow">O que o rebranding resolve</p><ul class="checks">' + li(b.resolve) + "</ul></div>" +
+        "</div>" +
+        '<p class="posit"><small>Direção de posicionamento</small><q>' + b.pos + "</q></p>" +
+      "</div>";
+  }
+  $$(".tab").forEach(function (t) { t.addEventListener("click", function () { showBrand(+t.dataset.b); }); });
+  $(".tabs").addEventListener("keydown", function (e) {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    var cur = +$('.tab[aria-selected="true"]').dataset.b, n = (cur + (e.key === "ArrowRight" ? 1 : 2)) % 3;
+    showBrand(n); $('.tab[data-b="' + n + '"]').focus();
+  });
+  showBrand(0);
+
+  /* ---------- guia por necessidade ---------- */
+  var ICO = {
+    ouvir: '<path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4.5" height="6.5" rx="1.5"/><rect x="16.5" y="14" width="4.5" height="6.5" rx="1.5"/>',
+    nariz: '<path d="M3 8h10a2.5 2.5 0 1 0-2.5-2.5M3 12h15a2.5 2.5 0 1 1-2.5 2.5M3 16h8"/>',
+    voz: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/>',
+    dor: '<path d="M2 12h4l3-8 6 16 3-8h4"/>',
+    face: '<circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1.8 2 5.2 2 7 0M9 9.5h.01M15 9.5h.01"/>'
+  };
+  var NEEDS = [
+    { k: "ouvir", t: "Dificuldade para ouvir", d: "Avaliação, exames e profissionais", w: "Caminho pela Otorhinus Manaus" },
+    { k: "nariz", t: "Nariz e respiração", d: "Consulta e percurso de investigação", w: "A clínica endossa · aprofunda com a Dra. Mônica Pinheiro", deep: 1 },
+    { k: "voz", t: "Voz, fala e comunicação", d: "Áreas de atendimento e avaliação", w: "Caminho pela Otorhinus Manaus" },
+    { k: "dor", t: "Dor e limitação de movimento", d: "Fisioterapia e agendamento", w: "Caminho pela Otorhinus Manaus" },
+    { k: "face", t: "Interesse em cirurgia facial", d: "Avaliação e planejamento", w: "A clínica endossa · aprofunda com a Dra. Mônica Pinheiro", deep: 1 }
+  ];
+  var guide = $("#guide");
+  guide.innerHTML = NEEDS.map(function (n, i) {
+    return '<button class="need' + (n.deep ? " deep" : "") + '" type="button" data-i="' + i + '" aria-pressed="false">' +
+      '<span class="n-in"><span class="n-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + ICO[n.k] + "</svg></span>" + n.t + "</span>" +
+      '<span class="n-arrow"></span>' +
+      '<span class="n-out"><b>' + n.d + "</b><small>" + n.w + "</small></span></button>";
+  }).join("");
+  var needs = $$(".need", guide), auto = null, ai = 0;
+  function setNeed(i) { needs.forEach(function (n, j) { n.classList.toggle("on", i === j); n.setAttribute("aria-pressed", i === j ? "true" : "false"); }); }
+  needs.forEach(function (n, i) {
+    n.addEventListener("click", function () { clearInterval(auto); auto = null; setNeed(i); });
+  });
+  new IntersectionObserver(function (es, o) {
+    if (!es[0].isIntersecting) return;
+    o.disconnect(); setNeed(0);
+    if (!reduce) auto = setInterval(function () { ai = (ai + 1) % NEEDS.length; setNeed(ai); }, 2400);
+  }, { threshold: .4 }).observe(guide);
+
+  /* ---------- entregáveis ---------- */
+  var DEL = [
+    ["Posicionamento e tom de voz", "Promessa, mensagens e linguagem", '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'],
+    ["Logo e identidade visual", "Logo, cores, tipografia e elementos", '<path d="M4 20l3-9 7-7 6 6-7 7z"/><circle cx="12" cy="12" r="1.6"/><path d="M4 20l6-6"/>'],
+    ["Manual da marca", "Regras de uso para equipe e fornecedores", '<path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v16H6.5A1.5 1.5 0 0 0 5 20.5zM5 20.5A1.5 1.5 0 0 0 6.5 22H19"/>'],
+    ["Sistema de endosso", "Assinatura comum e padrão de informações", '<path d="M10 14a4 4 0 0 0 5.7 0l3.5-3.5a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3.5 3.5a4 4 0 0 0 5.7 5.7l1-1"/>', 1],
+    ["Guia de Social Media", "Linha editorial, tom e regras de cada perfil", '<path d="M3 6l6-2.5 6 2.5 6-2.5v14.5L15 20.5 9 18l-6 2.5zM9 3.5V18M15 6v14.5"/>'],
+    ["Enxoval visual para redes", "Modelos de posts, stories, destaques e capas", '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/>'],
+    ["Materiais gráficos", "Papelaria, uniformes, crachás, timbrado, receituário e proposta comercial", '<path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/>'],
+    ["Cerimônia de Entrega", "A marca apresentada e entregue à equipe", '<circle cx="12" cy="8.5" r="5.5"/><path d="M8.5 13l-1.5 8 5-3 5 3-1.5-8"/>', 1]
+  ];
+  var BC = ["var(--jandrio)", "var(--monica)", "var(--otorhinus)"];
+  var BN = ["Dr. Jandrio Campos", "Dra. Mônica Pinheiro", "Otorhinus Manaus"];
+  $("#grid8").innerHTML = DEL.map(function (d, i) {
+    return '<article class="dcard' + (d[3] ? " feat" : "") + '" data-reveal style="--d:' + (i % 4) + '">' +
+      '<span class="stamp">' + BC.map(function (c) { return '<i style="--c:' + c + '"></i>'; }).join("") + "</span>" +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d[2] + "</svg>" +
+      "<h3>" + d[0] + "</h3><p>" + d[1] + "</p></article>";
+  }).join("");
+  $$("#grid8 [data-reveal]").forEach(function (el) { io.observe(el); });
+  var on = [true, true, true];
+  function paintChips() {
+    $$(".chip").forEach(function (c) { c.setAttribute("aria-pressed", on[+c.dataset.c] ? "true" : "false"); });
+    $$("#grid8 .stamp").forEach(function (s) { $$("i", s).forEach(function (d, j) { d.classList.toggle("on", on[j]); }); });
+    var n = on.filter(Boolean).length;
+    $("#multi").textContent = "× " + n + (n === 1 ? " marca" : " marcas");
+    $("#multiNames").innerHTML = BN.filter(function (_, j) { return on[j]; }).join(' <span class="dot">·</span> ') +
+      ' <span class="dot">=</span> ' + (n * DEL.length) + " entregas";
+  }
+  $$(".chip").forEach(function (c) {
+    c.addEventListener("click", function () {
+      var j = +c.dataset.c;
+      if (on[j] && on.filter(Boolean).length === 1) return;
+      on[j] = !on[j]; paintChips();
+    });
+  });
+  paintChips();
+
+  /* ---------- une: pulso ao passar nos itens ---------- */
+  var v3 = $("#venn3");
+  $$(".upill").forEach(function (p) {
+    p.addEventListener("mouseenter", function () { v3.classList.remove("beat"); void v3.offsetWidth; v3.classList.add("beat"); });
+  });
+
+  /* ---------- hoje / depois ---------- */
+  var sw = $("#switch"), ba = $("#ba");
+  function setBA(v) {
+    sw.dataset.v = v; ba.dataset.v = v;
+    $$("button", sw).forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.v === v ? "true" : "false"); });
+  }
+  $$("button", sw).forEach(function (b) { b.addEventListener("click", function () { setBA(b.dataset.v); }); });
+  if (!reduce) {
+    setBA("hoje");
+    new IntersectionObserver(function (es, o) {
+      if (es[0].isIntersecting) { o.disconnect(); setTimeout(function () { setBA("depois"); }, 1300); }
+    }, { threshold: .5 }).observe(ba);
+  }
+
+  /* ---------- scroll: topo, trilho, etapas ---------- */
+  var top = $("#top"), track = $("#track"), steps = $("#steps"), stepEls = $$(".step", steps);
+  var themed = $$("[data-theme]");
+  function onScroll() {
+    var y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    top.classList.toggle("solid", y > 40);
+    track.style.setProperty("--p", h > 0 ? Math.min(1, y / h) : 0);
+    var probe = innerHeight - 30, theme = "dark";
+    for (var i = 0; i < themed.length; i++) {
+      var r = themed[i].getBoundingClientRect();
+      if (r.top <= probe && r.bottom >= probe) { theme = themed[i].dataset.theme; break; }
+    }
+    track.className = "track on-" + theme;
+    var r2 = steps.getBoundingClientRect();
+    var s = Math.max(0, Math.min(1, (innerHeight * .75 - r2.top) / (r2.height * .9)));
+    steps.style.setProperty("--s", s);
+    var cur = Math.min(3, Math.floor(s * 4));
+    stepEls.forEach(function (el, i) { el.classList.toggle("cur", s > 0 && i === cur); });
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(function () { onScroll(); ticking = false; }); }
+  }, { passive: true });
+  window.addEventListener("resize", onScroll);
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var t = a.getAttribute("href").length > 1 && $(a.getAttribute("href"));
+      if (!t) return;
+      e.preventDefault();
+      scrollTo({ top: t.getBoundingClientRect().top + scrollY - 64, behavior: reduce ? "auto" : "smooth" });
+    });
+  });
+  onScroll();
+
+  $("#trackIn").addEventListener("click", function (e) {
+    var r = this.getBoundingClientRect(), p = (e.clientX - r.left - 18) / (r.width - 36);
+    scrollTo({ top: Math.max(0, Math.min(1, p)) * (document.documentElement.scrollHeight - innerHeight), behavior: reduce ? "auto" : "smooth" });
+  });
+})();
+</script>
+</body>
+</html>
