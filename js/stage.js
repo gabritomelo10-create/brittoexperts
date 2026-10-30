@@ -81,9 +81,9 @@
   /* ---------------- desenho ---------------- */
   function background(p) {
     var g = ctx.createLinearGradient(0, 0, 0, H);
-    g.addColorStop(0, "#020403");
-    g.addColorStop(0.45, "#06100b");
-    g.addColorStop(1, "#020403");
+    g.addColorStop(0, "#0b0d09");
+    g.addColorStop(0.45, "#131a12");
+    g.addColorStop(1, "#0b0d09");
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, W, H);
 
@@ -91,8 +91,8 @@
     var far = proj(0, 8, STAGE_EDGE + 40);
     if (far) {
       var rg = ctx.createRadialGradient(far[0], far[1], 0, far[0], far[1], Math.max(W, H) * 0.75);
-      rg.addColorStop(0, "rgba(35,184,116,0.22)");
-      rg.addColorStop(0.5, "rgba(26,157,97,0.07)");
+      rg.addColorStop(0, "rgba(142,184,90,0.22)");
+      rg.addColorStop(0.5, "rgba(38,57,43,0.07)");
       rg.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = rg;
       ctx.fillRect(0, 0, W, H);
@@ -116,8 +116,8 @@
       var a1 = ang - spread, a2 = ang + spread;
       var g = ctx.createLinearGradient(ox, oy, ox + Math.cos(ang) * len, oy + Math.sin(ang) * len);
       var alpha = 0.06 + 0.04 * Math.sin(time * 0.8 + i);
-      g.addColorStop(0, "rgba(95,224,163," + (alpha * 1.6).toFixed(3) + ")");
-      g.addColorStop(1, "rgba(95,224,163,0)");
+      g.addColorStop(0, "rgba(215,228,75," + (alpha * 1.6).toFixed(3) + ")");
+      g.addColorStop(1, "rgba(215,228,75,0)");
       ctx.fillStyle = g;
       ctx.beginPath();
       ctx.moveTo(ox, oy);
@@ -132,7 +132,7 @@
   function mix(a, b, t) {
     return "rgb(" + Math.round(lerp(a[0], b[0], t)) + "," + Math.round(lerp(a[1], b[1], t)) + "," + Math.round(lerp(a[2], b[2], t)) + ")";
   }
-  var C_NEAR = [3, 8, 5], C_FAR = [34, 82, 58], C_RIM = [95, 224, 163];
+  var C_NEAR = [8, 10, 7], C_FAR = [48, 68, 46], C_RIM = [215, 228, 75];
 
   function crowd(p) {
     var cheer = map(p, 0.8, 1);           // na apoteose a plateia se agita
@@ -198,9 +198,9 @@
       var tw = reduce ? 1 : 0.65 + 0.35 * Math.sin(time * 3 + ph[3] * 5);
       var rr = ph[2] * 3.2;
       var g = ctx.createRadialGradient(ph[0], ph[1], 0, ph[0], ph[1], rr);
-      g.addColorStop(0, "rgba(235,255,245," + (0.95 * tw).toFixed(3) + ")");
-      g.addColorStop(0.2, "rgba(150,240,200," + (0.35 * tw).toFixed(3) + ")");
-      g.addColorStop(1, "rgba(95,224,163,0)");
+      g.addColorStop(0, "rgba(246,248,236," + (0.95 * tw).toFixed(3) + ")");
+      g.addColorStop(0.2, "rgba(226,236,170," + (0.35 * tw).toFixed(3) + ")");
+      g.addColorStop(1, "rgba(215,228,75,0)");
       ctx.fillStyle = g;
       ctx.fillRect(ph[0] - rr, ph[1] - rr, rr * 2, rr * 2);
     }
@@ -212,11 +212,11 @@
     if (z0 >= z1) return;
     var a = proj(-14, 0, z0), b = proj(14, 0, z0), c = proj(14, 0, z1), d = proj(-14, 0, z1);
     if (!a || !b || !c || !d) return;
-    ctx.fillStyle = "#010201";
+    ctx.fillStyle = "#070806";
     ctx.fillRect(0, d[1], W, H - d[1]);
     var g = ctx.createLinearGradient(0, d[1], 0, Math.min(a[1], H * 3));
-    g.addColorStop(0, "#07110c");
-    g.addColorStop(1, "#010201");
+    g.addColorStop(0, "#141a12");
+    g.addColorStop(1, "#070806");
     ctx.fillStyle = g;
     ctx.beginPath();
     ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.lineTo(c[0], c[1]); ctx.lineTo(d[0], d[1]);
@@ -225,7 +225,7 @@
     // face frontal do palco
     var e = proj(14, -STAGE_H, z1), f = proj(-14, -STAGE_H, z1);
     if (e && f) {
-      ctx.fillStyle = "#010302";
+      ctx.fillStyle = "#080907";
       ctx.beginPath();
       ctx.moveTo(d[0], d[1]); ctx.lineTo(c[0], c[1]); ctx.lineTo(e[0], e[1]); ctx.lineTo(f[0], f[1]);
       ctx.closePath(); ctx.fill();
@@ -233,8 +233,8 @@
     // fita de LED na borda do palco
     ctx.save();
     ctx.globalCompositeOperation = "lighter";
-    ctx.strokeStyle = "rgba(35,184,116,0.9)";
-    ctx.shadowColor = "#23b874";
+    ctx.strokeStyle = "rgba(142,184,90,0.9)";
+    ctx.shadowColor = "#B9D352";
     ctx.shadowBlur = 18;
     ctx.lineWidth = Math.max(1, c[2] * 0.02);
     ctx.beginPath(); ctx.moveTo(d[0], d[1]); ctx.lineTo(c[0], c[1]); ctx.stroke();
@@ -283,8 +283,8 @@
       var top = proj(0, 9, SPEAKER_Z);
       var tx = top ? top[0] : sx, ty = top ? top[1] : -H;
       var cone = ctx.createLinearGradient(tx, ty, sx, sy);
-      cone.addColorStop(0, "rgba(180,255,220," + (0.22 * light).toFixed(3) + ")");
-      cone.addColorStop(1, "rgba(95,224,163," + (0.05 * light).toFixed(3) + ")");
+      cone.addColorStop(0, "rgba(238,245,195," + (0.22 * light).toFixed(3) + ")");
+      cone.addColorStop(1, "rgba(215,228,75," + (0.05 * light).toFixed(3) + ")");
       ctx.fillStyle = cone;
       ctx.beginPath();
       ctx.moveTo(tx - 0.12 * s, ty);
@@ -297,15 +297,15 @@
       ctx.translate(sx, sy);
       ctx.scale(1, 0.22);
       var pool = ctx.createRadialGradient(0, 0, 0, 0, 0, 1.3 * s);
-      pool.addColorStop(0, "rgba(140,250,200," + (0.4 * light).toFixed(3) + ")");
-      pool.addColorStop(1, "rgba(35,184,116,0)");
+      pool.addColorStop(0, "rgba(225,238,150," + (0.4 * light).toFixed(3) + ")");
+      pool.addColorStop(1, "rgba(142,184,90,0)");
       ctx.fillStyle = pool;
       ctx.beginPath(); ctx.arc(0, 0, 1.3 * s, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
       // halo atrás do corpo
       var halo = ctx.createRadialGradient(sx, sy - 1.3 * s, 0, sx, sy - 1.3 * s, 1.4 * s);
-      halo.addColorStop(0, "rgba(95,224,163," + (0.28 * light).toFixed(3) + ")");
-      halo.addColorStop(1, "rgba(95,224,163,0)");
+      halo.addColorStop(0, "rgba(215,228,75," + (0.28 * light).toFixed(3) + ")");
+      halo.addColorStop(1, "rgba(215,228,75,0)");
       ctx.fillStyle = halo;
       ctx.fillRect(sx - 1.4 * s, sy - 2.7 * s, 2.8 * s, 2.8 * s);
       ctx.restore();
@@ -313,14 +313,14 @@
 
     var path = speakerPath(sx, sy, s);
     ctx.save();
-    ctx.shadowColor = "rgba(95,224,163," + (0.25 + 0.6 * light).toFixed(3) + ")";
+    ctx.shadowColor = "rgba(215,228,75," + (0.25 + 0.6 * light).toFixed(3) + ")";
     ctx.shadowBlur = Math.min(60, 0.12 * s);
-    ctx.fillStyle = "#010201";
+    ctx.fillStyle = "#070806";
     ctx.fill(path);
     ctx.restore();
     // contorno de luz (rim light)
     ctx.save();
-    ctx.strokeStyle = "rgba(150,245,205," + (0.15 + 0.55 * light).toFixed(3) + ")";
+    ctx.strokeStyle = "rgba(232,242,180," + (0.15 + 0.55 * light).toFixed(3) + ")";
     ctx.lineWidth = Math.max(1, s * 0.005);
     ctx.stroke(path);
     ctx.restore();
@@ -330,15 +330,15 @@
     if (vA > 0 && dz > 0.6) {
       ctx.save();
       ctx.clip(path);
-      var fs = 0.25 * s;
-      ctx.font = "900 " + fs.toFixed(1) + "px 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif";
+      var fs = 0.135 * s;
+      ctx.font = "700 " + fs.toFixed(1) + "px 'Sora', 'Manrope', sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       var rise = (1 - easeOut(vA)) * 0.08 * s;
       ctx.globalAlpha = vA;
-      ctx.shadowColor = "#23b874";
+      ctx.shadowColor = "#B9D352";
       ctx.shadowBlur = 0.06 * s;
-      ctx.fillStyle = "#5fe0a3";
+      ctx.fillStyle = "#D7E44B";
       ctx.fillText("VOCÊ", sx, sy - 1.17 * s + rise);
       ctx.restore();
     }
@@ -347,21 +347,21 @@
 
   /* frase da apoteose, pendurada sobre a plateia, atrás do palestrante */
   var PHRASE = {
-    wide: [["NÃO DESPERDICE", 0], ["O POTENCIAL DA SUA", 0], ["PRÓXIMA APRESENTAÇÃO.", 1]],
-    narrow: [["NÃO", 0], ["DESPERDICE", 0], ["O POTENCIAL", 0], ["DA SUA PRÓXIMA", 0], ["APRESENTAÇÃO.", 1]]
+    wide: [["Não desperdice", 0], ["o potencial da sua", 0], ["próxima apresentação.", 1]],
+    narrow: [["Não", 0], ["desperdice", 0], ["o potencial", 0], ["da sua próxima", 0], ["apresentação.", 1]]
   };
   var phraseWorld = 1; // altura da fonte em metros, ajustada no resize
 
   function fitPhrase() {
     var lines = W / H < 0.9 ? PHRASE.narrow : PHRASE.wide;
-    ctx.font = "900 100px 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif";
+    ctx.font = "700 100px 'Sora', 'Manrope', sans-serif";
     var maxW = 0;
     lines.forEach(function (l) { maxW = Math.max(maxW, ctx.measureText(l[0]).width / 100); });
     // escala final da câmera no plano da frase
     var base = Math.min(H, W * 1.15);
     var sFinal = (0.86 * base) / (PHRASE_Z - CAM_END_Z);
     var byW = (W * 0.84) / (maxW * sFinal);
-    var byH = (H * 0.37) / (lines.length * 0.9 * sFinal);
+    var byH = (H * 0.37) / (lines.length * 1.1 * sFinal);
     phraseWorld = Math.min(byW, byH);
     return lines;
   }
@@ -370,7 +370,7 @@
   function phrase(p) {
     var a = map(p, 0.72, 0.86);
     if (a <= 0) return;
-    var lh = phraseWorld * 0.9;
+    var lh = phraseWorld * 1.1;
     var n = phraseLines.length;
     var base = Math.min(H, W * 1.15);
     var sFinal = (0.86 * base) / (PHRASE_Z - CAM_END_Z);
@@ -387,12 +387,17 @@
       var pr = proj(0, y, PHRASE_Z);
       if (!pr) continue;
       var fs = phraseWorld * pr[2];
-      ctx.font = "900 " + fs.toFixed(1) + "px 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif";
+      ctx.font = "700 " + fs.toFixed(1) + "px 'Sora', 'Manrope', sans-serif";
       ctx.globalAlpha = la;
       var hl = phraseLines[i][1];
-      ctx.shadowColor = hl ? "rgba(35,184,116,0.9)" : "rgba(0,0,0,0.85)";
+      ctx.shadowColor = hl ? "rgba(185,211,82,0.7)" : "rgba(0,0,0,0.85)";
       ctx.shadowBlur = hl ? fs * 0.35 : fs * 0.25;
-      ctx.fillStyle = hl ? "#5fe0a3" : "#eef3ef";
+      if (hl) {
+        var tw = ctx.measureText(phraseLines[i][0]).width;
+        var lg = ctx.createLinearGradient(pr[0] - tw / 2, 0, pr[0] + tw / 2, 0);
+        lg.addColorStop(0, "#8EB85A"); lg.addColorStop(1, "#D7E44B");
+        ctx.fillStyle = lg;
+      } else ctx.fillStyle = "#F4F6F0";
       ctx.fillText(phraseLines[i][0], pr[0], pr[1]);
     }
     ctx.restore();
@@ -404,7 +409,7 @@
     var a = 0;
     if (dz > -0.6 && dz < 0.9) a = 1 - Math.abs(dz - 0.15) / 0.75;
     if (a > 0) {
-      ctx.fillStyle = "rgba(1,2,1," + clamp(a, 0, 1).toFixed(3) + ")";
+      ctx.fillStyle = "rgba(7,8,6," + clamp(a, 0, 1).toFixed(3) + ")";
       ctx.fillRect(0, 0, W, H);
     }
   }

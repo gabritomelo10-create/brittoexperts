@@ -2,6 +2,15 @@
 
 Site estático (HTML + CSS + JS puro, sem build e sem dependências), baseado no artefato da BRITTO* Experts.
 
+## Identidade visual
+
+Segue o *Guia de Identidade Visual BRITTO\* GROUP, vol. 02*:
+
+- Paleta: Limão BRITTO\* `#D7E44B` (em degradê a partir de `#8EB85A`), Carvão `#11130F`, Porcelana `#F4F6F0`, Verde profundo `#26392B`, Névoa verde `#E3EBCB`. Tokens no topo de `css/style.css`.
+- Tipografia: Sora 600/700 em títulos e chamadas, Manrope 400/500 em textos e rótulos.
+- Logo e símbolo em `img/brand/`, extraídos em vetor do próprio guia (principal, compacta e asterisco, nas versões limão e clara). Não redigitar a logo com fonte.
+- Imagens 3D do asterisco (`img/brand/asterisco-*.jpg`) vêm do guia.
+
 ## Abertura em 3D (scroll)
 
 `js/stage.js` desenha em `<canvas>` uma cena em perspectiva controlada pelo scroll:

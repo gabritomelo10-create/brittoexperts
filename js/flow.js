@@ -24,7 +24,7 @@
 
   /* ---------- formas (desenhadas num canvas 600×420, origem no centro) ---------- */
   var SW = 600, SH = 420;
-  var FONT = "'Big Shoulders Display','Arial Narrow',Impact,sans-serif";
+  var FONT = "'Sora','Manrope',sans-serif";
 
   function sample(draw, n, jitter) {
     var c = document.createElement("canvas");
@@ -69,7 +69,7 @@
       g.fillRect(x0 + 28, y0 + 56, 110, 6);
       var y = y0 + 90;
       for (var k = 0; k < 3; k++) {
-        g.font = "900 26px " + FONT; g.fillText("0" + (k + 1), x0 + 26, y + 22);
+        g.font = "700 24px " + FONT; g.fillText("0" + (k + 1), x0 + 26, y + 22);
         g.fillRect(x0 + 72, y + 4, 150 - k * 22, 9);
         g.fillRect(x0 + 72, y + 24, 196, 4); g.fillRect(x0 + 72, y + 36, 180 - k * 20, 4); g.fillRect(x0 + 72, y + 48, 120 + k * 30, 4);
         y += 86;
@@ -82,7 +82,7 @@
     return sample(function (g) {
       var w = 520, h = 292, x0 = SW / 2 - w / 2, y0 = SH / 2 - h / 2;
       g.lineWidth = 5; g.strokeRect(x0, y0, w, h);
-      g.font = "900 96px " + FONT; g.fillText("SUA", x0 + 30, y0 + 116); g.fillText("IDEIA.", x0 + 30, y0 + 206);
+      g.font = "700 74px " + FONT; g.fillText("Sua", x0 + 32, y0 + 118); g.fillText("ideia.", x0 + 32, y0 + 200);
       g.fillRect(x0 + 32, y0 + 236, 150, 7);
       g.lineWidth = 6; g.beginPath(); g.arc(x0 + 405, y0 + 146, 70, 0, Math.PI * 2); g.stroke();
       g.beginPath(); g.arc(x0 + 405, y0 + 146, 34, 0, Math.PI * 2); g.fill();
@@ -164,9 +164,9 @@
     // brilho de fundo
     var glowR = sc * (260 + shine * 220);
     var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
-    g.addColorStop(0, "rgba(95,224,163," + (0.18 + shine * 0.3).toFixed(3) + ")");
-    g.addColorStop(0.45, "rgba(35,184,116," + (0.07 + shine * 0.12).toFixed(3) + ")");
-    g.addColorStop(1, "rgba(35,184,116,0)");
+    g.addColorStop(0, "rgba(215,228,75," + (0.18 + shine * 0.3).toFixed(3) + ")");
+    g.addColorStop(0.45, "rgba(142,184,90," + (0.07 + shine * 0.12).toFixed(3) + ")");
+    g.addColorStop(1, "rgba(142,184,90,0)");
     ctx.fillStyle = g;
     ctx.fillRect(cx - glowR, cy - glowR, glowR * 2, glowR * 2);
 
@@ -189,7 +189,7 @@
       var r = (0.8 + q.s * 0.7) * Math.max(0.7, sc);
       var tw = 0.55 + 0.45 * Math.sin(time * 2 + q.ph * 3);
       var white = q.hue > 0.72 || (to === 3 && q.hue > 0.4 * (1 - shine));
-      ctx.fillStyle = white ? "rgba(235,255,245," + (0.55 + 0.45 * tw).toFixed(2) + ")" : "rgba(95,224,163," + (0.45 + 0.5 * tw).toFixed(2) + ")";
+      ctx.fillStyle = white ? "rgba(246,248,236," + (0.55 + 0.45 * tw).toFixed(2) + ")" : "rgba(215,228,75," + (0.45 + 0.5 * tw).toFixed(2) + ")";
       ctx.fillRect(px - r / 2, py - r / 2, r, r);
     }
     ctx.restore();
@@ -204,8 +204,8 @@
       for (var k = 0; k < 12; k++) {
         ctx.rotate(Math.PI / 6);
         var lg = ctx.createLinearGradient(0, 0, 0, -380 * sc);
-        lg.addColorStop(0, "rgba(180,255,220," + (0.14 * ra).toFixed(3) + ")");
-        lg.addColorStop(1, "rgba(95,224,163,0)");
+        lg.addColorStop(0, "rgba(238,245,195," + (0.14 * ra).toFixed(3) + ")");
+        lg.addColorStop(1, "rgba(215,228,75,0)");
         ctx.fillStyle = lg;
         ctx.beginPath(); ctx.moveTo(-6 * sc, 0); ctx.lineTo(6 * sc, 0); ctx.lineTo(30 * sc, -380 * sc); ctx.lineTo(-30 * sc, -380 * sc); ctx.closePath(); ctx.fill();
       }
