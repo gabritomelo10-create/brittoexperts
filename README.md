@@ -41,6 +41,10 @@ Quatro painéis com cenas animadas em CSS (palestra, pitch, abertura/convenção
 - Linhas de palestras com preenchimento verde no hover; iniciais que giram.
 - Barra de progresso, header que se esconde ao rolar, menu que marca a seção atual.
 
+## Propostas
+
+`proposta/otorhinus/` é a proposta interativa do rebranding do ecossistema Otorhinus (Dr. Jandrio Campos, Dra. Mônica Pinheiro e Otorhinus Manaus). A página é independente, com CSS e JS no próprio `index.html`, e o PDF original fica ao lado para download. Abra em `/proposta/otorhinus/`. Ela não aparece em buscadores (`noindex`).
+
 ## Rodar localmente
 
 ```bash
