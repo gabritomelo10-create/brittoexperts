@@ -310,33 +310,88 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
 .steps-note{margin-top:30px;font-weight:500;color:var(--mute-d)}
 .steps-note b{color:var(--limao);font-weight:600}
 
-/* ---------- 11. investimento ---------- */
+/* ---------- valor e investimento: ancoragem, escada de preço, reenquadramento ---------- */
+.stack{border-radius:var(--r);overflow:clip}
+.st-row{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line-l)}
+@media (min-width:760px){.st-row{grid-template-columns:1fr 150px 150px}}
+.st-row h3{font-size:1.04rem;font-weight:600}
+.st-row p{font-size:.9rem;color:var(--mute-l)}
+.st-row .v{font-family:var(--f-title);font-weight:600;text-align:right;white-space:nowrap;color:var(--mute-l)}
+.st-row .v3{font-family:var(--f-title);font-weight:700;text-align:right;white-space:nowrap;color:var(--profundo)}
+.st-row .v{display:none}
+@media (min-width:760px){.st-row .v{display:block}}
+.st-head{padding-block:14px;background:rgba(38,57,43,.06)}
+.st-head span{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-l);text-align:right}
+.st-head span:first-child{text-align:left}
+.st-head .v-h{display:none}
+@media (min-width:760px){.st-head .v-h{display:block}}
+.st-item{opacity:0;transform:translateX(-12px);transition:opacity .6s var(--ease),transform .6s var(--ease),background .4s}
+.st-item.in{opacity:1;transform:none}
+.st-item.in .v3{animation:flash 1s var(--ease)}
+@keyframes flash{30%{color:#7fa53a}}
+.st-total{position:sticky;bottom:44px;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 18px;padding:22px 24px;background:var(--carvao);color:var(--porcelana)}
+.st-total > span{font-size:.95rem;color:var(--mute-d)}
+.st-total strong{font-family:var(--f-title);font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em}
+.anchor-note{margin-top:14px;font-size:.85rem;color:var(--mute-l)}
+
 .inv{display:grid;gap:24px;align-items:stretch}
-@media (min-width:960px){.inv{grid-template-columns:1.25fr .9fr}}
-.price{border-radius:20px;padding:clamp(28px,4vw,46px);position:relative;overflow:hidden}
+@media (min-width:980px){.inv{grid-template-columns:1fr 1fr}}
+.ladder{display:flex;flex-direction:column;gap:14px}
+.rung{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.rung small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--limao)}
+.rung span{display:block;margin-top:4px;color:var(--mute-d);font-size:.95rem}
+.rung b{position:relative;font-family:var(--f-title);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;white-space:nowrap;transition:color .6s,opacity .6s}
+.rung.cut b::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:3px;border-radius:2px;background:#e0533d;transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease);transition-delay:calc(var(--d,0) * 90ms + 600ms)}
+.rung.cut.in b{color:var(--mute-d);opacity:.75}
+.rung.cut.in b::after{transform:scaleX(1)}
+.rung.win{border-radius:var(--r);background:var(--deep);border:1px solid rgba(215,228,75,.45);box-shadow:0 0 0 1px rgba(215,228,75,.15),0 24px 60px -30px rgba(215,228,75,.5)}
+.rung.win b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.arrow-d{align-self:center;color:var(--limao);font-size:1.2rem;line-height:1;opacity:.7}
+.price{border-radius:20px;padding:clamp(28px,4vw,46px);position:relative;overflow:hidden;display:flex;flex-direction:column}
 .price .ast-bg{position:absolute;right:-50px;top:-50px;width:260px;height:260px;color:rgba(17,19,15,.08);transform:rotate(12deg)}
 .price > *{position:relative}
-.price .was{font-size:1.05rem;color:var(--profundo)}
-.price .was s{text-decoration-thickness:2px;white-space:nowrap}
-.price .now{display:flex;align-items:baseline;gap:12px;margin-top:20px;flex-wrap:wrap;font-family:var(--f-title)}
+.price .k{font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--profundo)}
+.price .now{display:flex;align-items:baseline;gap:12px;margin-top:14px;flex-wrap:wrap;font-family:var(--f-title)}
 .price .now small{font-size:clamp(2rem,4vw,2.8rem);font-weight:700}
-.price .now strong{font-size:clamp(3.4rem,10vw,6.6rem);font-weight:700;letter-spacing:-.05em;line-height:.9}
-.price .tot{margin-top:18px;font-family:var(--f-title);font-weight:600;font-size:1.12rem}
-.bars{margin-top:28px;display:flex;flex-direction:column;gap:10px}
-.bar{position:relative;height:32px;border-radius:8px;background:rgba(17,19,15,.1);overflow:hidden}
-.bar i{position:absolute;inset:0 auto 0 0;display:flex;align-items:center;padding-left:12px;font-style:normal;font-size:.8125rem;font-weight:600;white-space:nowrap;width:0;transition:width 1.4s var(--ease)}
-.bar.std i{background:rgba(17,19,15,.16);color:var(--profundo);text-decoration:line-through}
-.bar.eco i{background:var(--carvao);color:var(--limao)}
-.saving{margin-top:26px;padding:22px 26px}
-.saving b{display:block;font-family:var(--f-title);font-size:1.5rem}
-.saving > span{color:var(--mute-d)}
-.comp{padding:clamp(28px,4vw,40px);display:flex;flex-direction:column}
-.comp .k{font-size:.75rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--limao)}
-.row{display:flex;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid rgba(215,228,75,.16);font-size:1.03rem}
-.row b{font-family:var(--f-title);font-weight:600;color:var(--porcelana);white-space:nowrap}
-.row.sum b{color:var(--limao)}
-.row.off b{color:var(--limao-2)}
-.comp p{margin-top:auto;padding-top:22px;color:var(--mute-d);font-size:.95rem}
+.price .now strong{font-size:clamp(3.4rem,9vw,6.2rem);font-weight:700;letter-spacing:-.05em;line-height:.9}
+.price .tot{margin-top:16px;font-family:var(--f-title);font-weight:600;font-size:1.1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{background:var(--carvao);color:var(--limao);border-radius:999px;padding:8px 14px;font-size:.875rem;font-weight:600}
+.chips span.alt{background:rgba(17,19,15,.12);color:var(--carvao)}
+.price .incl{margin-top:auto;padding-top:24px;font-size:.95rem;color:var(--profundo)}
+
+.vp{margin-top:24px;padding:clamp(24px,3.5vw,36px)}
+.vp-row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin-top:14px}
+@media (max-width:600px){.vp-row{grid-template-columns:1fr}}
+.vp-row > span{font-size:.95rem;color:var(--mute-d)}
+.vp-bar{height:40px;border-radius:10px;background:rgba(244,246,240,.06);overflow:hidden}
+.vp-bar i{display:flex;align-items:center;height:100%;width:0;padding-left:14px;font-style:normal;font-family:var(--f-title);font-weight:700;white-space:nowrap;transition:width 1.6s var(--ease)}
+.vp-bar.val i{background:var(--grad);color:var(--carvao)}
+.vp-bar.pri i{background:rgba(244,246,240,.16);color:var(--porcelana)}
+.vp.in .vp-bar.val i{width:100%}
+.vp.in .vp-bar.pri i{width:46.3%;transition-delay:.5s}
+.vp-out{margin-top:20px;font-family:var(--f-title);font-weight:600;font-size:clamp(1.1rem,2vw,1.4rem)}
+.vp-out b{color:var(--limao)}
+
+.tiles{display:grid;gap:16px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.tile{padding:24px}
+.tile strong{display:block;font-family:var(--f-title);font-size:clamp(1.7rem,3vw,2.2rem);letter-spacing:-.03em}
+.tile span{display:block;margin-top:6px;color:var(--mute-d);font-size:.95rem}
+
+.sim{margin-top:24px;padding:clamp(24px,3.5vw,38px);display:grid;gap:28px}
+@media (min-width:900px){.sim{grid-template-columns:1fr 1fr;align-items:center}}
+.sim h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
+.sim .lede{font-size:1rem;margin-top:10px}
+.field{margin-top:22px}
+.field label{display:flex;justify-content:space-between;gap:12px;font-size:.95rem;color:var(--mute-d)}
+.field label b{font-family:var(--f-title);color:var(--porcelana)}
+.field input{width:100%;margin-top:10px;accent-color:var(--limao);height:28px}
+.sim-out{display:grid;gap:12px}
+.sim-out div{border-radius:12px;padding:18px 20px;background:rgba(17,19,15,.45);border:1px solid rgba(215,228,75,.14)}
+.sim-out strong{display:block;font-family:var(--f-title);font-size:clamp(1.5rem,3vw,2rem);color:var(--limao);letter-spacing:-.02em}
+.sim-out span{color:var(--mute-d);font-size:.95rem}
+.sim-note{font-size:.8rem;color:var(--mute-d);opacity:.8}
+.inv-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 
 /* ---------- 12. muda ---------- */
 .switch{display:inline-flex;background:#fff;border:1px solid var(--line-l);border-radius:14px;padding:5px;margin-bottom:28px;position:relative}
@@ -669,42 +724,7 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
   </div>
 </section>
 
-<!-- 11 · INVESTIMENTO -->
-<section class="dark" id="investimento" data-theme="dark">
-  <div class="photo" data-par><img src="img/grupo.jpg" alt="" loading="lazy"></div>
-  <div class="wrap in-front">
-    <div class="head">
-      <p class="kicker" data-reveal>Ato 3 / Apoteose / Investimento</p>
-      <h2 class="title" data-reveal style="--d:1">Três rebrandings, com a condição de ecossistema.</h2>
-    </div>
-    <div class="inv">
-      <div class="price solid-lime" data-reveal>
-        <svg class="ast-bg" fill="currentColor"><use href="#ast"/></svg>
-        <p class="was">Valor padrão: 3 × R$ 25.000 = <s>R$ 75.000</s></p>
-        <p class="now"><small>10x</small><strong>R$ <span data-count="5000">0</span></strong></p>
-        <p class="tot">Total de R$ 50.000 para as três marcas</p>
-        <div class="bars" aria-hidden="true">
-          <div class="bar std"><i data-w="100">Padrão · R$ 75.000</i></div>
-          <div class="bar eco"><i data-w="66.67">Ecossistema · R$ 50.000</i></div>
-        </div>
-        <div class="saving glass">
-          <b class="lime">Economia de R$ <span data-count="25000">0</span></b>
-          <span>Uma Imersão de Marca única para o ecossistema</span>
-        </div>
-      </div>
-      <aside class="comp glass" data-reveal style="--d:1">
-        <p class="k">Composição</p>
-        <div class="row"><span>3 rebrandings · valor padrão</span><b>R$ 75.000</b></div>
-        <div class="row off"><span>Condição de ecossistema</span><b>− R$ 25.000</b></div>
-        <div class="row sum"><span>Total para as três marcas</span><b>R$ 50.000</b></div>
-        <div class="row sum"><span>Parcelamento</span><b>10x R$ 5.000</b></div>
-        <p>Imersão, moodboard, identidade, manual, guia de social media, enxoval para redes e materiais gráficos para cada marca.</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- 12 · O QUE MUDA -->
+<!-- 11 · O QUE MUDA -->
 <section class="light" id="muda" data-theme="light">
   <div class="wrap">
     <div class="head" style="margin-bottom:28px">
@@ -729,7 +749,88 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
   </div>
 </section>
 
-<!-- 13 · PARA COMEÇAR -->
+<!-- 12 · O QUE VOCÊS RECEBEM (âncora) -->
+<section class="light" id="valor" data-theme="light">
+  <div class="photo soft"><img src="img/claro.jpg" alt="" loading="lazy"></div>
+  <div class="wrap in-front">
+    <div class="head">
+      <p class="kicker" data-reveal>Ato 3 / Apoteose / O que vocês recebem</p>
+      <h2 class="title" data-reveal style="--d:1">Antes do preço, o valor de tudo o que entra.</h2>
+      <p class="lede" data-reveal style="--d:2">Cada entrega, se fosse contratada separadamente, para cada uma das três marcas.</p>
+    </div>
+    <div class="stack glass-l" id="stack">
+      <div class="st-row st-head"><span>Entrega</span><span class="v-h">Por marca</span><span>× 3 marcas</span></div>
+      <div class="st-total"><span>Valor das entregas contratadas separadamente</span><strong>R$ <span id="stackSum">0</span></strong></div>
+    </div>
+    <p class="anchor-note" data-reveal>Valores de referência por entrega avulsa, por marca.</p>
+  </div>
+</section>
+
+<!-- 13 · INVESTIMENTO -->
+<section class="dark" id="investimento" data-theme="dark">
+  <div class="photo" data-par><img src="img/grupo.jpg" alt="" loading="lazy"></div>
+  <div class="wrap in-front">
+    <div class="head">
+      <p class="kicker" data-reveal>Ato 3 / Apoteose / Investimento</p>
+      <h2 class="title" data-reveal style="--d:1">Do valor ao preço.</h2>
+      <p class="lede" data-reveal style="--d:2">Fechando as três marcas juntas, a Imersão de Marca é uma só, e a economia vem direto para vocês.</p>
+    </div>
+    <div class="inv">
+      <div class="ladder">
+        <div class="rung glass cut" data-reveal><div><small>Contratando cada entrega separadamente</small><span>9 entregas × 3 marcas</span></div><b>R$ 108.000</b></div>
+        <span class="arrow-d" aria-hidden="true">↓</span>
+        <div class="rung glass cut" data-reveal style="--d:2"><div><small>Pacote de rebranding BRITTO*</small><span>3 × R$ 25.000</span></div><b>R$ 75.000</b></div>
+        <span class="arrow-d" aria-hidden="true">↓</span>
+        <div class="rung win" data-reveal style="--d:4"><div><small>Condição de ecossistema</small><span>As três marcas, juntas</span></div><b>R$ 50.000</b></div>
+      </div>
+      <div class="price solid-lime" data-reveal style="--d:5">
+        <svg class="ast-bg" fill="currentColor"><use href="#ast"/></svg>
+        <p class="k">Investimento para as três marcas</p>
+        <p class="now"><small>10x</small><strong>R$ <span data-count="5000">0</span></strong></p>
+        <p class="tot">Total de R$ 50.000 · R$ 16.667 por marca</p>
+        <div class="chips">
+          <span>Economia de R$ 58.000 (54%) sobre o avulso</span>
+          <span class="alt">R$ 25.000 a menos que o pacote</span>
+        </div>
+        <p class="incl">24 entregas, 1 Imersão de Marca, 4 etapas com aprovação e a Cerimônia de Entrega.</p>
+      </div>
+    </div>
+
+    <div class="vp glass" id="vp" data-reveal>
+      <p class="kicker" style="padding-bottom:14px">Valor × preço</p>
+      <div class="vp-row"><span>O que vocês recebem</span><div class="vp-bar val"><i>R$ 108.000</i></div></div>
+      <div class="vp-row"><span>O que vocês investem</span><div class="vp-bar pri"><i>R$ 50.000</i></div></div>
+      <p class="vp-out">Para cada <b>R$ 1</b> investido, <b>R$ 2,16</b> em entregas.</p>
+    </div>
+
+    <div class="tiles">
+      <div class="tile glass" data-reveal><strong class="lime">R$ 1.667</strong><span>por marca, por mês, durante 10 meses</span></div>
+      <div class="tile glass" data-reveal style="--d:1"><strong class="lime">R$ 2.083</strong><span>por entrega, em 24 entregas</span></div>
+      <div class="tile glass" data-reveal style="--d:2"><strong class="lime">≈ R$ 56</strong><span>por dia, por marca</span></div>
+    </div>
+
+    <div class="sim glass" data-reveal>
+      <div>
+        <h3>Quantos pacientes pagam a parcela?</h3>
+        <p class="lede">Ajuste com os números da clínica.</p>
+        <div class="field"><label for="tk">Valor médio por paciente <b id="tkOut">R$ 1.500</b></label><input type="range" id="tk" min="300" max="20000" step="100" value="1500"></div>
+        <div class="field"><label for="np">Pacientes novos por mês com a nova presença <b id="npOut">3</b></label><input type="range" id="np" min="1" max="20" step="1" value="3"></div>
+      </div>
+      <div class="sim-out">
+        <div><strong id="simA">4 pacientes</strong><span>por mês já cobrem a parcela de R$ 5.000</span></div>
+        <div><strong id="simB">12 meses</strong><span>para o investimento total se pagar</span></div>
+        <p class="sim-note">Simulação ilustrativa, feita com os números que vocês escolhem. Não é promessa de resultado.</p>
+      </div>
+    </div>
+
+    <div class="inv-cta" data-reveal>
+      <a class="btn" href="#comecar">Garantir a condição de ecossistema <span class="arr">→</span></a>
+      <a class="btn ghost" id="waInv" href="#" target="_blank" rel="noopener">Tirar uma dúvida no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · PARA COMEÇAR -->
 <section class="dark final" id="comecar" data-theme="dark">
   <div class="photo" data-par><img src="img/bora.jpg" alt="" loading="lazy"></div>
   <div class="wrap in-front">
@@ -793,9 +894,6 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
       var el = e.target;
       el.classList.add("in");
       $$("[data-count]", el).forEach(count);
-      if (el.matches(".price")) $$(".bar i", el).forEach(function (b, i) {
-        setTimeout(function () { b.style.width = b.dataset.w + "%"; }, 300 + i * 260);
-      });
       io.unobserve(el);
     });
   }, { threshold: 0.18, rootMargin: "0px 0px -6% 0px" });
@@ -955,6 +1053,57 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
       if (es[0].isIntersecting) { o.disconnect(); setTimeout(function () { setBA("depois"); }, 1300); }
     }, { threshold: .5 }).observe(ba);
   }
+
+
+  /* ---------- âncora: valor de cada entrega, somando ao rolar ---------- */
+  var VALUE = [
+    ["Imersão de Marca e posicionamento", "Promessa, mensagens e tom de voz", 6000],
+    ["Moodboard e direção estética", "Referências e aprovação da direção visual", 2500],
+    ["Logo e identidade visual", "Logo, cores, tipografia e elementos", 8000],
+    ["Manual da marca", "Regras de uso para equipe e fornecedores", 3500],
+    ["Sistema de endosso", "Assinatura comum e padrão de informações", 3000],
+    ["Guia de Social Media", "Linha editorial, tom e regras de cada perfil", 3000],
+    ["Enxoval visual para redes", "Modelos de posts, stories, destaques e capas", 4000],
+    ["Materiais gráficos", "Papelaria, uniformes, crachás, timbrado, receituário", 4500],
+    ["Cerimônia de Entrega", "Apresentação, arquivos e orientação da equipe", 1500]
+  ];
+  function brl(v) { return Math.round(v).toLocaleString("pt-BR"); }
+  var stack = $("#stack"), sumEl = $("#stackSum"), shown = 0, sumTo = 0, sumNow = 0, sumRaf = 0;
+  stack.querySelector(".st-total").insertAdjacentHTML("beforebegin", VALUE.map(function (r, i) {
+    return '<div class="st-row st-item" data-i="' + i + '"><div><h3>' + r[0] + "</h3><p>" + r[1] + '</p></div><span class="v">R$ ' + brl(r[2]) + '</span><span class="v3">R$ ' + brl(r[2] * 3) + "</span></div>";
+  }).join(""));
+  function tickSum() {
+    sumNow += (sumTo - sumNow) * .12;
+    if (Math.abs(sumTo - sumNow) < 50) sumNow = sumTo;
+    sumEl.textContent = brl(sumNow);
+    sumRaf = sumNow !== sumTo ? requestAnimationFrame(tickSum) : 0;
+  }
+  var stIo = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target, i = +el.dataset.i;
+      stIo.unobserve(el);
+      setTimeout(function () {
+        el.classList.add("in");
+        sumTo += VALUE[i][2] * 3;
+        if (reduce) { sumNow = sumTo; sumEl.textContent = brl(sumTo); }
+        else if (!sumRaf) sumRaf = requestAnimationFrame(tickSum);
+      }, (shown++ % 3) * 120);
+    });
+  }, { threshold: .6 });
+  $$(".st-item", stack).forEach(function (el) { stIo.observe(el); });
+
+  /* ---------- simulador: quantos pacientes pagam a parcela ---------- */
+  var tk = $("#tk"), np = $("#np");
+  function sim() {
+    var t = +tk.value, n = +np.value, a = Math.ceil(5000 / t), m = Math.ceil(50000 / (t * n));
+    $("#tkOut").textContent = "R$ " + brl(t);
+    $("#npOut").textContent = n;
+    $("#simA").textContent = a + (a === 1 ? " paciente" : " pacientes");
+    $("#simB").textContent = m <= 1 ? "1 mês" : m + " meses";
+  }
+  tk.addEventListener("input", sim); np.addEventListener("input", sim); sim();
+  $("#waInv").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent("Olá, Gabriel! Estou vendo a proposta do ecossistema Otorhinus e tenho uma dúvida sobre o investimento.");
 
   /* ---------- scroll: topo, rodapé, parallax, etapas ---------- */
   var top = $("#top"), foot = $("#foot"), footN = $("#footN"), steps = $("#steps"), stepEls = $$(".step", steps);
