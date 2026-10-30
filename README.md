@@ -8,7 +8,9 @@ Segue o *Guia de Identidade Visual BRITTO\* GROUP, vol. 02*:
 
 - Paleta: Limão BRITTO\* `#D7E44B` (em degradê a partir de `#8EB85A`), Carvão `#11130F`, Porcelana `#F4F6F0`, Verde profundo `#26392B`, Névoa verde `#E3EBCB`. Tokens no topo de `css/style.css`.
 - Tipografia: Sora 600/700 em títulos e chamadas, Manrope 400/500 em textos e rótulos.
-- Logo e símbolo em `img/brand/`, extraídos em vetor do próprio guia (principal, compacta e asterisco, nas versões limão e clara). Não redigitar a logo com fonte.
+- Logo e símbolo em `img/brand/`, extraídos em vetor do próprio guia (principal GROUP, EXPERTS, compacta e asterisco, nas versões limão e clara). Não redigitar a logo com fonte.
+- O site se apresenta como **BRITTO\* Experts**, uma empresa BRITTO\* GROUP, como define o guia.
+- Imagem de compartilhamento (WhatsApp, Instagram etc.): `img/brand/og-image.jpg`. As etiquetas `og:*` no `index.html` apontam para o endereço do GitHub Pages; troque quando houver domínio próprio.
 - Imagens 3D do asterisco (`img/brand/asterisco-*.jpg`) vêm do guia.
 
 ## Abertura em 3D (scroll)
@@ -25,7 +27,7 @@ O mouse move levemente a câmera (parallax). Respeita `prefers-reduced-motion`.
 
 Trilho horizontal que anda com o scroll no desktop (no celular, deslize para o lado). Os cards giram de leve e endireitam no centro; no hover a foto ganha cor.
 
-**Fotos:** salve cada foto em `img/palestrantes/<nome>.jpg` (retrato, ~800×1000). Os nomes dos arquivos estão em `js/data.js` (ex.: `icaro-gaspar.jpg`). Enquanto a foto não existir, o card mostra as iniciais.
+**Fotos:** salve cada foto em `img/palestrantes/` (retrato, ~800×1000) e preencha o campo `foto` da pessoa em `js/data.js` com o nome do arquivo (o nome sugerido está no comentário de cada linha, ex.: `icaro-gaspar.jpg`). Com `foto` vazio, o card mostra as iniciais e nenhuma imagem é buscada.
 
 ## Apresentações (MacBook 3D)
 

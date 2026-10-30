@@ -375,7 +375,7 @@
     var base = Math.min(H, W * 1.15);
     var sFinal = (0.86 * base) / (PHRASE_Z - CAM_END_Z);
     // a frase ocupa o alto da tela no enquadramento final; a última linha passa atrás da cabeça
-    var topScreen = Math.max(H * 0.14, 120);
+    var topScreen = H < 520 ? 62 : Math.max(H * 0.14, 120); // em telas baixas o cabeçalho é menor
     var yTop = CAM_END_Y + (H * 0.5 - topScreen) / sFinal;
     ctx.save();
     ctx.textAlign = "center";
