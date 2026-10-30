@@ -52,7 +52,7 @@ Quatro painéis com cenas animadas em CSS (palestra, pitch, abertura/convenção
 
 ## Propostas
 
-`proposta/otorhinus/` é a proposta interativa do rebranding do ecossistema Otorhinus (Dr. Jandrio Campos, Dra. Mônica Pinheiro e Otorhinus Manaus). A página é independente, com CSS e JS no próprio `index.html`, e o PDF original fica ao lado para download. Abra em `/proposta/otorhinus/`. Ela não aparece em buscadores (`noindex`).
+`proposta/otorhinus/` é a proposta interativa do rebranding do ecossistema Otorhinus (Dr. Jandrio Campos, Dra. Mônica Pinheiro e Otorhinus Manaus). A página segue o Guia de Identidade Visual BRITTO* GROUP (vol. 02): paleta Limão, Carvão, Porcelana, Verde profundo e Névoa verde, Sora + Manrope, logo vetorial em `img/britto-group.svg` e fundos tirados dos renders do guia em `img/`. CSS e JS ficam no próprio `index.html`. Abra em `/proposta/otorhinus/`. Ela não aparece em buscadores (`noindex`).
 
 ## Rodar localmente
 
