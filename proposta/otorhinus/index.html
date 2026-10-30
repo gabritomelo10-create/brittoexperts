@@ -310,33 +310,10 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
 .steps-note{margin-top:30px;font-weight:500;color:var(--mute-d)}
 .steps-note b{color:var(--limao);font-weight:600}
 
-/* ---------- valor e investimento: ancoragem, escada de preço, reenquadramento ---------- */
-.stack{border-radius:var(--r);overflow:clip}
-.st-row{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line-l)}
-@media (min-width:760px){.st-row{grid-template-columns:1fr 150px 150px}}
-.st-row h3{font-size:1.04rem;font-weight:600}
-.st-row p{font-size:.9rem;color:var(--mute-l)}
-.st-row .v{font-family:var(--f-title);font-weight:600;text-align:right;white-space:nowrap;color:var(--mute-l)}
-.st-row .v3{font-family:var(--f-title);font-weight:700;text-align:right;white-space:nowrap;color:var(--profundo)}
-.st-row .v{display:none}
-@media (min-width:760px){.st-row .v{display:block}}
-.st-head{padding-block:14px;background:rgba(38,57,43,.06)}
-.st-head span{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-l);text-align:right}
-.st-head span:first-child{text-align:left}
-.st-head .v-h{display:none}
-@media (min-width:760px){.st-head .v-h{display:block}}
-.st-item{opacity:0;transform:translateX(-12px);transition:opacity .6s var(--ease),transform .6s var(--ease),background .4s}
-.st-item.in{opacity:1;transform:none}
-.st-item.in .v3{animation:flash 1s var(--ease)}
-@keyframes flash{30%{color:#7fa53a}}
-.st-total{position:sticky;bottom:44px;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 18px;padding:22px 24px;background:var(--carvao);color:var(--porcelana)}
-.st-total > span{font-size:.95rem;color:var(--mute-d)}
-.st-total strong{font-family:var(--f-title);font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em}
-.anchor-note{margin-top:14px;font-size:.85rem;color:var(--mute-l)}
-
+/* ---------- investimento: valor padrão BRITTO*, condição especial, reenquadramento ---------- */
 .inv{display:grid;gap:24px;align-items:stretch}
 @media (min-width:980px){.inv{grid-template-columns:1fr 1fr}}
-.ladder{display:flex;flex-direction:column;gap:14px}
+.ladder{display:flex;flex-direction:column;justify-content:center;gap:14px}
 .rung{padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .rung small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--limao)}
 .rung span{display:block;margin-top:4px;color:var(--mute-d);font-size:.95rem}
@@ -366,10 +343,10 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
 .vp-row > span{font-size:.95rem;color:var(--mute-d)}
 .vp-bar{height:40px;border-radius:10px;background:rgba(244,246,240,.06);overflow:hidden}
 .vp-bar i{display:flex;align-items:center;height:100%;width:0;padding-left:14px;font-style:normal;font-family:var(--f-title);font-weight:700;white-space:nowrap;transition:width 1.6s var(--ease)}
-.vp-bar.val i{background:var(--grad);color:var(--carvao)}
-.vp-bar.pri i{background:rgba(244,246,240,.16);color:var(--porcelana)}
+.vp-bar.val i{background:rgba(244,246,240,.16);color:var(--mute-d);text-decoration:line-through}
+.vp-bar.pri i{background:var(--grad);color:var(--carvao)}
 .vp.in .vp-bar.val i{width:100%}
-.vp.in .vp-bar.pri i{width:38.8%;transition-delay:.5s}
+.vp.in .vp-bar.pri i{width:66.7%;transition-delay:.5s}
 .vp-out{margin-top:20px;font-family:var(--f-title);font-weight:600;font-size:clamp(1.1rem,2vw,1.4rem)}
 .vp-out b{color:var(--limao)}
 
@@ -749,39 +726,20 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
   </div>
 </section>
 
-<!-- 12 · O QUE VOCÊS RECEBEM (âncora) -->
-<section class="light" id="valor" data-theme="light">
-  <div class="photo soft"><img src="img/claro.jpg" alt="" loading="lazy"></div>
-  <div class="wrap in-front">
-    <div class="head">
-      <p class="kicker" data-reveal>Ato 3 / Apoteose / O que vocês recebem</p>
-      <h2 class="title" data-reveal style="--d:1">Antes do preço, o valor de tudo o que entra.</h2>
-      <p class="lede" data-reveal style="--d:2">Cada entrega, se fosse contratada separadamente, para cada uma das três marcas.</p>
-    </div>
-    <div class="stack glass-l" id="stack">
-      <div class="st-row st-head"><span>Entrega</span><span class="v-h">Por marca</span><span>× 3 marcas</span></div>
-      <div class="st-total"><span>Valor das entregas contratadas separadamente</span><strong>R$ <span id="stackSum">0</span></strong></div>
-    </div>
-    <p class="anchor-note" data-reveal>Valores de referência por entrega avulsa, por marca.</p>
-  </div>
-</section>
-
-<!-- 13 · INVESTIMENTO -->
+<!-- 12 · INVESTIMENTO -->
 <section class="dark" id="investimento" data-theme="dark">
   <div class="photo" data-par><img src="img/grupo.jpg" alt="" loading="lazy"></div>
   <div class="wrap in-front">
     <div class="head">
       <p class="kicker" data-reveal>Ato 3 / Apoteose / Investimento</p>
-      <h2 class="title" data-reveal style="--d:1">Do valor ao preço.</h2>
-      <p class="lede" data-reveal style="--d:2">Fechando as três marcas juntas, a Imersão de Marca é uma só, e a economia vem direto para vocês.</p>
+      <h2 class="title" data-reveal style="--d:1">Três marcas pelo preço de duas.</h2>
+      <p class="lede" data-reveal style="--d:2">Fechando as três marcas juntas, a Imersão de Marca é uma só. Por isso vocês têm uma condição especial, abaixo do valor padrão BRITTO*.</p>
     </div>
     <div class="inv">
       <div class="ladder">
-        <div class="rung glass cut" data-reveal><div><small>Contratando cada entrega separadamente</small><span>10 itens × 3 marcas, com os sites</span></div><b>R$ 129.000</b></div>
+        <div class="rung glass cut" data-reveal><div><small>Valor padrão BRITTO*</small><span>Rebranding completo: R$ 25.000 por marca</span></div><b>R$ 75.000</b></div>
         <span class="arrow-d" aria-hidden="true">↓</span>
-        <div class="rung glass cut" data-reveal style="--d:2"><div><small>Pacote de rebranding BRITTO*</small><span>3 × R$ 25.000</span></div><b>R$ 75.000</b></div>
-        <span class="arrow-d" aria-hidden="true">↓</span>
-        <div class="rung win" data-reveal style="--d:4"><div><small>Condição de ecossistema</small><span>As três marcas, juntas</span></div><b>R$ 50.000</b></div>
+        <div class="rung win" data-reveal style="--d:4"><div><small>Condição especial para vocês</small><span>As três marcas juntas · R$ 16.667 por marca, em vez de R$ 25.000</span></div><b>R$ 50.000</b></div>
       </div>
       <div class="price solid-lime" data-reveal style="--d:5">
         <svg class="ast-bg" fill="currentColor"><use href="#ast"/></svg>
@@ -789,18 +747,18 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
         <p class="now"><small>10x</small><strong>R$ <span data-count="5000">0</span></strong></p>
         <p class="tot">Total de R$ 50.000 · R$ 16.667 por marca</p>
         <div class="chips">
-          <span>Economia de R$ 79.000 (61%) sobre o avulso</span>
-          <span class="alt">R$ 25.000 a menos que o pacote</span>
+          <span>Economia de R$ 25.000 sobre o valor padrão</span>
+          <span class="alt">Uma das três marcas sai por conta da condição</span>
         </div>
         <p class="incl">27 entregas, incluindo 3 sites com 1 ano de hospedagem e 1 ano de domínio, 1 Imersão de Marca, 4 etapas com aprovação e a Cerimônia de Entrega.</p>
       </div>
     </div>
 
     <div class="vp glass" id="vp" data-reveal>
-      <p class="kicker" style="padding-bottom:14px">Valor × preço</p>
-      <div class="vp-row"><span>O que vocês recebem</span><div class="vp-bar val"><i>R$ 129.000</i></div></div>
-      <div class="vp-row"><span>O que vocês investem</span><div class="vp-bar pri"><i>R$ 50.000</i></div></div>
-      <p class="vp-out">Para cada <b>R$ 1</b> investido, <b>R$ 2,58</b> em entregas.</p>
+      <p class="kicker" style="padding-bottom:14px">Valor padrão × condição especial</p>
+      <div class="vp-row"><span>Valor padrão BRITTO*</span><div class="vp-bar val"><i>R$ 75.000</i></div></div>
+      <div class="vp-row"><span>Condição especial</span><div class="vp-bar pri"><i>R$ 50.000</i></div></div>
+      <p class="vp-out">A economia de <b>R$ 25.000</b> equivale a <b>5 parcelas</b> e ao valor padrão de <b>uma marca inteira</b>.</p>
     </div>
 
     <div class="tiles">
@@ -830,7 +788,7 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
   </div>
 </section>
 
-<!-- 14 · PARA COMEÇAR -->
+<!-- 13 · PARA COMEÇAR -->
 <section class="dark final" id="comecar" data-theme="dark">
   <div class="photo" data-par><img src="img/bora.jpg" alt="" loading="lazy"></div>
   <div class="wrap in-front">
@@ -1056,46 +1014,8 @@ section{position:relative;padding-block:clamp(80px,11vw,136px);overflow:hidden}
   }
 
 
-  /* ---------- âncora: valor de cada entrega, somando ao rolar ---------- */
-  var VALUE = [
-    ["Imersão de Marca e posicionamento", "Promessa, mensagens e tom de voz", 6000],
-    ["Moodboard e direção estética", "Referências e aprovação da direção visual", 2500],
-    ["Logo e identidade visual", "Logo, cores, tipografia e elementos", 8000],
-    ["Manual da marca", "Regras de uso para equipe e fornecedores", 3500],
-    ["Sistema de endosso", "Assinatura comum e padrão de informações", 3000],
-    ["Guia de Social Media", "Linha editorial, tom e regras de cada perfil", 3000],
-    ["Enxoval visual para redes", "Modelos de posts, stories, destaques e capas", 4000],
-    ["Materiais gráficos", "Papelaria, uniformes, crachás, timbrado, receituário", 4500],
-    ["Site da marca", "Com 1 ano de hospedagem e 1 ano de domínio inclusos", 7000],
-    ["Cerimônia de Entrega", "Apresentação, arquivos e orientação da equipe", 1500]
-  ];
-  function brl(v) { return Math.round(v).toLocaleString("pt-BR"); }
-  var stack = $("#stack"), sumEl = $("#stackSum"), shown = 0, sumTo = 0, sumNow = 0, sumRaf = 0;
-  stack.querySelector(".st-total").insertAdjacentHTML("beforebegin", VALUE.map(function (r, i) {
-    return '<div class="st-row st-item" data-i="' + i + '"><div><h3>' + r[0] + "</h3><p>" + r[1] + '</p></div><span class="v">R$ ' + brl(r[2]) + '</span><span class="v3">R$ ' + brl(r[2] * 3) + "</span></div>";
-  }).join(""));
-  function tickSum() {
-    sumNow += (sumTo - sumNow) * .12;
-    if (Math.abs(sumTo - sumNow) < 50) sumNow = sumTo;
-    sumEl.textContent = brl(sumNow);
-    sumRaf = sumNow !== sumTo ? requestAnimationFrame(tickSum) : 0;
-  }
-  var stIo = new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      var el = e.target, i = +el.dataset.i;
-      stIo.unobserve(el);
-      setTimeout(function () {
-        el.classList.add("in");
-        sumTo += VALUE[i][2] * 3;
-        if (reduce) { sumNow = sumTo; sumEl.textContent = brl(sumTo); }
-        else if (!sumRaf) sumRaf = requestAnimationFrame(tickSum);
-      }, (shown++ % 3) * 120);
-    });
-  }, { threshold: .6 });
-  $$(".st-item", stack).forEach(function (el) { stIo.observe(el); });
-
   /* ---------- simulador: quantos pacientes pagam a parcela ---------- */
+  function brl(v) { return Math.round(v).toLocaleString("pt-BR"); }
   var tk = $("#tk"), np = $("#np");
   function sim() {
     var t = +tk.value, n = +np.value, a = Math.ceil(5000 / t), m = Math.ceil(50000 / (t * n));
