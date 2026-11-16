@@ -54,6 +54,8 @@ Quatro painéis com cenas animadas em CSS (palestra, pitch, abertura/convenção
 
 `proposta/otorhinus/` é a proposta interativa do rebranding do ecossistema Otorhinus (Dr. Jandrio Campos, Dra. Mônica Pinheiro e Otorhinus Manaus). A página segue o Guia de Identidade Visual BRITTO* GROUP (vol. 02): paleta Limão, Carvão, Porcelana, Verde profundo e Névoa verde, Sora + Manrope, logo vetorial em `img/britto-group.svg` e fundos tirados dos renders do guia em `img/`. CSS e JS ficam no próprio `index.html`. Abra em `/proposta/otorhinus/`. Ela não aparece em buscadores (`noindex`).
 
+`proposta/cynthia/` é a proposta de marketing para saúde da Dra. Cynthia Cardoso, no mesmo padrão visual. Foi pensada primeiro para o celular: cartões em trilho deslizável, barra fixa com o preço e o botão de WhatsApp, e alternância entre o plano de estratégia + produção (R$ 6.700/mês) e o plano com tráfego (R$ 8.200/mês). Abra em `/proposta/cynthia/`.
+
 ## Rodar localmente
 
 ```bash
