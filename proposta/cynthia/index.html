@@ -169,11 +169,7 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
 .col.deep .checks li{color:var(--porcelana)}
 .col.deep .ck{background:var(--limao);color:var(--carvao)}
 
-/* ---------- 03. o plano (abas) ---------- */
-.blk{padding-top:26px;margin-top:26px;border-top:1px solid rgba(215,228,75,.16)}
-.blk:first-of-type{padding-top:0;margin-top:0;border-top:0}
-.blk-t{display:flex;align-items:center;gap:12px;font-size:clamp(1.1rem,2vw,1.35rem);margin-bottom:16px}
-.blk-t span{flex:none;width:30px;height:30px;border-radius:8px;background:var(--grad);color:var(--carvao);display:grid;place-items:center;font-size:.9rem}
+/* ---------- 03. o plano (4 seções) ---------- */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (min-width:900px){.g2{grid-template-columns:repeat(4,1fr);gap:14px}}
 .mini{padding:18px 16px;display:flex;flex-direction:column;gap:6px}
@@ -186,7 +182,6 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
 @media (min-width:900px){.weeks{grid-template-columns:repeat(4,1fr)}}
 .weeks li{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;background:rgba(244,246,240,.06);border:1px solid rgba(215,228,75,.18);font-family:var(--f-title);font-weight:600;font-size:.88rem;line-height:1.25}
 .weeks b{flex:none;width:38px;height:38px;border-radius:50%;background:var(--grad);color:var(--carvao);display:grid;place-items:center;font-size:1rem}
-.after{margin-top:12px;font-size:.97rem;color:var(--mute-d)}
 .prod{display:grid;gap:16px;align-items:center}
 @media (min-width:900px){.prod{grid-template-columns:1fr 1fr;gap:28px}}
 .cal{padding:18px}
@@ -199,7 +194,17 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:.85rem;font-weight:600}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .legend i{width:12px;height:12px;border-radius:3px}
-#plano .ck{background:var(--grad);color:var(--carvao)}
+#producao .ck{background:var(--grad);color:var(--carvao)}
+#producao .checks li{font-size:1.02rem}
+/* seções do plano: fundo liso, sem foto */
+.plain.dark{background:radial-gradient(60% 55% at 85% 0%,rgba(140,192,90,.13),transparent 70%),var(--carvao)}
+.plain.light{background:radial-gradient(60% 55% at 85% 0%,rgba(215,228,75,.18),transparent 70%),var(--porcelana)}
+.light .weeks li{background:#fff;border-color:var(--line-l);color:var(--carvao);box-shadow:0 14px 30px -24px rgba(38,57,43,.5)}
+.light .journey li{background:#fff;border-color:var(--line-l);color:var(--carvao);box-shadow:0 14px 30px -24px rgba(38,57,43,.5)}
+.light .journey svg{color:var(--profundo)}
+.light .journey span{color:var(--mute-l)}
+.light .journey li.last{background:var(--grad)}
+@media (min-width:900px){.light .journey li:not(:last-child)::after{color:var(--profundo)}}
 .journey{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;counter-reset:j}
 @media (min-width:900px){.journey{grid-template-columns:repeat(4,1fr)}}
 .journey li{position:relative;display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:12px;background:rgba(244,246,240,.06);border:1px solid rgba(215,228,75,.18)}
@@ -388,62 +393,75 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
   </div>
 </section>
 
-<!-- 03 · O PLANO -->
-<section class="dark" id="plano" data-theme="dark">
-  <div class="photo" data-par><img src="img/oficina.jpg" alt="" loading="lazy"></div>
-  <div class="wrap in-front">
+<!-- 03 · O PLANO, em 4 seções -->
+<section class="dark plain" id="plano" data-theme="dark">
+  <div class="wrap">
     <div class="head">
-      <p class="kicker" data-reveal>O plano</p>
-      <h2 class="title" data-reveal style="--d:1">Estratégia primeiro. <span class="lime">Produção toda semana.</span></h2>
+      <p class="kicker" data-reveal>O plano · 1 de 4</p>
+      <h2 class="title" data-reveal style="--d:1">Estratégia primeiro.</h2>
+      <p class="lede" data-reveal style="--d:2">Antes de qualquer post, definimos o que a Dra. Cynthia comunica, para quem e com que objetivo.</p>
     </div>
-    <div class="blk" data-reveal>
-      <h3 class="blk-t"><span>1</span>Estratégia primeiro</h3>
-      <div class="g2">
-        <div class="mini glass"><svg><use href="#i-target"/></svg><b>Posicionamento</b><span>O que diferencia a Dra. Cynthia, em cada conteúdo.</span></div>
-        <div class="mini glass"><svg><use href="#i-users"/></svg><b>Público e serviços</b><span>Quem atrair e para quais procedimentos, mês a mês.</span></div>
-        <div class="mini solid-lime"><svg><use href="#i-path"/></svg><b>Jornada até a avaliação</b><span>Do vídeo ao WhatsApp, cada etapa pensada para converter.</span></div>
-        <div class="mini glass"><svg><use href="#i-cal"/></svg><b>Linha editorial</b><span>O que dizer, em que ordem e com que objetivo, todo mês.</span></div>
+    <div class="g2" data-reveal>
+      <div class="mini glass"><svg><use href="#i-target"/></svg><b>Posicionamento</b><span>O que diferencia a Dra. Cynthia, em cada conteúdo.</span></div>
+      <div class="mini glass"><svg><use href="#i-users"/></svg><b>Público e serviços</b><span>Quem atrair e para quais procedimentos, mês a mês.</span></div>
+      <div class="mini solid-lime"><svg><use href="#i-path"/></svg><b>Jornada até a avaliação</b><span>Do vídeo ao WhatsApp, cada etapa pensada para converter.</span></div>
+      <div class="mini glass"><svg><use href="#i-cal"/></svg><b>Linha editorial</b><span>O que dizer, em que ordem e com que objetivo, todo mês.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="light plain" id="reunioes" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>O plano · 2 de 4</p>
+      <h2 class="title" data-reveal style="--d:1">No 1º mês, uma reunião por semana.</h2>
+      <p class="lede" data-reveal style="--d:2">Do mês 2 em diante, uma reunião por mês, com relatório de resultados e o plano do mês seguinte.</p>
+    </div>
+    <ol class="weeks" data-reveal>
+      <li><b>1</b><span>Diagnóstico e posicionamento</span></li>
+      <li><b>2</b><span>Público, serviços e jornada</span></li>
+      <li><b>3</b><span>Primeiros conteúdos no ar</span></li>
+      <li><b>4</b><span>Ajustes com os primeiros dados</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="dark plain" id="producao" data-theme="dark">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>O plano · 3 de 4</p>
+      <h2 class="title" data-reveal style="--d:1">Toda semana, 2 vídeos e 2 estáticos no ar.</h2>
+    </div>
+    <div class="prod" data-reveal>
+      <div class="cal glass-l">
+        <div class="grid16" id="grid16"></div>
+        <div class="legend"><span><i style="background:var(--carvao)"></i>2 vídeos/semana</span><span><i style="background:var(--grad)"></i>2 estáticos/semana</span></div>
       </div>
+      <ul class="checks small">
+        <li><span class="ck"><svg><use href="#i-check"/></svg></span>Até 2 captações por mês, com roteiro, direção e edição</li>
+        <li><span class="ck"><svg><use href="#i-check"/></svg></span>Edição dos vídeos que você gravar no dia a dia</li>
+        <li><span class="ck"><svg><use href="#i-check"/></svg></span>Até 8 adaptações para Stories</li>
+        <li><span class="ck"><svg><use href="#i-check"/></svg></span>Roteiros, legendas e programação em 1 perfil</li>
+        <li><span class="ck"><svg><use href="#i-check"/></svg></span>Você aprova o lote de uma vez, com 1 rodada de ajustes</li>
+      </ul>
     </div>
+  </div>
+</section>
 
-    <div class="blk" data-reveal>
-      <h3 class="blk-t"><span>2</span>No 1º mês, uma reunião por semana</h3>
-      <ol class="weeks">
-        <li><b>1</b><span>Diagnóstico e posicionamento</span></li>
-        <li><b>2</b><span>Público, serviços e jornada</span></li>
-        <li><b>3</b><span>Primeiros conteúdos no ar</span></li>
-        <li><b>4</b><span>Ajustes com os primeiros dados</span></li>
-      </ol>
-      <p class="after"><b class="lime">Do mês 2 em diante:</b> 1 reunião por mês, com relatório de resultados e plano do mês seguinte.</p>
+<section class="light plain" id="medicao" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>O plano · 4 de 4</p>
+      <h2 class="title" data-reveal style="--d:1">Como medimos, todo mês.</h2>
+      <p class="lede" data-reveal style="--d:2">Acompanhamos cada etapa, de quem viu o conteúdo até a avaliação marcada.</p>
     </div>
-
-    <div class="blk" data-reveal>
-      <h3 class="blk-t"><span>3</span>Toda semana, 2 vídeos e 2 estáticos no ar</h3>
-      <div class="prod">
-        <div class="cal glass-l">
-          <div class="grid16" id="grid16"></div>
-          <div class="legend"><span><i style="background:var(--carvao)"></i>2 vídeos/semana</span><span><i style="background:var(--grad)"></i>2 estáticos/semana</span></div>
-        </div>
-        <ul class="checks small">
-          <li><span class="ck"><svg><use href="#i-check"/></svg></span>Até 2 captações por mês, com roteiro, direção e edição</li>
-          <li><span class="ck"><svg><use href="#i-check"/></svg></span>Edição dos vídeos que você gravar no dia a dia</li>
-          <li><span class="ck"><svg><use href="#i-check"/></svg></span>Até 8 adaptações para Stories</li>
-          <li><span class="ck"><svg><use href="#i-check"/></svg></span>Roteiros, legendas e programação em 1 perfil</li>
-          <li><span class="ck"><svg><use href="#i-check"/></svg></span>Você aprova o lote de uma vez, com 1 rodada de ajustes</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="blk" data-reveal>
-      <h3 class="blk-t"><span>4</span>Como medimos, todo mês</h3>
-      <ol class="journey">
-        <li><svg><use href="#i-eye"/></svg><b>Visibilidade</b><span>Quem viu</span></li>
-        <li><svg><use href="#i-heart"/></svg><b>Interesse</b><span>Perfil, salvos, seguidores</span></li>
-        <li><svg><use href="#i-chat"/></svg><b>Conversa</b><span>WhatsApp da clínica</span></li>
-        <li class="last"><svg><use href="#i-cal"/></svg><b>Avaliações</b><span>Agendamentos</span></li>
-      </ol>
-      <p class="note">Na saúde, não prometemos resultado clínico nem número de pacientes: prometemos método e acompanhamento.</p>
-    </div>
+    <ol class="journey" data-reveal>
+      <li><svg><use href="#i-eye"/></svg><b>Visibilidade</b><span>Quem viu</span></li>
+      <li><svg><use href="#i-heart"/></svg><b>Interesse</b><span>Perfil, salvos, seguidores</span></li>
+      <li><svg><use href="#i-chat"/></svg><b>Conversa</b><span>WhatsApp da clínica</span></li>
+      <li class="last"><svg><use href="#i-cal"/></svg><b>Avaliações</b><span>Agendamentos</span></li>
+    </ol>
+    <p class="note" data-reveal>Na saúde, não prometemos resultado clínico nem número de pacientes: prometemos método e acompanhamento.</p>
   </div>
 </section>
 
