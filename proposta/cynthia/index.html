@@ -251,6 +251,43 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
 .up-btn em{font-style:normal;font-family:var(--f-title);font-weight:700;color:var(--limao)}
 .incl .note{font-size:.85rem}
 
+/* ---------- bônus: site ---------- */
+.bn{display:grid;gap:22px;align-items:center}
+@media (min-width:960px){.bn{grid-template-columns:1.05fr 1fr;gap:44px}}
+.browser{border-radius:16px;background:#fff;border:1px solid var(--line-l);box-shadow:0 40px 70px -40px rgba(38,57,43,.55);overflow:hidden}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:var(--nevoa);border-bottom:1px solid var(--line-l)}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:rgba(38,57,43,.25)}
+.browser .bar span{margin-left:8px;flex:1;background:#fff;border-radius:999px;padding:3px 12px;font-size:.74rem;color:var(--mute-l);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.site{position:relative;aspect-ratio:16/10;background:var(--carvao) url(img/hero.jpg) right center/cover;color:var(--porcelana);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(14px,3vw,26px)}
+.site::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,19,15,.95),rgba(17,19,15,.55) 60%,rgba(17,19,15,.15))}
+.site > *{position:relative}
+.site nav{display:flex;justify-content:space-between;align-items:center;font-size:clamp(.55rem,1.3vw,.72rem);letter-spacing:.08em;text-transform:uppercase;color:var(--mute-d)}
+.site nav b{font-family:var(--f-title);font-size:clamp(.7rem,1.6vw,.9rem);letter-spacing:0;text-transform:none;color:var(--porcelana)}
+.site nav span{display:none}
+@media (min-width:560px){.site nav span{display:inline}}
+.site h4{font-size:clamp(1.15rem,3.6vw,2rem);max-width:12ch}
+.site p{font-size:clamp(.66rem,1.4vw,.82rem);color:var(--mute-d);max-width:30ch;margin-top:6px}
+.site .cta{display:inline-flex;align-self:flex-start;gap:6px;background:var(--grad);color:var(--carvao);font-weight:700;font-size:clamp(.62rem,1.3vw,.78rem);padding:7px 12px;border-radius:999px}
+.pages{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pages span{background:#fff;border:1px solid var(--line-l);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:600;color:var(--profundo)}
+.anchor{background:#fff;border:1px solid var(--line-l);border-radius:20px;padding:clamp(20px,3.5vw,32px);box-shadow:0 30px 60px -44px rgba(38,57,43,.6)}
+.anchor .k{font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--profundo);margin-bottom:10px}
+.anchor ul{list-style:none;margin:0;padding:0}
+.anchor li{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-l)}
+.anchor li svg{flex:0 0 22px;height:22px;color:var(--profundo)}
+.anchor li div{flex:1;min-width:0}
+.anchor li b{display:block;font-family:var(--f-title);font-size:1rem}
+.anchor li small{display:block;font-size:.82rem;color:var(--mute-l);line-height:1.4}
+.anchor li s{font-family:var(--f-title);font-weight:600;color:var(--mute-l);white-space:nowrap}
+.anchor .tot{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0 4px;font-family:var(--f-title);font-weight:600}
+.anchor .tot s{font-size:1.25rem;color:var(--mute-l)}
+.anchor .you{margin-top:12px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 14px;padding:16px 18px;border-radius:14px;background:var(--grad);color:var(--carvao)}
+.anchor .you span{font-weight:700;font-size:.95rem}
+.anchor .you strong{font-family:var(--f-title);font-size:clamp(2rem,6vw,2.6rem);letter-spacing:-.04em;line-height:1}
+.anchor .why{margin-top:12px;font-size:.88rem;color:var(--mute-l)}
+.bonus a{flex:1 1 100%;font-size:.86rem;font-weight:700;text-decoration:none;margin-top:4px}
+.bonus a:hover{text-decoration:underline}
+
 /* ---------- 05. começar ---------- */
 .final{padding-bottom:clamp(110px,13vw,150px)}
 .final .photo img{object-position:70% center}
@@ -488,6 +525,7 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
           <span><svg><use href="#i-monitor"/></svg>Site personalizado</span>
           <span><svg><use href="#i-globe"/></svg>Domínio 1 ano</span>
           <span><svg><use href="#i-server"/></svg>Hospedagem 1 ano</span>
+          <a href="#bonus">Valor de R$ 5.200, sem custo ao fechar ↓</a>
         </div>
       </div>
       <div class="incl glass" id="incl" data-reveal style="--d:1">
@@ -516,7 +554,41 @@ section{position:relative;padding-block:clamp(72px,11vw,136px);overflow:hidden}
         </div>
       </div>
     </div>
-    <p class="note" data-reveal>Domínio e hospedagem renovados pela clínica a partir do 2º ano.</p>
+  </div>
+</section>
+
+<!-- 04b · BÔNUS: SITE -->
+<section class="light plain" id="bonus" data-theme="light">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>Bônus ao fechar</p>
+      <h2 class="title" data-reveal style="--d:1">Um site da Dra. Cynthia, por nossa conta.</h2>
+      <p class="lede" data-reveal style="--d:2">O endereço para onde o conteúdo leva: quem vê um vídeo e quer saber mais encontra a doutora, os procedimentos e o botão para marcar a avaliação.</p>
+    </div>
+    <div class="bn">
+      <div data-reveal>
+        <div class="browser" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i><span>dracynthiacardoso.com.br</span></div>
+          <div class="site">
+            <nav><b>Dra. Cynthia Cardoso</b><span>Sobre · Procedimentos · Contato</span></nav>
+            <div><h4>Beleza com coerência.</h4><p>Planejamento facial individualizado, com experiência clínica.</p></div>
+            <span class="cta">Agendar avaliação →</span>
+          </div>
+        </div>
+        <div class="pages"><span>Início</span><span>Sobre a Dra.</span><span>Procedimentos</span><span>Avaliação pelo WhatsApp</span></div>
+      </div>
+      <div class="anchor" data-reveal style="--d:1">
+        <p class="k">Quanto isso custaria</p>
+        <ul>
+          <li><svg><use href="#i-monitor"/></svg><div><b>Site personalizado</b><small>Design e textos próprios, feito para o celular, ligado ao WhatsApp e ao Instagram</small></div><s>R$ 4.800</s></li>
+          <li><svg><use href="#i-globe"/></svg><div><b>Domínio .com.br</b><small>Registro por 1 ano</small></div><s>R$ 40</s></li>
+          <li><svg><use href="#i-server"/></svg><div><b>Hospedagem</b><small>1 ano no ar, com certificado de segurança</small></div><s>R$ 360</s></li>
+        </ul>
+        <div class="tot"><span>Total</span><s>R$ 5.200</s></div>
+        <div class="you"><span>Para a Dra. Cynthia, ao fechar</span><strong>R$ 0</strong></div>
+        <p class="why">Quase um mês do plano, de presente. Domínio e hospedagem renovados pela clínica a partir do 2º ano.</p>
+      </div>
+    </div>
   </div>
 </section>
 
