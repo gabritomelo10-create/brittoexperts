@@ -7,15 +7,64 @@
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
 
   document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = waLink(a.getAttribute("data-wa")); a.target = "_blank"; a.rel = "noopener"; });
-  document.querySelectorAll("[data-scroll]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var t = document.getElementById(b.getAttribute("data-scroll"));
-      if (t) t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-    });
+
+  /* ---------- navegação: links reais, com endereço #seção ----------
+     Nas seções que ficam presas na tela, o salto cai no ponto da animação em que há conteúdo
+     (o MacBook já aberto, por exemplo), e não no começo vazio. */
+  var LAND = { apresentacoes: 0.5, mentorias: 0.05 };
+  var navLock = 0;
+  function alvoY(id) {
+    var el = document.getElementById(id);
+    if (!el) return null;
+    var top = el.getBoundingClientRect().top + scrollY;
+    var preso = el.offsetHeight > innerHeight * 1.5;
+    if (preso && LAND[id] != null) return top + (el.offsetHeight - innerHeight) * LAND[id];
+    return top;
+  }
+  function irPara(id, suave) {
+    var y = alvoY(id);
+    if (y == null) return false;
+    navLock = performance.now() + 1600;
+    document.querySelector("header.top").classList.remove("hide");
+    window.scrollTo({ top: Math.max(0, y), behavior: suave && !reduce ? "smooth" : "auto" });
+    return true;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute("href").slice(1);
+    if (!id) return;
+    if (id === "topo") id = "stage";
+    if (!document.getElementById(id)) return;
+    e.preventDefault();
+    fecharMenu();
+    if (irPara(id, true)) history.pushState(null, "", "#" + (id === "stage" ? "topo" : id));
+  });
+  window.addEventListener("popstate", function () { var id = location.hash.slice(1) || "stage"; irPara(id === "topo" ? "stage" : id, false); });
+  window.addEventListener("load", function () {
+    var id = location.hash.slice(1);
+    if (id && id !== "topo") setTimeout(function () { irPara(id, false); }, 60);
   });
 
+  /* ---------- menu do celular ---------- */
+  var header0 = document.querySelector("header.top"), toggle = document.querySelector(".menu-toggle");
+  function fecharMenu() {
+    if (!header0.classList.contains("open")) return;
+    header0.classList.remove("open");
+    document.documentElement.classList.remove("menu-aberto");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+  toggle.addEventListener("click", function () {
+    var abrir = !header0.classList.contains("open");
+    header0.classList.toggle("open", abrir);
+    document.documentElement.classList.toggle("menu-aberto", abrir);
+    toggle.setAttribute("aria-expanded", abrir ? "true" : "false");
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") fecharMenu(); });
+  window.addEventListener("resize", function () { if (innerWidth >= 900) fecharMenu(); });
+
   /* ---------- cidades ---------- */
-  var cid = ["Manaus", "São Paulo", "Salvador", "Japão", "China"], ct = document.getElementById("cidades");
+  var cid = ["Manaus", "São Paulo", "Salvador", "Japão", "China"] /* 3 cidades no Brasil e 2 países */, ct = document.getElementById("cidades");
   for (var r = 0; r < 4; r++) cid.forEach(function (c) { var s = document.createElement("span"); s.textContent = c; ct.appendChild(s); });
 
   /* ---------- palestrantes: trilho horizontal ---------- */
@@ -33,7 +82,7 @@
       (p.palestra ? '<span class="spk-talk">' + esc(p.palestra) + '</span>' : '') + '</div>';
     var img = d.querySelector("img");
     img.addEventListener("load", function () { d.classList.remove("no-photo"); });
-    img.src = "img/palestrantes/" + p.foto + ".jpg";
+    if (p.foto) img.src = "img/palestrantes/" + p.foto;
     sp.appendChild(d);
   });
   document.getElementById("cast-total").textContent = String(spk.length).padStart(2, "0");
@@ -174,6 +223,7 @@
         bt.el.firstElementChild.style.transform = "translateY(" + y.toFixed(1) + "px)";
       });
       hint.style.opacity = p < 0.04 ? 1 : 0;
+      if (window.__atualizaWa) window.__atualizaWa();
     };
   }
 
@@ -184,9 +234,22 @@
   var parallax = document.querySelectorAll("[data-parallax]");
   var apoAst = document.getElementById("apo-ast");
   var lastY = scrollY, ticking = false;
-  var navBtns = Array.prototype.map.call(document.querySelectorAll("nav.menu button[data-scroll]"), function (b) {
-    return { b: b, s: document.getElementById(b.getAttribute("data-scroll")) };
+  var navBtns = Array.prototype.map.call(document.querySelectorAll('nav.menu a[href^="#"]'), function (b) {
+    return { b: b, s: document.getElementById(b.getAttribute("href").slice(1)) };
   });
+  /* o botão flutuante do WhatsApp sai de cena quando já há botões de contato na tela */
+  var wa = document.getElementById("wa"), apo = document.getElementById("apoteose"), flowFinal = document.getElementById("flow-final");
+  var heroBtns = document.querySelectorAll(".beat-1, .beat-final");
+  function atualizaWa() {
+    var fr = document.getElementById("mentorias").getBoundingClientRect();
+    var noMetodo = fr.top < innerHeight && fr.bottom > 0;
+    var esconder = apo.getBoundingClientRect().top < innerHeight - 40 || (noMetodo && flowFinal.classList.contains("on"));
+    var sr = stage.getBoundingClientRect();
+    if (sr.bottom > innerHeight * 0.5) heroBtns.forEach(function (b) { if (b.classList.contains("on") && +b.style.opacity > 0.3) esconder = true; });
+    wa.classList.toggle("off", esconder);
+  }
+  window.__atualizaWa = atualizaWa;
+  atualizaWa();
 
   function onScroll() {
     ticking = false;
@@ -195,8 +258,11 @@
     bar.style.transform = "scaleX(" + (max > 0 ? y / max : 0).toFixed(4) + ")";
     var pastStage = y > stage.offsetHeight - innerHeight;
     header.classList.toggle("solid", pastStage);
-    header.classList.toggle("hide", pastStage && y > lastY + 4 && y > stage.offsetHeight);
-    if (y < lastY - 4) header.classList.remove("hide");
+    if (performance.now() > navLock && !header.classList.contains("open")) {
+      header.classList.toggle("hide", pastStage && y > lastY + 4 && y > stage.offsetHeight);
+      if (y < lastY - 4) header.classList.remove("hide");
+    }
+    atualizaWa();
     lastY = y;
     if (!reduce) {
       parallax.forEach(function (el) {
@@ -211,7 +277,7 @@
     }
     var cur = null;
     navBtns.forEach(function (n) { if (n.s && n.s.getBoundingClientRect().top < innerHeight * 0.4) cur = n; });
-    navBtns.forEach(function (n) { n.b.classList.toggle("on", n === cur && !!cur && cur.s.getBoundingClientRect().bottom > 0); });
+    navBtns.forEach(function (n) { var on = n === cur && !!cur && cur.s.getBoundingClientRect().bottom > 0; n.b.classList.toggle("on", on); if (on) n.b.setAttribute("aria-current", "true"); else n.b.removeAttribute("aria-current"); });
   }
   window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
@@ -225,7 +291,8 @@
   function founderScroll() {
     var r = founder.getBoundingClientRect();
     var p = clamp((innerHeight - r.top) / (innerHeight + r.height), 0, 1);
-    founder.style.setProperty("--lit", reduce ? 1 : clamp((p - 0.12) / 0.3, 0, 1).toFixed(3));
+    var fr = fPhoto.getBoundingClientRect();
+    founder.style.setProperty("--lit", reduce ? 1 : clamp((innerHeight - fr.top) / (innerHeight * 0.55), 0, 1).toFixed(3));
     if (!reduce) fName.style.setProperty("--nx", (-p * innerWidth * 0.8).toFixed(1) + "px");
     if (!reduce && innerWidth >= 900) {
       var max = Math.max(0, reel.scrollWidth - innerWidth);
@@ -257,7 +324,7 @@
     { p: "Qual elogio você mais escuta?", o: [["Você pensa lá na frente", "E"], ["Você fala muito bem", "C"], ["Você sabe tudo disso", "T"], ["Sua história me inspira", "H"]] },
     { p: "Se fosse ensinar amanhã, qual formato te atrai?", o: [["Mentoria com poucos empresários", "E"], ["Palestra para um auditório cheio", "C"], ["Curso com aulas práticas", "T"], ["Contar minha trajetória em um evento", "H"]] }
   ];
-  var quiz = document.getElementById("quiz"), idx = 0, pts = { E: 0, C: 0, T: 0, H: 0 };
+  var quiz = document.getElementById("quiz"), idx = 0, pts = { E: 0, C: 0, T: 0, H: 0 }, ordem = [];
   function render() {
     if (idx < perguntas.length) {
       var q = perguntas[idx];
@@ -265,13 +332,15 @@
       q.o.forEach(function (o) { h += '<button type="button" data-z="' + o[1] + '">' + esc(o[0]) + '</button>'; });
       h += '</div><div class="bar"><i style="width:' + (idx / perguntas.length * 100) + '%"></i></div>';
       quiz.innerHTML = h;
-      quiz.querySelectorAll("button[data-z]").forEach(function (b) { b.addEventListener("click", function () { pts[b.getAttribute("data-z")]++; idx++; render(); }); });
+      quiz.querySelectorAll("button[data-z]").forEach(function (b) { b.addEventListener("click", function () { var z = b.getAttribute("data-z"); pts[z]++; ordem.push(z); idx++; render(); }); });
     } else {
-      var top = "E"; Object.keys(pts).forEach(function (k) { if (pts[k] > pts[top]) top = k; });
+      // maior pontuação; em empate, vale a resposta mais recente entre os empatados
+      var max = Math.max.apply(null, Object.keys(pts).map(function (k) { return pts[k]; }));
+      var top = ordem.slice().reverse().filter(function (k) { return pts[k] === max; })[0];
       var z = zonas[top];
-      var msg = "Olá! Fiz a demonstração da Matriz de Genialidade no site da BRITTO* GROUP e meu resultado foi " + z.nome + ". Quero fazer a Matriz completa.";
+      var msg = "Olá! Fiz a demonstração da Matriz de Genialidade no site da BRITTO* Experts e meu resultado foi " + z.nome + ". Quero fazer a Matriz completa.";
       quiz.innerHTML = '<span class="q">Sua zona de genialidade</span><span class="res-zona">' + esc(z.nome) + '</span><p class="res-txt">' + esc(z.txt) + '</p><div class="res-sug">' + z.sug.map(function (s) { return '<span>' + esc(s) + '</span>'; }).join("") + '</div><div class="btns" style="margin-top:auto"><a class="btn" target="_blank" rel="noopener" href="' + waLink(msg) + '">Fazer a Matriz completa <span class="arr">→</span></a><button type="button" class="btn ghost" id="refazer">Refazer</button></div>';
-      document.getElementById("refazer").addEventListener("click", function () { idx = 0; pts = { E: 0, C: 0, T: 0, H: 0 }; render(); });
+      document.getElementById("refazer").addEventListener("click", function () { idx = 0; pts = { E: 0, C: 0, T: 0, H: 0 }; ordem = []; render(); });
     }
   }
   render();

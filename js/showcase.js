@@ -57,8 +57,7 @@
     box.appendChild(el);
     var d = document.createElement("button");
     d.type = "button";
-    d.setAttribute("role", "tab");
-    d.setAttribute("aria-label", s.cliente + ": " + s.titulo);
+    d.setAttribute("aria-label", "Mostrar " + s.cliente + ": " + s.titulo);
     d.addEventListener("click", function () { jumpTo(i); });
     dotsEl.appendChild(d);
   });
@@ -102,7 +101,7 @@
     if (idx !== current) {
       current = idx;
       slideEls.forEach(function (el, i) { el.classList.toggle("on", i === idx); el.classList.toggle("past", i < idx); });
-      dotEls.forEach(function (d, i) { d.classList.toggle("on", i === idx); d.setAttribute("aria-selected", i === idx ? "true" : "false"); });
+      dotEls.forEach(function (d, i) { d.classList.toggle("on", i === idx); if (i === idx) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
       screen.classList.toggle("showing", idx >= 0);
       var s = slides[idx];
       clientEl.textContent = s ? s.cliente : "BRITTO*";
