@@ -263,7 +263,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
 .bar2 .av i{background:rgba(17,19,15,.16);text-decoration:line-through;color:var(--profundo)}
 .bar2 .pa i{background:var(--carvao);color:var(--limao);transition-delay:.4s}
 .price.in .bar2 .av i{width:100%}
-.price.in .bar2 .pa i{width:53.6%}
+.price.in .bar2 .pa i{width:35.7%}
 .incl{padding:clamp(22px,3.5vw,30px)}
 .incl .k{color:var(--limao);margin-bottom:16px}
 .incl .fine{margin-top:16px;font-size:.84rem;color:var(--mute-d)}
@@ -340,7 +340,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
 
 <div class="mbar" id="mbar">
   <i class="mbar-bar"></i>
-  <div><small>Projeto completo</small><b>10x R$ 1.500</b></div>
+  <div><small>Projeto completo</small><b>10x R$ 1.000</b></div>
   <a class="btn" id="mbarBtn" href="#" target="_blank" rel="noopener">Quero começar</a>
 </div>
 
@@ -495,12 +495,12 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
       <div class="price solid-lime" data-reveal>
         <svg class="ast-bg" fill="currentColor"><use href="#ast"/></svg>
         <p class="was">Valor dos itens separados: <s>R$ 28.000</s></p>
-        <p class="now"><small>10x</small><strong>R$ 1.500</strong></p>
-        <p class="tot">ou R$ 15.000 no projeto completo</p>
-        <div class="chips"><span>Economia de <b>R$ 13.000</b> no projeto completo</span><span class="alt"><b>46%</b> abaixo dos itens separados</span></div>
+        <p class="now"><small>10x</small><strong>R$ 1.000</strong></p>
+        <p class="tot">ou R$ 10.000 no projeto completo</p>
+        <div class="chips"><span>Economia de <b>R$ 18.000</b> no projeto completo</span><span class="alt"><b>64%</b> abaixo dos itens separados</span></div>
         <div class="bar2" aria-hidden="true">
           <div class="av"><i>Itens separados · R$ 28.000</i></div>
-          <div class="pa"><i>Projeto completo · R$ 15.000</i></div>
+          <div class="pa"><i>Projeto completo · R$ 10.000</i></div>
         </div>
       </div>
       <div class="incl glass" data-reveal style="--d:1">
@@ -563,7 +563,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   function go(el) { scrollTo({ top: el.getBoundingClientRect().top + scrollY - 64, behavior: reduce ? "auto" : "smooth" }); }
 
-  var msg = "https://wa.me/" + WA + "?text=" + encodeURIComponent("Olá, Gabriel! Vi a proposta de identidade corporativa da Mil & Vinte Logística e quero seguir com o projeto completo (10x R$ 1.500).");
+  var msg = "https://wa.me/" + WA + "?text=" + encodeURIComponent("Olá, Gabriel! Vi a proposta de identidade corporativa da Mil & Vinte Logística e quero seguir com o projeto completo (10x R$ 1.000).");
   $("#approve").href = msg; $("#mbarBtn").href = msg;
 
   /* ---------- revelação ---------- */
