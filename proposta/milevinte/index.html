@@ -121,6 +121,28 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
 }
 
 
+/* ---------- estrada 3D (scroll) ---------- */
+.scene3d{position:relative;height:520vh;padding:0;overflow:visible;background:#0d0f0c}
+.scene3d .stick{position:sticky;top:0;height:100svh;overflow:hidden}
+.scene3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .8s}
+.scene3d.ready canvas{opacity:1}
+.scene3d .shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(13,15,12,.55),transparent 22%,transparent 70%,rgba(13,15,12,.7))}
+.scene3d .s-head{position:absolute;left:0;right:0;top:calc(76px + env(safe-area-inset-top,0px));z-index:2}
+.scene3d .s-head .kicker{border-color:rgba(244,246,240,.25)}
+.cap{position:absolute;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:2;pointer-events:none}
+@media (max-width:760px){.cap{bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
+.cap p{max-width:520px;padding:16px 20px;border-radius:14px;background:rgba(17,19,15,.6);border:1px solid rgba(215,228,75,.18);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-family:var(--f-title);font-weight:600;font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.25;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s var(--ease)}
+.cap p small{display:block;margin-top:6px;font-family:var(--f-text);font-weight:500;font-size:.9rem;color:var(--mute-d)}
+.cap.on p{opacity:1;transform:none}
+.hint{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:2;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-d);transition:opacity .4s}
+.cap[data-from="0"].on ~ .hint{opacity:1}
+.hint{opacity:0}
+.scene3d.no3d{height:auto;padding-block:clamp(64px,10vw,120px)}
+.scene3d.no3d .stick{position:static;height:auto}
+.scene3d.no3d canvas,.scene3d.no3d .shade,.scene3d.no3d .hint{display:none}
+.scene3d.no3d .s-head,.scene3d.no3d .cap{position:static}
+.scene3d.no3d .cap p{opacity:1;transform:none;margin-top:10px}
+
 /* ---------- 01. abertura: a rede de pontos de contato ---------- */
 .hero{min-height:100svh;display:flex;align-items:center;padding-block:96px 100px;background:radial-gradient(60% 60% at 78% 45%,rgba(140,192,90,.3),transparent 65%),var(--carvao)}
 .hero > .wrap{width:100%}
@@ -169,19 +191,6 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
 .missing .checks li{align-items:flex-start}
 
 /* ---------- 03. a marca roda pela cidade ---------- */
-.road{position:relative;height:120px;margin:4px 0 22px;border-radius:var(--r);overflow:hidden;background:linear-gradient(180deg,rgba(38,57,43,.45),rgba(17,19,15,.2))}
-.road::after{content:"";position:absolute;left:0;right:0;bottom:22px;height:3px;background:repeating-linear-gradient(90deg,rgba(215,228,75,.55) 0 28px,transparent 28px 56px);animation:lane 1s linear infinite}
-@keyframes lane{to{background-position:-56px 0}}
-.city{position:absolute;left:0;right:0;bottom:25px;height:70px;background:linear-gradient(90deg,transparent,rgba(244,246,240,.06) 10% 90%,transparent);clip-path:polygon(0 100%,0 60%,6% 60%,6% 30%,12% 30%,12% 55%,18% 55%,18% 10%,24% 10%,24% 45%,32% 45%,32% 25%,38% 25%,38% 60%,46% 60%,46% 15%,52% 15%,52% 50%,60% 50%,60% 35%,66% 35%,66% 5%,72% 5%,72% 55%,80% 55%,80% 28%,86% 28%,86% 50%,94% 50%,94% 20%,100% 20%,100% 100%)}
-.truck{position:absolute;bottom:22px;left:0;width:150px;height:72px;transform:translateX(-170px)}
-.road.go .truck{animation:drive 7s linear infinite}
-@keyframes drive{from{transform:translateX(-170px)}to{transform:translateX(calc(var(--rw) + 20px))}}
-.truck .box{position:absolute;left:0;bottom:14px;width:104px;height:56px;border-radius:6px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--f-title);font-weight:700;font-size:.78rem;letter-spacing:.06em;color:var(--carvao);box-shadow:0 0 24px rgba(215,228,75,.4)}
-.truck .cab{position:absolute;left:106px;bottom:14px;width:40px;height:40px;border-radius:4px 14px 4px 4px;background:#2f4a36;border:2px solid var(--limao-2)}
-.truck .cab::after{content:"";position:absolute;right:5px;top:6px;width:16px;height:13px;border-radius:2px 8px 2px 2px;background:rgba(215,228,75,.35)}
-.truck i{position:absolute;bottom:0;width:22px;height:22px;border-radius:50%;background:var(--carvao);border:4px solid #9aa596;animation:wheel .5s linear infinite}
-.truck i:nth-of-type(1){left:14px}.truck i:nth-of-type(2){left:70px}.truck i:nth-of-type(3){left:116px}
-@keyframes wheel{to{transform:rotate(360deg)}}
 .g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (min-width:900px){.g4{grid-template-columns:repeat(4,1fr);gap:14px}}
 .mini{padding:18px 16px;display:flex;flex-direction:column;gap:6px}
@@ -325,7 +334,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   <div class="wrap">
     <span>BRITTO* GROUP</span>
     <span>Da marca de hoje à marca que entrega confiança</span>
-    <span class="foot-n" id="footN">01 / 07</span>
+    <span class="foot-n" id="footN">01 / 08</span>
   </div>
 </div>
 
@@ -402,16 +411,26 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   </div>
 </section>
 
-<!-- 03 · A MARCA RODA PELA CIDADE -->
+<!-- 03 · A ESTRADA EM 3D: o caminhão anda com o scroll e a logo passa para o cartão -->
+<section class="scene3d" id="estrada" data-theme="dark" aria-label="A marca na estrada e no cartão de visita">
+  <div class="stick">
+    <canvas id="s3d" data-logo="img/logo-atual.jpg" aria-hidden="true"></canvas>
+    <div class="shade"></div>
+    <div class="s-head"><div class="wrap"><p class="kicker">A marca em movimento</p></div></div>
+    <div class="cap" data-from="0" data-to=".22"><div class="wrap"><p>Cada entrega é um anúncio.<small>A marca roda pela cidade a cada rota.</small></p></div></div>
+    <div class="cap" data-from=".22" data-to=".45"><div class="wrap"><p>Vista por centenas de pessoas a cada quilômetro.<small>No trânsito, no pátio, na porta do cliente.</small></p></div></div>
+    <div class="cap" data-from=".45" data-to=".74"><div class="wrap"><p>Um símbolo forte, que se reconhece de longe.<small>Pintura, adesivo e faixa seguindo o mesmo manual.</small></p></div></div>
+    <div class="cap" data-from=".74" data-to="1.01"><div class="wrap"><p>A mesma marca, do caminhão ao cartão de visita.<small>Um só padrão em cada ponto de contato.</small></p></div></div>
+    <span class="hint">Role para dirigir ↓</span>
+  </div>
+</section>
+
+<!-- 04 · A MARCA RODA PELA CIDADE -->
 <section class="dark" id="cidade" data-theme="dark" style="background:radial-gradient(55% 50% at 80% 20%,rgba(140,192,90,.18),transparent 70%),var(--carvao)">
   <div class="wrap">
     <div class="head">
       <p class="kicker" data-reveal>Em logística, a marca roda pela cidade</p>
       <h2 class="title" data-reveal style="--d:1">Cada entrega é um anúncio. <span class="lime">Cada detalhe, uma promessa.</span></h2>
-    </div>
-    <div class="road" id="road" aria-hidden="true">
-      <div class="city"></div>
-      <div class="truck"><span class="box">MIL &amp; VINTE</span><span class="cab"></span><i></i><i></i><i></i></div>
     </div>
     <div class="g4">
       <div class="mini solid-lime" data-reveal><svg><use href="#i-truck"/></svg><b>Veículos</b><span>Vistos por centenas de pessoas a cada rota.</span></div>
@@ -423,7 +442,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   </div>
 </section>
 
-<!-- 04 · QUATRO SEMANAS -->
+<!-- 05 · QUATRO SEMANAS -->
 <section class="light" id="semanas" data-theme="light">
   <div class="wrap">
     <div class="head">
@@ -440,7 +459,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   </div>
 </section>
 
-<!-- 05 · O QUE VOCÊS RECEBEM -->
+<!-- 06 · O QUE VOCÊS RECEBEM -->
 <section class="dark" id="entregas" data-theme="dark">
   <div class="photo" data-par><img src="img/escuro.jpg" alt="" loading="lazy"></div>
   <div class="wrap in-front">
@@ -465,7 +484,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   </div>
 </section>
 
-<!-- 06 · INVESTIMENTO -->
+<!-- 07 · INVESTIMENTO -->
 <section class="dark" id="investimento" data-theme="dark" style="background:radial-gradient(60% 50% at 20% 0%,rgba(140,192,90,.18),transparent 70%),var(--carvao)">
   <div class="wrap">
     <div class="head">
@@ -514,7 +533,7 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   </div>
 </section>
 
-<!-- 07 · PARA COMEÇAR -->
+<!-- 08 · PARA COMEÇAR -->
 <section class="dark final" id="comecar" data-theme="dark">
   <div class="photo" data-par><img src="img/bora.jpg" alt="" loading="lazy"></div>
   <div class="wrap in-front">
@@ -560,12 +579,6 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   /* ---------- rede de pontos de contato ---------- */
   setTimeout(function () { $("#net").classList.add("go"); }, reduce ? 0 : 300);
 
-  /* ---------- caminhão roda quando a estrada aparece ---------- */
-  var road = $("#road");
-  function rw() { road.style.setProperty("--rw", road.offsetWidth + "px"); }
-  rw(); window.addEventListener("resize", rw);
-  new IntersectionObserver(function (es) { road.classList.toggle("go", es[0].isIntersecting && !reduce); }, { threshold: .2 }).observe(road);
-
   /* ---------- clientes ---------- */
   var C = ["All In Club", "Suysei", "Vídera", "AVRA Incorporadora", "Artesã", "Yroyak", "Sushi Ponta Negra", "Chef João Batista"];
   var row = C.map(function (c, i) { return "<span" + (i === 3 ? ' class="on"' : "") + ">" + c + "</span>"; }).join("");
@@ -609,5 +622,8 @@ section{position:relative;padding-block:clamp(64px,10vw,120px);overflow:hidden}
   });
 })();
 </script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="js/estrada.js"></script>
+<script>setTimeout(function(){var s=document.getElementById("estrada");if(!s.classList.contains("ready"))s.classList.add("no3d");},8000);</script>
 </body>
 </html>
