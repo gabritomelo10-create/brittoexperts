@@ -60,7 +60,7 @@ Quatro painéis com cenas animadas em CSS (palestra, pitch, abertura/convenção
 
 `proposta/waymaker/` é a proposta de realidade aumentada da Editora WayMaker, no mesmo padrão: 6 blocos, sem abas, com um livro em CSS que ganha vida (demonstração de abrir, apontar a câmera e ver o 3D saltar) e um seletor de pacotes (1 a 20 experiências) que mostra o total, o valor por experiência e a economia sobre o avulso. Abra em `/proposta/waymaker/`.
 
-`proposta/milevinte/` é a proposta de identidade corporativa da Mil & Vinte Logística, no mesmo padrão: 7 blocos sem abas, com a rede de pontos de contato na abertura, a logo atual deles, um caminhão da marca rodando pela cidade, as 4 semanas, as 6 frentes de entrega, a ancoragem R$ 28.000 → R$ 15.000 (10x R$ 1.500) e o Guardião da Marca. Abra em `/proposta/milevinte/`.
+`proposta/milevinte/` é a proposta de identidade corporativa da Mil & Vinte Logística, no mesmo padrão: 7 blocos sem abas, com a rede de pontos de contato na abertura, a logo atual deles, um caminhão da marca rodando pela cidade, as 4 semanas, as 6 frentes de entrega, a ancoragem R$ 28.000 → R$ 10.000 (10x R$ 1.000) e o Guardião da Marca. Abra em `/proposta/milevinte/`.
 
 ## Rodar localmente
 
