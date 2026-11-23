@@ -274,9 +274,10 @@ const camKeys = [ // relativas ao caminhão: [posição, alvo]
   [new THREE.Vector3(24, 1.3, 11), new THREE.Vector3(5, 2.2, 0)],
   [new THREE.Vector3(10, 2.0, 15), new THREE.Vector3(2, 2.4, 0)],
   [new THREE.Vector3(-20, 6.5, 15), new THREE.Vector3(0, 2.2, 0)],
-  [new THREE.Vector3(-0.9, 3.0, small ? 19 : 15.5), new THREE.Vector3(-0.9, 2.6, 0)],
+  [new THREE.Vector3(-0.9, 3.0, small ? 15 : 15.5), new THREE.Vector3(-0.9, 2.6, 0)],
 ];
-const closePos = new THREE.Vector3(DEC.x, DEC.y, small ? 11 : 8.4), closeLook = new THREE.Vector3(DEC.x, DEC.y, 1.3);
+if (small) camKeys.forEach((k) => { k[0].x *= 1.5; k[0].z *= 1.55; });
+const closePos = new THREE.Vector3(DEC.x, DEC.y, small ? 14 : 8.4), closeLook = new THREE.Vector3(DEC.x, DEC.y, 1.3);
 
 let target = 0, prog = 0, dist = 0, lastX = null;
 const tmpP = new THREE.Vector3(), tmpL = new THREE.Vector3();
@@ -317,7 +318,7 @@ function frame(p, time) {
   veil.material.opacity = 0.86 * seg(p, 0.76, 0.9);
   if (show) {
     const c = seg(p, 0.8, 0.94);
-    cardGroup.position.set(0, small ? 0.1 : 0.05, small ? -3.6 : -3.4);
+    cardGroup.position.set(0, small ? 0.15 : 0.05, small ? -4.6 : -3.4);
     card.rotation.set(-0.35 * (1 - c) + Math.sin(time * 0.8) * 0.03, -0.9 * (1 - c) + Math.sin(time * 0.6) * 0.06, 0.12 * (1 - c));
     card.position.y = -1.4 * (1 - seg(p, 0.76, 0.86));
   }
