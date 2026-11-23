@@ -58,6 +58,8 @@ Quatro painéis com cenas animadas em CSS (palestra, pitch, abertura/convenção
 
 `proposta/cynthia/` é a proposta de marketing para saúde da Dra. Cynthia Cardoso, no mesmo padrão visual. Foi pensada primeiro para o celular: cartões em trilho deslizável, barra fixa com o preço e o botão de WhatsApp, e alternância entre o plano de estratégia + produção (R$ 6.700/mês) e o plano com tráfego (R$ 8.200/mês). Abra em `/proposta/cynthia/`.
 
+`proposta/waymaker/` é a proposta de realidade aumentada da Editora WayMaker, no mesmo padrão: 6 blocos, sem abas, com um livro em CSS que ganha vida (demonstração de abrir, apontar a câmera e ver o 3D saltar) e um seletor de pacotes (1 a 20 experiências) que mostra o total, o valor por experiência e a economia sobre o avulso. Abra em `/proposta/waymaker/`.
+
 ## Rodar localmente
 
 ```bash
