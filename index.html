@@ -40,6 +40,7 @@
       <nav class="menu" aria-label="Seções">
         <a href="#palestrantes">Palestrantes</a>
         <a href="#apresentacoes">Apresentações</a>
+        <a href="#ecossistema">A BRITTO*</a>
         <a href="#gabriel">Gabriel Brito</a>
         <a href="#mentorias">Método C.N.V.</a>
         <a href="#palcos">Palcos</a>
@@ -184,6 +185,45 @@
       <div class="chips" data-reveal>
         <span class="chip">Palestrantes</span><span class="chip">Mentores</span><span class="chip">Empresários</span><span class="chip">Comunicadores</span><span class="chip">Especialistas técnicos</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- A BRITTO* — Gabriel no centro do ecossistema, com partículas e os cinco braços -->
+<section class="eco" id="ecossistema" aria-label="A BRITTO* GROUP">
+  <canvas class="eco-fx" id="eco-fx" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="head eco-head">
+      <p class="eyebrow" data-reveal>A BRITTO* GROUP</p>
+      <h2 data-reveal data-split>Um ecossistema para quem tem algo a dizer.</h2>
+      <p class="lede" data-reveal>Da marca ao palco, do site ao livro: a BRITTO* cuida de cada ponto em que o expert aparece. No centro, a direção de Gabriel Brito.</p>
+    </div>
+    <div class="eco-stage" id="eco-stage">
+      <svg class="eco-lines" id="eco-lines" aria-hidden="true"></svg>
+      <div class="eco-core" aria-hidden="true">
+        <i class="eco-ring r1"></i><i class="eco-ring r2"></i><i class="eco-ring r3"></i>
+        <i class="eco-glow"></i>
+        <div class="eco-man">
+          <img src="img/gabriel-cutout.webp" alt="" width="725" height="1400" loading="lazy" decoding="async">
+          <img class="eco-holo" src="img/gabriel-cutout.webp" alt="" width="725" height="1400" loading="lazy" decoding="async">
+        </div>
+        <span class="eco-tag"><b>Gabriel Brito</b>Fundador · BRITTO* GROUP</span>
+      </div>
+      <article class="eco-arm eco-l1" data-arm="0" style="--i:0">
+        <span class="eco-n">01</span><h3>Branding & Rebranding</h3><p>Marcas com posicionamento, identidade e sistema visual.</p>
+      </article>
+      <article class="eco-arm eco-l2" data-arm="1" style="--i:1">
+        <span class="eco-n">02</span><h3>Palestras</h3><p>Conteúdo, narrativa e visual com o Método C.N.V.</p>
+      </article>
+      <article class="eco-arm eco-r1" data-arm="2" style="--i:2">
+        <span class="eco-n">03</span><h3>Apresentações</h3><p>Pitches, convenções e apresentações comerciais.</p>
+      </article>
+      <article class="eco-arm eco-r2" data-arm="3" style="--i:3">
+        <span class="eco-n">04</span><h3>Sites</h3><p>Sites que levam o visitante até o contato.</p>
+      </article>
+      <article class="eco-arm eco-b" data-arm="4" style="--i:4">
+        <span class="eco-n">05</span><h3>Books</h3><p>Books de marca e de autoridade, impressos e digitais.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -429,5 +469,6 @@
 <script src="js/main.js"></script>
 <script src="js/showcase.js"></script>
 <script src="js/flow.js"></script>
+<script src="js/eco.js"></script>
 </body>
 </html>
