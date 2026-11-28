@@ -31,6 +31,8 @@
 
 <div class="progress" aria-hidden="true"><i id="progress"></i></div>
 <div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="fx-bokeh" id="fx-bokeh" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fx-grain" aria-hidden="true"></div>
 
 <header class="top">
   <div class="wrap">
@@ -224,6 +226,107 @@
       <article class="eco-arm eco-b" data-arm="4" style="--i:4">
         <span class="eco-n">05</span><h3>Books</h3><p>Books de marca e de autoridade, impressos e digitais.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- A MARCA — o asterisco é construído com o scroll: conceito, geometria, nome, cores e tipografia -->
+<section class="brand" id="marca" aria-label="A construção da marca BRITTO*">
+  <div class="brand-sticky">
+    <div class="brand-bg" aria-hidden="true"><i class="bk b1"></i><i class="bk b2"></i><i class="bk b3"></i></div>
+    <div class="wrap brand-grid">
+      <div class="brand-copy">
+        <p class="eyebrow">A marca · <span id="bstep-n">01</span> / 05</p>
+        <div class="bsteps">
+          <article class="bstep on"><h2>O conceito.</h2><p>Um asterisco marca o que merece atenção. É o sinal que separa o comum do que é notável, e é isso que fazemos com cada expert.</p></article>
+          <article class="bstep"><h2>A geometria.</h2><p>Três barras com a mesma espessura, a 60° uma da outra. Construído em grid para funcionar do favicon ao telão do palco.</p></article>
+          <article class="bstep"><h2>O nome.</h2><p>BRITTO em caixa alta e condensada, firme como um palco. O asterisco sobe para o alto, como a nota que destaca.</p></article>
+          <article class="bstep"><h2>As cores.</h2><p>Limão para a energia, carvão para a seriedade, porcelana para respirar. O degradê leva do verde ao limão, como a luz que acende.</p></article>
+          <article class="bstep"><h2>A tipografia.</h2><p>Sora nos títulos, com presença de palco. Manrope nos textos, clara em qualquer tamanho.</p></article>
+        </div>
+        <div class="bdots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="brand-visual" id="brand-visual" aria-hidden="true">
+        <svg class="bv-guides" viewBox="0 0 600 600">
+          <circle cx="300" cy="300" r="250"/><circle cx="300" cy="300" r="175"/><circle cx="300" cy="300" r="100"/>
+          <line x1="300" y1="20" x2="300" y2="580"/><line x1="57.5" y1="160" x2="542.5" y2="440"/><line x1="57.5" y1="440" x2="542.5" y2="160"/>
+          <line class="h" x1="20" y1="300" x2="580" y2="300"/>
+          <path class="arc" d="M300 210 A90 90 0 0 1 378 255"/><text x="352" y="214">60°</text>
+          <path class="arc" d="M378 345 A90 90 0 0 1 300 390"/><text x="352" y="400">60°</text>
+          <g class="dim"><line x1="372" y1="200" x2="372" y2="400"/><text x="384" y="304">h</text><line x1="277" y1="430" x2="323" y2="430"/><text x="290" y="452">h/4,3</text></g>
+        </svg>
+        <svg class="bv-ast" id="bv-ast" viewBox="0 0 600 600">
+          <defs><linearGradient id="bvg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8EB85A"/><stop offset="1" stop-color="#D7E44B"/></linearGradient>
+          <filter id="bvglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g id="bv-star" filter="url(#bvglow)"><rect class="bar" x="277" y="200" width="46" height="200" rx="4"/><rect class="bar" x="277" y="200" width="46" height="200" rx="4"/><rect class="bar" x="277" y="200" width="46" height="200" rx="4"/></g>
+        </svg>
+        <img class="bv-word" id="bv-word" src="img/brand/compacta-limao.svg" alt="" width="330" height="106">
+        <div class="bv-pal" id="bv-pal">
+          <span style="--c:#D7E44B;--t:#11130F"><b>Limão</b>#D7E44B</span>
+          <span style="--c:#8EB85A;--t:#11130F"><b>Verde</b>#8EB85A</span>
+          <span style="--c:#26392B;--t:#F4F6F0"><b>Verde profundo</b>#26392B</span>
+          <span style="--c:#11130F;--t:#F4F6F0"><b>Carvão</b>#11130F</span>
+          <span style="--c:#F4F6F0;--t:#11130F"><b>Porcelana</b>#F4F6F0</span>
+        </div>
+        <div class="bv-type" id="bv-type">
+          <div class="t1"><span>Aa</span><small>Sora · títulos</small></div>
+          <div class="t2"><span>Aa</span><small>Manrope · textos</small></div>
+          <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz 0123456789*</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O SÍMBOLO EM 3D — arraste para girar, passe o mouse para iluminar -->
+<section class="simbolo" id="simbolo" aria-label="O símbolo BRITTO* em 3D">
+  <canvas class="sim-canvas" id="sim-canvas" aria-hidden="true"></canvas>
+  <div class="sim-floor" aria-hidden="true"></div>
+  <div class="wrap sim-copy">
+    <p class="eyebrow" data-reveal>O símbolo</p>
+    <h2 data-reveal data-split>Um asterisco que você pode tocar.</h2>
+    <p class="lede" data-reveal>Arraste para girar. Passe o mouse para acender as luzes. Toque duas vezes para ele dar uma volta.</p>
+    <div class="sim-hint" data-reveal><i></i>Arraste</div>
+  </div>
+</section>
+
+<!-- MOCKUPS — a marca aplicada, em 3D: passe o mouse, vire, balance -->
+<section class="mockups" id="mockups" aria-label="Mockups da marca BRITTO*">
+  <div class="mk-light" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-reveal>Mockups</p>
+      <h2 data-reveal data-split>A marca no mundo real.</h2>
+      <p class="lede" data-reveal>Passe o mouse sobre cada peça: o cartão vira, o crachá balança, o book abre e o letreiro acende.</p>
+    </div>
+    <div class="mk-grid" id="mk-grid">
+      <figure class="mk mk-cards" data-mk>
+        <div class="mk-scene">
+          <div class="card3d"><div class="cf front"><img src="img/brand/simbolo-limao.svg" alt=""><span>Gabriel Brito<small>Fundador</small></span></div><div class="cf back"><img src="img/brand/compacta-limao.svg" alt=""></div></div>
+          <div class="card3d c2"><div class="cf front"><img src="img/brand/simbolo-limao.svg" alt=""></div><div class="cf back"><img src="img/brand/compacta-limao.svg" alt=""></div></div>
+        </div>
+        <figcaption><b>Cartão de visita</b>Passe o mouse para virar</figcaption>
+      </figure>
+      <figure class="mk mk-badge" data-mk>
+        <div class="mk-scene"><div class="lanyard" id="lanyard"><i class="strap"></i><div class="badge"><i class="clip"></i><img src="img/brand/simbolo-limao.svg" alt=""><b>VOCÊ</b><span>Palestrante BRITTO*</span><img class="bw" src="img/brand/compacta-limao.svg" alt=""></div></div></div>
+        <figcaption><b>Crachá de evento</b>Mexa o mouse para balançar</figcaption>
+      </figure>
+      <figure class="mk mk-book" data-mk>
+        <div class="mk-scene"><div class="book"><div class="b-back"></div><div class="b-pages"></div><div class="b-spine"><span>BRITTO* · BOOK DE MARCA</span></div><div class="b-page"><p>Conteúdo<i>Narrativa</i>Visual</p></div><div class="b-cover"><div class="bc-in"><img src="img/brand/simbolo-limao.svg" alt=""><b>Book<br>de marca</b><small>BRITTO* GROUP</small></div><div class="bc-out"></div></div></div></div>
+        <figcaption><b>Book</b>Passe o mouse para abrir</figcaption>
+      </figure>
+      <figure class="mk mk-phone" data-mk>
+        <div class="mk-scene"><div class="phone"><div class="ph-screen"><div class="ph-top"><img src="img/brand/simbolo-limao.svg" alt=""><span><b>britto.group</b>Apresentações de alto nível</span></div><div class="ph-feed"><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i><i class="p5"></i><i class="p6"></i><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i><i class="p5"></i><i class="p6"></i></div></div></div></div>
+        <figcaption><b>Instagram</b>O feed corre no hover</figcaption>
+      </figure>
+      <figure class="mk mk-neon" data-mk>
+        <div class="mk-scene"><div class="wall"><img class="neon" src="img/brand/compacta-limao.svg" alt=""><i class="spill"></i></div></div>
+        <figcaption><b>Letreiro</b>Passe o mouse para acender</figcaption>
+      </figure>
+      <figure class="mk mk-photo" data-mk>
+        <div class="mk-scene"><img class="ph-img" src="img/brand/asterisco-pedestal.jpg" alt="Asterisco BRITTO* em 3D sobre pedestal" loading="lazy" decoding="async"></div>
+        <figcaption><b>Símbolo em pedestal</b>Render 3D da marca</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -470,5 +573,8 @@
 <script src="js/showcase.js"></script>
 <script src="js/flow.js"></script>
 <script src="js/eco.js"></script>
+<script src="js/brand.js"></script>
+<script src="js/vendor/three.min.js" defer></script>
+<script src="js/simbolo3d.js" defer></script>
 </body>
 </html>
